@@ -1,36 +1,21 @@
 import Metadata from "./Metadata";
-// import { Barlow_Condensed, Montserrat } from "next/font/google";
 import ViewportWarning from "../components/ViewportWarning/ViewportWarning";
+import Header from "../components/Header/Header";
 import "../styles/main.scss";
 
-
-// const barlowCondensed = Barlow_Condensed({
-//   variable: "--font-barlow-condensed",
-//   subsets: ["latin"],
-//   weight: ["400", "700"],
-// });
-
-// const montserrat = Montserrat({
-//   variable: "--font-montserrat",
-//   subsets: ["latin"],
-//   weight: ["400", "700"],
-// });
-
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: RootLayoutProps): React.JSX.Element {
   return (
     <html lang="en">
       <head>
         <Metadata />
       </head>
-      <body
-        // className={`${barlowCondensed.variable} ${montserrat.variable} antialiased`}
-      >
+      <body>
         <ViewportWarning />
-
+        <Header />
         {children}
       </body>
     </html>

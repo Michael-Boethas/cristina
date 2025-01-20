@@ -1,6 +1,6 @@
-import React from "react";
+import {JSX} from "react";
 
-const ViewportWarning: React.FC = () => {
+export default function ViewportWarning(): JSX.Element{
   return (
     <div className="SMALLEST:hidden bg-yellow-200 p-4 text-center text-orange-500 font-bold">
       <div className="flex flex-col items-center">
@@ -22,6 +22,4 @@ const ViewportWarning: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default ViewportWarning;
+}
