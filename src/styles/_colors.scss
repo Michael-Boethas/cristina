@@ -1,25 +1,13 @@
 :root {
     --bg-1: #bb6b00;
+    --bg-1-transparent: rgba(187, 107, 0, .9);
     --bg-2: #832232;
+    --bg-2-transparent: rgba(131, 34, 50, .9);
     --bg-3: #f3f9e3;
+    --bg-3-transparent: rgba(243, 249, 227, .9);
     --bg-4: #c89fa3;
+    --bg-4-transparent: rgba(200, 159, 163, .9);
 
     --fg-1: #171717;
     --fg-2: #ffffff;
-}
-
-.bg-1 {
-    background: var(--bg-1);
-}
-
-.bg-2 {
-    background: var(--bg-2);
-}
-
-.bg-3 {
-    background: var(--bg-3);
-}
-
-.bg-4 {
-    background: var(--bg-4);
 }

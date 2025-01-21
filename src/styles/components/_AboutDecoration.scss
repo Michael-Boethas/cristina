@@ -1,12 +1,8 @@
-// * {
-//     outline: 1px solid red;
-// }
-
 .about__decoration {
 
     position: relative;
     display: none;
-    margin: 5% 5%;
+    margin: 8% 5%;
 
     @screen md {
         width: 35vw;
@@ -15,6 +11,11 @@
 
     @screen lg {
         display: block;
+    }
+
+    @screen 2xl {
+        margin: 5%;
+        scale: 80%;
     }
 
     div {
