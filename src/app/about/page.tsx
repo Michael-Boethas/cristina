@@ -4,7 +4,7 @@ export default function About(): React.JSX.Element {
   return (
       <div className="flex gap-6 pt-16">
         <AboutDecoration />
-        <section className="lg:w-3/5 xl:w-4/5 text-lg md:text-xl p-20">
+        <section className="lg:w-3/5 xl:w-4/5 text-lg md:text-xl p-5 md:p-20">
           <h2 className="text-4xl md:text-5xl italic py-8">
             A little bit about me…
           </h2>

@@ -1,12 +1,12 @@
 
 export default function AboutDecoration(): React.JSX.Element {
   return (
-    <aside className="about__decoration">
+    <div className="about__decoration" aria-hidden="true">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-    </aside>
+    </div>
   );
 }
