@@ -1,23 +1,31 @@
-export default function Metadata() : React.JSX.Element {
+type MetadataProps = {
+  title?: string;
+  description?: string;
+};
+
+export default function Metadata({
+  title = "Cristina Jimenez - Home",
+  description = "Portfolio of a communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies.",
+}: MetadataProps): React.JSX.Element {
   return (
     <>
       {/* Meta Tags */}
       <meta charSet="utf-8" />
-      <title>Cristina Jimenez - Portfolio</title>
+      <title>{title}</title>
       <meta
         name="description"
-        content="Portfolio of a communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies."
+        content={description}
       />
 
       {/* Open Graph Meta Tags */}
-      <meta property="og:title" content="Cristina Jimenez - Portfolio" />
+      <meta property="og:title" content={title} />
       <meta
         property="og:description"
-        content="Portfolio of a communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies."
+        content={description}
       />
       <meta
         property="og:image"
-        content="https://www.cristina-jimenez.netlify.app/og-image.png"
+        content={`${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -28,19 +36,19 @@ export default function Metadata() : React.JSX.Element {
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content="https://www.cristina-jimenez.netlify.app"
+        content={process.env.NEXT_PUBLIC_BASE_URL}
       />
 
       {/* Twitter Cards */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Cristina Jimenez - Portfolio" />
+      <meta name="twitter:title" content={title} />
       <meta
         name="twitter:description"
-        content="Portfolio of a communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies."
+        content={description}
       />
       <meta
         name="twitter:image"
-        content="https://www.cristinasportfolio.com/twitter-card-image.png"
+        content={`${process.env.NEXT_PUBLIC_BASE_URL}/twitter-card-image.png`}
       />
 
       {/* Icons */}
