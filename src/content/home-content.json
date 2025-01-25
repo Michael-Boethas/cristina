@@ -1,0 +1,24 @@
+{
+  "introduction": [
+    "Hello, I am Cristina – ",
+    "[br]",
+    "a communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies."
+  ],
+  "expertise": {
+    "1": {
+      "icon": "images/expertise/phone.svg",
+      "label": "Social Media Management",
+      "text": "I create strategies that spark conversations and build communities, blending creative content with data-driven campaigns to grow and engage audiences."
+    },
+    "2": {
+      "icon": "images/expertise/network.svg",
+      "label": "Corporate and Internal communications",
+      "text": "I craft clear, inspiring messaging that connects teams, strengthens cultures, and keeps everyone aligned, from top executives to global teams."
+    },
+    "3": {
+      "icon": "images/expertise/laptop.svg",
+      "label": "Content creation",
+      "text": "I bring ideas to life with scroll-stopping visuals, engaging copy, and stories that truly resonate, always tailored to the platform and audience."
+    }
+  }
+}

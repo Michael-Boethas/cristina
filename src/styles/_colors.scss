@@ -1,13 +1,15 @@
 :root {
-    --bg-1: #bb6b00;
-    --bg-1-transparent: rgba(187, 107, 0, .9);
-    --bg-2: #832232;
-    --bg-2-transparent: rgba(131, 34, 50, .9);
-    --bg-3: #f3f9e3;
-    --bg-3-transparent: rgba(243, 249, 227, .9);
-    --bg-4: #c89fa3;
-    --bg-4-transparent: rgba(200, 159, 163, .9);
+  --bg-1: #bb6b00;
+  --bg-1-transparent: rgba(187, 107, 0, 0.95);
+  --bg-2: #832232;
+  --bg-2-transparent: rgba(131, 34, 50, 0.95);
+  --bg-3: #f3f9e3;
+  --bg-3-transparent: rgba(243, 249, 227, 0.95);
+  --bg-4: #c89fa3;
+  --bg-4-transparent: rgba(200, 159, 163, 0.95);
+  --bg-5: #d3b7ba;
+  --bg-5-transparent: rgb(211, 183, 186, 0.95);
 
-    --fg-1: #171717;
-    --fg-2: #ffffff;
+  --fg-1: #171717;
+  --fg-2: #ffffff;
 }

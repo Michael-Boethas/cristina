@@ -1,0 +1,21 @@
+@use "../_breakpoints" as *;
+
+.nav-slide-in {
+  @media screen and (max-width: $breakpoint-md) {
+    transform: translateX(0);
+    opacity: 1;
+    transition:
+      transform 300ms ease-in-out,
+      opacity 300ms ease-in-out;
+  }
+}
+
+.nav-slide-out {
+  @media screen and (max-width: $breakpoint-md) {
+    transform: translateX(100%);
+    opacity: 0;
+    transition:
+      transform 300ms ease-in-out,
+      opacity 300ms ease-in-out;
+  }
+}

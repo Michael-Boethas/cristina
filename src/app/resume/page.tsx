@@ -1,4 +1,4 @@
 export default function Resume(): React.JSX.Element {
-    return <>RESUME</>;
+    return <main className="pt-32">RESUME</main>;
   }
   

@@ -11,26 +11,30 @@ export default function Nav(): React.JSX.Element {
       <Link
         href="/home"
         className={`${pathname === "/home" ? "border-b-bg-1 border-b-4" : ""}`}
+        aria-label="Navigate to Home page"
       >
-        Home
+        <span>Home</span>
       </Link>
       <Link
         href="/about"
         className={`${pathname === "/about" ? "border-b-bg-1 border-b-4" : ""}`}
+        aria-label="Navigate to About page"
       >
-        About
+        <span>About</span>
       </Link>
       <Link
         href="/portfolio"
         className={`${pathname === "/portfolio" ? "border-b-bg-1 border-b-4" : ""}`}
+        aria-label="Navigate to Portfolio"
       >
-        Portfolio
+        <span>Portfolio</span>
       </Link>
       <Link
         href="/resume"
         className={`${pathname === "/resume" ? "border-b-bg-1 border-b-4" : ""}`}
+        aria-label="Navigate to Resume"
       >
-        Resume
+        <span>Resume</span>
       </Link>
     </nav>
   );

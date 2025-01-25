@@ -1,4 +1,4 @@
 export default function Portfolio(): React.JSX.Element {
-    return <>PORTFOLIO</>;
+    return <main className="pt-32">PORTFOLIO</main>;
   }
   

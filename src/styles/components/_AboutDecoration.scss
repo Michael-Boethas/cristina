@@ -1,66 +1,65 @@
 .about__decoration {
+  position: relative;
+  display: none;
+  margin: 12% 0 0 8%;
 
-    position: relative;
-    display: none;
-    margin: 12% 0 0 8%;
+  @screen md {
+    width: 35vw;
+    aspect-ratio: 4 / 3;
+  }
 
-    @screen md {
-        width: 35vw;
-        aspect-ratio: 4 / 3;
-    }
+  @screen lg {
+    display: block;
+    scale: 95%;
+  }
 
-    @screen lg {
-        display: block;
-        scale: 95%;
-    }
+  @screen xl {
+    margin: 8% 0 0 8%;
+    scale: 90%;
+  }
 
-    @screen xl {
-        margin: 8% 0 0 8%;
-        scale: 90%;
-    }
+  @screen 2xl {
+    margin: 5% 0 0 8%;
+    scale: 85%;
+  }
 
-    @screen 2xl {
-        margin: 5% 0 0 8%;
-        scale: 85%;
-    }
+  div {
+    position: absolute;
+    width: 50%;
+  }
 
-    div {
-        position: absolute;
-        width: 50%;
-    }
+  div:nth-child(1) {
+    background: var(--bg-1);
+    aspect-ratio: 2.42 / 2.98;
+    scale: 100%;
+    transform: rotate(352.4deg) translate(0, 8%);
+  }
 
-    div:nth-child(1) {
-        background: var(--bg-1);
-        aspect-ratio: 2.42 / 2.98;
-        scale: 100%;
-        transform: rotate(352.4deg) translate(0, 8%);
-    }
+  div:nth-child(2) {
+    background: var(--bg-2);
+    aspect-ratio: 2.38 / 2.32;
+    scale: 96%;
+    transform: rotate(8deg) translate(100%, 0%);
+  }
 
-    div:nth-child(2) {
-        background: var(--bg-2);
-        aspect-ratio: 2.38 / 2.32;
-        scale: 96%;
-        transform: rotate(8deg) translate(100%, 0%);
-    }
+  div:nth-child(3) {
+    background: var(--bg-3);
+    aspect-ratio: 2.42 / 2.98;
+    scale: 100%;
+    transform: rotate(11deg) translate(20%, 68%);
+  }
 
-    div:nth-child(3) {
-        background: var(--bg-3);
-        aspect-ratio: 2.42 / 2.98;
-        scale: 100%;
-        transform: rotate(11deg) translate(20%, 68%);
-    }
+  div:nth-child(4) {
+    background: var(--bg-4);
+    aspect-ratio: 2.1 / 2.4;
+    scale: 89%;
+    transform: rotate(344deg) translate(78%, 105%);
+  }
 
-    div:nth-child(4) {
-        background: var(--bg-4);
-        aspect-ratio: 2.1 / 2.4;
-        scale: 89%;
-        transform: rotate(344deg) translate(78%, 105%);
-    }
-
-    div:nth-child(5) {
-        background: var(--bg-1);
-        aspect-ratio: 2.1 / 2.4;
-        scale: 89%;
-        transform: rotate(341deg) translate(20%, 145%);
-    }
+  div:nth-child(5) {
+    background: var(--bg-1);
+    aspect-ratio: 2.1 / 2.4;
+    scale: 89%;
+    transform: rotate(341deg) translate(20%, 145%);
+  }
 }

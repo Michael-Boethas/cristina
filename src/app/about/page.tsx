@@ -2,9 +2,13 @@ import AboutDecoration from "../../components/AboutDecoration/AboutDecoration";
 
 export default function About(): React.JSX.Element {
   return (
-      <div className="flex gap-6 pt-16">
+    <>
+      <main className="flex gap-6 pt-16 lg:pt-32">
         <AboutDecoration />
-        <section className="lg:w-3/5 xl:w-4/5 text-lg md:text-xl p-5 md:p-20">
+        <section
+          className="lg:w-3/5 xl:w-4/5 text-lg md:text-xl p-5 md:p-20"
+          aria-label="Section describing Cristina Jiménez"
+        >
           <h2 className="text-4xl md:text-5xl italic py-8">
             A little bit about me…
           </h2>
@@ -38,6 +42,7 @@ export default function About(): React.JSX.Element {
             innovative projects and dynamic teams.
           </p>
         </section>
-      </div>
+      </main>
+    </>
   );
 }
