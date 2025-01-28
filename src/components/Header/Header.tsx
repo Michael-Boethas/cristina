@@ -12,7 +12,7 @@ export default function Header(): React.JSX.Element {
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
   return (
-    <header className="fixed w-full flex justify-between bg-bg-3-transparent pt-5 pb-2 md:px-6 lg:px-24 md:gap-20 lg:gap-28">
+    <header className="fixed z-50 w-full flex justify-between bg-bg-3-transparent pt-5 pb-2 md:px-6 lg:px-24 md:gap-20 lg:gap-28">
       <div className="flex flex-col gap-2 px-6 lg:px-1">
         <h1 className="text-3xl">Cristina Jiménez</h1>
         {pathname === "/home" ? (
@@ -31,7 +31,7 @@ export default function Header(): React.JSX.Element {
         ></i>
 
         <div
-          className={`absolute md:static top-full right-0 flex flex-col w-full xs:w-1/2 sm:w-1/3 md:w-auto items-center bg-bg-3-transparent pt-4 md:pt-0 ${isCollapsed ? "nav-slide-out" : "nav-slide-in"}`}
+          className={`absolute md:static top-full right-0 flex flex-col w-full xs:w-1/2 sm:w-1/3 md:w-auto items-center bg-bg-3-transparent md:bg-transparent pt-4 md:pt-0 ${isCollapsed ? "nav-slide-out" : "nav-slide-in"}`}
           onClick={toggleCollapse}
         >
           <Nav />

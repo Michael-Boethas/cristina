@@ -1,24 +1,53 @@
 {
   "introduction": [
-    "Hello, I am Cristina – ",
+    "Hello, I am Cristina - ",
     "[br]",
     "a communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies."
   ],
   "expertise": {
+    "title": "My Expertise",
     "1": {
-      "icon": "images/expertise/phone.svg",
+      "icon": "/images/expertise/phone.svg",
       "label": "Social Media Management",
       "text": "I create strategies that spark conversations and build communities, blending creative content with data-driven campaigns to grow and engage audiences."
     },
     "2": {
-      "icon": "images/expertise/network.svg",
+      "icon": "/images/expertise/network.svg",
       "label": "Corporate and Internal communications",
       "text": "I craft clear, inspiring messaging that connects teams, strengthens cultures, and keeps everyone aligned, from top executives to global teams."
     },
     "3": {
-      "icon": "images/expertise/laptop.svg",
+      "icon": "/images/expertise/laptop.svg",
       "label": "Content creation",
       "text": "I bring ideas to life with scroll-stopping visuals, engaging copy, and stories that truly resonate, always tailored to the platform and audience."
+    }
+  },
+  "industries": {
+    "title": "Industries",
+    "1": {
+      "image": "/images/industries/audit.webp",
+      "label": "Audit",
+      "text": "Forvis Mazars: Mazars, now merged with Forvis, is a leading international audit, tax, and advisory firm delivering integrated solutions to help businesses navigate complex global markets."
+    },
+    "2": {
+      "image": "/images/industries/biodiversity.webp",
+      "label": "Biodiversity Conservation",
+      "text": "GIZ: The Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) is a global organization committed to sustainable development, focusing on biodiversity conservation, climate change, and fostering resilient communities worldwide."
+    },
+    "3": {
+      "image": "/images/industries/cosmetics.webp",
+      "label": "Cosmetics",
+      "text": "The Estée Lauder Companies: It is a global leader in prestige beauty, home to iconic brands such as Estée Lauder, MAC, and Clinique, offering innovative products across skincare, makeup, and fragrance."
+    },
+    "4": {
+      "image": "/images/industries/education.webp",
+      "label": "Education",
+      "text": "INTEC: The Instituto Tecnológico de Santo Domingo (INTEC) is one of the leading universities in the Dominican Republic, renowned for its excellence in engineering, medicine, and business education."
+    },
+    "5": {
+      "image": "/images/industries/finance.webp",
+      "label": "Financial Services",
+      "text": "Euronext: It is the largest pan-European stock exchange, facilitating capital market access and driving innovation and growth in financial services across multiple markets."
     }
   }
 }

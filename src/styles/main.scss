@@ -1,10 +1,10 @@
-@use "./breakpoints";
 @use "./_typography";
 @use "./_colors";
 @use "./_globals";
 
 @use "./components/AboutDecoration";
 @use "./components/Header";
+@use "./components/Expertise";
 
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Montserrat:wght@400;700&display=swap");
