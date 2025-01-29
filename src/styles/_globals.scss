@@ -13,8 +13,7 @@ strong {
   font-weight: lighter;
 }
 
-///////// Animations ////////////////
-
+///////// Transitions ////////////////
 
 .text--collapsed {
   max-height: 0;
@@ -30,6 +29,6 @@ strong {
   overflow: visible;
   opacity: 1;
   transition:
-    max-height 800ms ease-in-out,
-    opacity 500ms ease-in-out 80ms;
+    max-height 600ms ease-in-out,
+    opacity 300ms ease-in-out 80ms;
 }

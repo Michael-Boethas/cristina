@@ -1,9 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
+import { renderWithLineBreaks } from "utils/utils";
 import { IndustryContent } from "../../types";
 
 interface IndustryProps {
@@ -18,11 +17,9 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
   };
 
   return (
-    <div
-      className={`flex flex-col gap-6 items-center p-6`}
-    >
+    <div className={`sm:w-1/3 md:w-64 flex flex-col items-center`}>
       <button
-        className="relative w-52 h-52"
+        className="relative aspect-square w-4/5 xs:w-3/5 sm:w-full border border-4 border-bg-2"
         onClick={toggleContent}
         aria-label="expand"
       >
@@ -30,14 +27,19 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
           src={entry.image}
           alt={`Icon representing ${entry.label}`}
           fill
-          className="object-cover rounded-xl"
+          className="object-cover"
         />
-        <h3 className="md:min-h-[80px]">{entry.label}</h3>{" "}
+        <div className="industry__overlay">
+          <h3 className="text-white text-3xl">{entry.label}</h3>
+        </div>
       </button>
       <p
-        className={`md:max-w-sm text-[80%] ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
+        className={`px-8 xs:px-16 sm:p-0 text-xl pt-4 ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
       >
-        {entry.text}
+        <span className="font-medium">
+          {renderWithLineBreaks(entry.text ).slice(0, 1)}
+        </span>
+        {renderWithLineBreaks(entry.text).slice(1)}
       </p>
     </div>
   );

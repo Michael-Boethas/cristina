@@ -35,6 +35,7 @@ export default function Home(): React.JSX.Element {
           </Link>
         </div>
       </section>
+
       <section
         className="flex flex-col flex-grow items-center bg-bg-4"
         aria-label="Description of Cristina Jiménez's work expertise"
@@ -43,6 +44,7 @@ export default function Home(): React.JSX.Element {
           {content.expertise.title}
         </h2>
         <div className="w-full flex flex-col justify-evenly items-center py-6 text-2xl sm:text-3xl lg:text-4xl md:flex-row md:flex-wrap md:gap-12 md:items-start">
+          {/* Iterated rendering of expertise */}
           {Object.entries(content.expertise)
             .filter(([key]) => key !== "title") // Excluding the title field
             .map(([key, item]) => {
@@ -50,15 +52,16 @@ export default function Home(): React.JSX.Element {
             })}
         </div>
       </section>
+
       <section
-        className="flex flex-col flex-grow items-center industries-section__background"
+        className="min-h-[60vh] flex flex-col gap-12 items-center sm:px-12 industries-section__background"
         aria-label="Industries and companies Cristina Jiménez has workded for"
       >
         <h2 className="text-5xl lg:text-6xl no-italic py-8">
           {content.industries.title}
         </h2>
-        <div className="w-full flex flex-col justify-evenly items-center ">
-          {/* <Industry entry={content.industries["1"]} /> */}
+        <div className="flex flex-col justify-center gap-6 sm:gap-16 lg:gap-12 items-center sm:flex-row sm:flex-wrap sm:items-start">
+          {/* Iterated rendering of industries */}
           {Object.entries(content.industries)
             .filter(([key]) => key !== "title") // Excluding the title field
             .map(([key, item]) => {
@@ -66,6 +69,7 @@ export default function Home(): React.JSX.Element {
             })}
         </div>
       </section>
+
       <section
         className="flex flex-col flex-grow bg-bg-5"
         aria-label="Form to contact Cristina Jiménez"

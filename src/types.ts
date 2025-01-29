@@ -6,13 +6,8 @@ export interface ExpertiseContent {
     text: string;
 }
 
-export type ExpertiseItem = Record<string, ExpertiseContent>;
-
-
 export interface IndustryContent {
     image: string;
     label: string;
-    text: string;
+    text: string[];
 }
-
-export type IndustryItem = Record<string, IndustryContent>;

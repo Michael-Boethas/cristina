@@ -1,0 +1,22 @@
+@use "../_breakpoints" as *;
+
+.industry__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000aa;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    opacity: 0;
+
+  }
+  
+  &:hover {
+    opacity: 1;
+  }
+}
