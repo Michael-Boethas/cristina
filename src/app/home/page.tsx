@@ -54,7 +54,7 @@ export default function Home(): React.JSX.Element {
       </section>
 
       <section
-        className="min-h-[60vh] flex flex-col gap-12 items-center sm:px-12 industries-section__background"
+        className="min-h-[50vh] flex flex-col gap-12 items-center sm:px-12 industries-section__background"
         aria-label="Industries and companies Cristina Jiménez has workded for"
       >
         <h2 className="text-5xl lg:text-6xl no-italic py-8">

@@ -14,9 +14,8 @@
   @media screen and (min-width: $breakpoint-sm) {
     opacity: 0;
 
-  }
-  
-  &:hover {
-    opacity: 1;
+    &:hover {
+      opacity: 1;
+    }
   }
 }

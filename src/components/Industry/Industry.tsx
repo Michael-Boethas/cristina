@@ -34,9 +34,9 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
         </div>
       </button>
       <p
-        className={`px-8 xs:px-16 sm:p-0 text-xl pt-4 ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
+        className={`py-4 px-8 xs:px-16 sm:px-0 text-xl ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
       >
-        <span className="font-medium">
+        <span className="font-semibold">
           {renderWithLineBreaks(entry.text ).slice(0, 1)}
         </span>
         {renderWithLineBreaks(entry.text).slice(1)}
