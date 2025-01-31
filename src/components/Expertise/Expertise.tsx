@@ -29,7 +29,7 @@ export default function Expertise({ entry }: ExpertiseProps): React.JSX.Element 
       />
       <h3 className="md:min-h-[80px]">{entry.label}</h3>
       <button onClick={toggleContent} aria-label="expand">
-        <i className="fa-sharp fa-solid fa-plus"></i>
+        <i className="hover-pop fa-sharp fa-solid fa-plus"></i>
       </button>
       <p className={`md:max-w-sm text-[80%] ${isCollapsed ? "text--collapsed" : "text--expanded"}`}>
         {entry.text}

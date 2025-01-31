@@ -1,8 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import Expertise from "components/Expertise/Expertise";
 import Industry from "components/Industry/Industry";
+import ContactForm from "components/ContactForm/ContactForm";
 import { renderWithLineBreaks } from "utils/utils";
 import { ExpertiseContent, IndustryContent } from "../../types";
 import content from "../../content/home-content.json";
@@ -23,13 +22,13 @@ export default function Home(): React.JSX.Element {
         <div className="flex flex-col items-center text-fg-2 text-center pt-8 md:w-full md:items-start gap-6 text-lg md:text-2xl md:w-1/3 lg:w-2/3 xl:flex-row xl:w-1/2 2xl:w-1/3">
           <Link
             href="/portfolio"
-            className="xs:w-2/3 sm:w-1/2 bg-bg-2 p-3 self-stretch rounded-xl content-center"
+            className="hover-bg-1 xs:w-2/3 sm:w-1/2 bg-bg-2 p-3 self-stretch rounded-xl content-center"
           >
             Checkout my portfolio
           </Link>
           <Link
             href="/resume"
-            className="xs:w-2/3 sm:w-1/2 bg-bg-2 p-3 self-stretch rounded-xl content-center"
+            className="hover-bg-1 xs:w-2/3 sm:w-1/2 bg-bg-2 p-3 self-stretch rounded-xl content-center"
           >
             See my Resume
           </Link>
@@ -54,7 +53,7 @@ export default function Home(): React.JSX.Element {
       </section>
 
       <section
-        className="min-h-[50vh] flex flex-col gap-12 items-center sm:px-12 industries-section__background"
+        className="min-h-[50vh] flex flex-col gap-12 items-center pb-12 sm:px-12 industries-section__background"
         aria-label="Industries and companies Cristina Jiménez has workded for"
       >
         <h2 className="text-5xl lg:text-6xl no-italic py-8">
@@ -71,14 +70,13 @@ export default function Home(): React.JSX.Element {
       </section>
 
       <section
-        className="flex flex-col flex-grow bg-bg-5"
+        className="min-h-[50vh] flex flex-col items-center bg-[var(--bg-5)] border-y-4 border-[var(--bg-1)]"
         aria-label="Form to contact Cristina Jiménez"
       >
         <h2 className="text-4xl lg:text-5xl no-italic p-8">
           Let&apos;s work together
         </h2>
-
-        {/* <ContactForm /> */}
+        <ContactForm />
       </section>
     </main>
   );

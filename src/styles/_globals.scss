@@ -13,6 +13,19 @@ strong {
   font-weight: lighter;
 }
 
+.hover-pop {
+  transition: transform 100ms ease-in-out;
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+.hover-bg-1 {
+  &:hover {
+    background-color: var(--bg-1);
+  }
+}
+
 ///////// Transitions ////////////////
 
 .text--collapsed {
