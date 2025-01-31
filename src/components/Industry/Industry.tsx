@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { renderWithLineBreaks } from "utils/utils";
 import { IndustryContent } from "../../types";
 
@@ -36,9 +37,9 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
       <p
         className={`py-4 px-8 xs:px-16 sm:px-0 text-xl ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
       >
-        <span className="font-semibold">
-          {renderWithLineBreaks(entry.text ).slice(0, 1)}
-        </span>
+        <Link href={entry.url} target="_blank" className="font-semibold">
+          {renderWithLineBreaks(entry.text).slice(0, 1)}
+        </Link>
         {renderWithLineBreaks(entry.text).slice(1)}
       </p>
     </div>

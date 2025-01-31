@@ -9,5 +9,6 @@ export interface ExpertiseContent {
 export interface IndustryContent {
     image: string;
     label: string;
+    url: string;
     text: string[];
 }

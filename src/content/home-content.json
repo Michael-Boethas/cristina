@@ -27,6 +27,7 @@
     "1": {
       "image": "/images/industries/audit.webp",
       "label": "Audit",
+      "url": "https://www.forvismazars.us/",
       "text": [
         "Forvis Mazars:",
         "[br]",
@@ -36,6 +37,7 @@
     "2": {
       "image": "/images/industries/biodiversity.webp",
       "label": "Biodiversity Conservation",
+      "url": "https://www.giz.de/en/html/index.html",
       "text": [
         "GIZ:",
         "[br]",
@@ -45,6 +47,7 @@
     "3": {
       "image": "/images/industries/cosmetics.webp",
       "label": "Cosmetics",
+      "url": "https://www.esteelauder.com/",
       "text": [
         "The Estée Lauder Companies:",
         "[br]",
@@ -54,6 +57,7 @@
     "4": {
       "image": "/images/industries/education.webp",
       "label": "Education",
+      "url": "https://www.intec.edu.do/",
       "text": [
         "INTEC:",
         "[br]",
@@ -63,6 +67,7 @@
     "5": {
       "image": "/images/industries/finance.webp",
       "label": "Financial Services",
+      "url": "https://www.euronext.com/en",
       "text": [
         "Euronext:",
         "[br]",
