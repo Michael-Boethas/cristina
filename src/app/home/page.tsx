@@ -53,7 +53,7 @@ export default function Home(): React.JSX.Element {
       </section>
 
       <section
-        className="min-h-[50vh] flex flex-col gap-12 items-center pb-12 sm:px-12 industries-section__background"
+        className="min-h-[60vh] flex flex-col items-center gap-16 pb-12 sm:px-12 industries-section__background"
         aria-label="Industries and companies Cristina Jiménez has workded for"
       >
         <h2 className="text-5xl lg:text-6xl no-italic py-8">
@@ -70,7 +70,7 @@ export default function Home(): React.JSX.Element {
       </section>
 
       <section
-        className="min-h-[50vh] flex flex-col items-center bg-[var(--bg-5)] border-y-4 border-[var(--bg-1)]"
+        className="min-h-[50vh] flex flex-col items-center bg-[var(--bg-5)]"
         aria-label="Form to contact Cristina Jiménez"
       >
         <h2 className="text-4xl lg:text-5xl no-italic p-8">

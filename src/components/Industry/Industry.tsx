@@ -18,9 +18,11 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
   };
 
   return (
-    <div className={`sm:w-1/3 md:w-64 flex flex-col items-center`}>
+    <div
+      className={`w-[80vw] xs:w-[70vw] sm:w-[33vw] md:w-64 flex flex-col items-center`}
+    >
       <button
-        className="relative aspect-square w-4/5 xs:w-3/5 sm:w-full border border-4 border-bg-2"
+        className="relative aspect-square w-full border border-4 border-bg-2"
         onClick={toggleContent}
         aria-label="expand"
       >
@@ -28,20 +30,40 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
           src={entry.image}
           alt={`Icon representing ${entry.label}`}
           fill
+          sizes="(max-width: 768px) 500px, (max-width: 1200px) 400px"
           className="object-cover"
         />
         <div className="industry__overlay">
           <h3 className="text-white text-3xl">{entry.label}</h3>
         </div>
       </button>
-      <p
-        className={`py-4 px-8 xs:px-16 sm:px-0 text-xl ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
+
+      {/* Modal window */}
+      <div
+        className={`${isCollapsed ? "hidden" : "backdrop"}`}
+        onClick={toggleContent}
       >
-        <Link href={entry.url} target="_blank" className="font-semibold">
-          {renderWithLineBreaks(entry.text).slice(0, 1)}
-        </Link>
-        {renderWithLineBreaks(entry.text).slice(1)}
-      </p>
+        <div
+          className={`${isCollapsed ? "hidden" : "industry__content"}`}
+          // Prevent event bubbling
+          onClick={(event) => event.stopPropagation()}
+        >
+          <div className="flex justify-between items-start">
+            <h3 className="sm:opacity-1 text-3xl sm:text-4xl">{entry.label}</h3>
+            <button onClick={toggleContent}>
+              <i className="hover-fg-1 text-2xl fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div className="p-3 py-6 sm:p-">
+            <Link href={entry.url} target="_blank" className="hover-fg-1 font-semibold">
+              <h4 className="text-xl sm:text-2xl">{`${renderWithLineBreaks(entry.text).slice(0, 1)}`}</h4>
+            </Link>
+            <p className="-mt-5 align-baseline sm:text-xl">
+              {renderWithLineBreaks(entry.text).slice(1)}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

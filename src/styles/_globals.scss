@@ -16,13 +16,19 @@ strong {
 .hover-pop {
   transition: transform 100ms ease-in-out;
   &:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
   }
 }
 
 .hover-bg-1 {
   &:hover {
     background-color: var(--bg-1);
+  }
+}
+
+.hover-fg-1 {
+  &:hover {
+    color: var(--bg-1);
   }
 }
 
