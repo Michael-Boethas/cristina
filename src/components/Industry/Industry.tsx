@@ -22,40 +22,46 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
       className={`w-[80vw] xs:w-[70vw] sm:w-[33vw] md:w-64 flex flex-col items-center`}
     >
       <button
-        className="relative aspect-square w-full border border-[6px] border-bg-2 rounded-[36px]"
+        className="relative aspect-square w-full bg-bg-2 border border-[5px] border-bg-2 rounded-[35px]"
         onClick={toggleContent}
-        aria-label="expand"
+        aria-label="Show content"
       >
         <Image
           src={entry.image}
-          alt={`Icon representing ${entry.label}`}
+          alt={`Image representing ${entry.label}`}
           fill
           sizes="(max-width: 768px) 500px, (max-width: 1200px) 400px"
           className="object-cover rounded-[30px]"
         />
         <div className="industry__overlay rounded-[30px]">
-          <h3 className="text-white text-2xl">{entry.label}</h3>
+          <h3 className="text-white text-3xl">{entry.label}</h3>
         </div>
       </button>
 
       {/* Modal window */}
-      <div
+      <div // Backdrop
         className={`${isCollapsed ? "hidden" : "backdrop"}`}
         onClick={toggleContent}
       >
-        <div
+        <div // Modal
           className={`${isCollapsed ? "hidden" : "industry__content"}`}
-          // Prevent event bubbling
+          // Prevent event bubbling from the backdrop
           onClick={(event) => event.stopPropagation()}
         >
           <div className="flex justify-between items-start">
             <h3 className="sm:opacity-1 text-3xl sm:text-4xl">{entry.label}</h3>
-            <button onClick={toggleContent}>
+            <button aria-label="Close button" onClick={toggleContent}>
               <i className="hover-fg-1 text-2xl fa-solid fa-xmark"></i>
             </button>
           </div>
           <div className="p-3 py-6 sm:p-">
-            <Link href={entry.url} target="_blank" rel="noopener" className="hover-fg-1 font-semibold">
+            <Link
+              href={entry.url}
+              target="_blank"
+              rel="noopener"
+              aria-label={`Visit ${entry.label}'s website`}
+              className="hover-fg-1 font-semibold"
+            >
               <h4 className="text-xl sm:text-2xl">{`${renderWithLineBreaks(entry.text).slice(0, 1)}`}</h4>
             </Link>
             <p className="-mt-5 align-baseline sm:text-xl">

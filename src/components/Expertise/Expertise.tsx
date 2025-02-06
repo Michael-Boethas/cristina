@@ -8,7 +8,9 @@ interface ExpertiseProps {
   entry: ExpertiseContent;
 }
 
-export default function Expertise({ entry }: ExpertiseProps): React.JSX.Element {
+export default function Expertise({
+  entry,
+}: ExpertiseProps): React.JSX.Element {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleContent = () => {
@@ -28,10 +30,15 @@ export default function Expertise({ entry }: ExpertiseProps): React.JSX.Element 
         className="w-20 h-auto xs:w-28 lg:w-auto max-w-36"
       />
       <h3 className="md:min-h-[80px]">{entry.label}</h3>
-      <button onClick={toggleContent} aria-label="expand">
+      <button
+        onClick={toggleContent}
+        aria-label={isCollapsed ? "Expand content" : "Collapse content"}
+      >
         <i className="hover-pop fa-sharp fa-solid fa-plus"></i>
       </button>
-      <p className={`md:max-w-sm text-[80%] ${isCollapsed ? "text--collapsed" : "text--expanded"}`}>
+      <p
+        className={`md:max-w-sm text-[80%] ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
+      >
         {entry.text}
       </p>
     </div>

@@ -1,6 +1,6 @@
 import PreviewPDF from "components/PreviewPDF/PreviewPDF";
 import CareerTimeline from "components/CareerTimeline/CareerTimeline";
-import content from "../../content/resume-content.json";
+import content from "../../content/resume-content.json" assert { type: "json" };
 
 export default function Resume(): React.JSX.Element {
   return (

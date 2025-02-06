@@ -6,7 +6,7 @@ import Link from "next/link";
 import Nav from "../Nav/Nav";
 
 export default function Header(): React.JSX.Element {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? ""; // Enforce string
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
@@ -37,7 +37,8 @@ export default function Header(): React.JSX.Element {
           <Nav />
           <Link
             href="https://www.linkedin.com/in/cristina-jim%C3%A9nez-b84a0b127/"
-            target="_blank" rel="noopener"
+            target="_blank"
+            rel="noopener"
             className="flex justify-center"
             aria-label="Redirect to Linkedin profile"
           >

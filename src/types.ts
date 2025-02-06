@@ -1,20 +1,18 @@
-// Types definition
-
 export interface ExpertiseContent {
-    icon: string;
-    label: string;
-    text: string;
+    readonly icon: string;
+    readonly label: string;
+    readonly text: string;
 }
 
 export interface IndustryContent {
-    image: string;
-    label: string;
-    url: string;
-    text: string[];
+    readonly image: string;
+    readonly label: string;
+    readonly url: string;    // Optional in case there's no link
+    readonly text: string[];  // Make sure it's always an array
 }
 
-export interface CareerContent {
-    dates: string;
-    company: string;
-    url: string;
+export interface ExperienceContent {
+    readonly dates: string;
+    readonly company: string;
+    readonly url: string;  // Optional in case there's no link
 }

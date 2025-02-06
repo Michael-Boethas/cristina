@@ -1,7 +1,7 @@
 import Link from "next/link";
 import TimelineItem from "components/TimelineItem/TimelineItem";
 import content from "../../content/resume-content.json";
-import { CareerContent } from "types";
+import { ExperienceContent } from "types";
 
 interface CareerTimelineProps {
   classes?: string;
@@ -15,7 +15,7 @@ export default function CareerTimeline({
       {Object.entries(content)
         .filter(([key]) => key !== "title") // Excluding the title field
         .map(([key, item]) => {
-          return <TimelineItem key={key} entry={item as CareerContent} />;
+          return <TimelineItem key={key} entry={item as ExperienceContent} />;
         })}
       <Link
         href="/CV.pdf"
