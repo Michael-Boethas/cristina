@@ -37,7 +37,7 @@ export default function Header(): React.JSX.Element {
           <Nav />
           <Link
             href="https://www.linkedin.com/in/cristina-jim%C3%A9nez-b84a0b127/"
-            target="_blank"
+            target="_blank" rel="noopener"
             className="flex justify-center"
             aria-label="Redirect to Linkedin profile"
           >

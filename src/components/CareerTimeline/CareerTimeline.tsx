@@ -20,7 +20,7 @@ export default function CareerTimeline({
       <Link
         href="/CV.pdf"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener"
         className="max-w-max md:self-center hover-bg-1 bg-bg-2 p-4 m-12 text-fg-2 rounded-xl"
       >
         View my resume

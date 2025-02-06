@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CareerContent } from "types";
 
 interface TimelineItemProps {
@@ -12,7 +13,7 @@ export default function TimelineItem({
       <div className="min-w-[30px] h-[30px] float-left -translate-x-4 rounded-full bg-bg-4">&nbsp;</div>
       <div className="flex flex-col text-lg md:text-2xl ps-2">
         <span className="font--barlow">{entry.dates}</span>
-        <span>{entry.company}</span>
+        <Link href={entry.url} target="_blank" rel="noopener" className="hover-fg-1">{entry.company}</Link>
       </div>
     </div>
   );

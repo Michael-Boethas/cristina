@@ -16,4 +16,5 @@ export interface IndustryContent {
 export interface CareerContent {
     dates: string;
     company: string;
+    url: string;
 }

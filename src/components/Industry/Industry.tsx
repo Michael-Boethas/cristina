@@ -55,7 +55,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
             </button>
           </div>
           <div className="p-3 py-6 sm:p-">
-            <Link href={entry.url} target="_blank" className="hover-fg-1 font-semibold">
+            <Link href={entry.url} target="_blank" rel="noopener" className="hover-fg-1 font-semibold">
               <h4 className="text-xl sm:text-2xl">{`${renderWithLineBreaks(entry.text).slice(0, 1)}`}</h4>
             </Link>
             <p className="-mt-5 align-baseline sm:text-xl">

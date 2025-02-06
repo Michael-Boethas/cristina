@@ -10,8 +10,8 @@ export default function PreviewPDF({
   return (
     <div className={classes}>
       <iframe
-        src={`${pdf}#view=toolbar=1&navpanes=0&scrollbar=0`}
-        className="w-full h-[80vh] hidden lg:block"
+        src={`${pdf}#view=toolbar=1&navpanes=0&scrollbar=0&zoom=page-width`}
+        className="w-full h-full hidden lg:block"
         title="PDF Preview"
       ></iframe>
     </div>
