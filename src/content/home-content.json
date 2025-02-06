@@ -24,6 +24,7 @@
   },
   "industries": {
     "title": "Industries",
+    "tagline": "Get to know more about the companies I've worked for",
     "1": {
       "image": "/images/industries/audit.webp",
       "label": "Audit",

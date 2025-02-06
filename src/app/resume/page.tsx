@@ -1,18 +1,18 @@
+import PreviewPDF from "components/PreviewPDF/PreviewPDF";
+import CareerTimeline from "components/CareerTimeline/CareerTimeline";
 import content from "../../content/resume-content.json";
 
 export default function Resume(): React.JSX.Element {
   return (
-    <main className="pt-32 flex flex-col lg:flex-row">
-      <aside className="lg:w-1/2">
-        <h2 className="text-5xl lg:text-6xl no-italic px-4 md:px-24 py-8">
-          {content.title}
-        </h2>
-      </aside>
-      <div className="w-full sm:w-1/2 h-screen">
-        <iframe
-          src="/CV.pdf#toolbar=0&navpanes=0&scrollbar=0"
-          className="w-full h-full object-contain aspect-[8.5/11]"
-          title="PDF Viewer"
+    <main className="min-h-screen pt-16 sm:px-8 lg:px-10 lg:pt-36 xl:px-16 flex flex-col">
+      <h2 className="text-4xl lg:text-5xl no-italic px-4 lg:px-16 py-8">
+        {content.title}
+      </h2>
+      <div className="flex ps-10">
+        <CareerTimeline classes="w-full xl:w-1/2 flex flex-col items-left md:p-6" />
+        <PreviewPDF
+          classes="hidden md:block w-[820px] h-[80vh] md:translate-y-[-50px]"
+          pdf="CV.pdf"
         />
       </div>
     </main>

@@ -31,7 +31,7 @@ export default function Header(): React.JSX.Element {
         ></i>
 
         <div
-          className={`absolute md:static top-full right-0 flex flex-col w-full xs:w-1/2 sm:w-1/3 md:w-auto items-center bg-bg-3-transparent md:bg-transparent pt-4 md:pt-0 ${isCollapsed ? "nav-slide-out" : "nav-slide-in"}`}
+          className={`absolute md:static top-full right-0 flex flex-col w-full xs:w-1/2 sm:w-1/3 md:w-auto items-center bg-bg-3-transparent md:bg-transparent py-4 md:pt-0 ${isCollapsed ? "nav-slide-out" : "nav-slide-in"}`}
           onClick={toggleCollapse}
         >
           <Nav />

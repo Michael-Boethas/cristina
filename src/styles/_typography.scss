@@ -6,10 +6,12 @@ h3,
 h4,
 h5,
 h6,
-nav a {
+nav a,
+.font--barlow {
   font-family: "Barlow Condensed", sans-serif;
 }
 
-body {
+body,
+.font--montserrat {
   font-family: "Montserrat", sans-serif;
 }

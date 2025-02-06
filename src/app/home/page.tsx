@@ -42,6 +42,7 @@ export default function Home(): React.JSX.Element {
         <h2 className="text-5xl lg:text-6xl no-italic py-8">
           {content.expertise.title}
         </h2>
+        <span></span>
         <div className="w-full flex flex-col justify-evenly items-center py-6 text-2xl sm:text-3xl lg:text-4xl md:flex-row md:flex-wrap md:gap-12 md:items-start">
           {/* Iterated rendering of expertise */}
           {Object.entries(content.expertise)
@@ -53,16 +54,17 @@ export default function Home(): React.JSX.Element {
       </section>
 
       <section
-        className="min-h-[60vh] flex flex-col items-center gap-16 pb-12 sm:px-12 industries-section__background"
+        className="min-h-[60vh] flex flex-col items-center gap-12 pb-12 sm:px-12 industries-section__background"
         aria-label="Industries and companies Cristina Jiménez has workded for"
       >
         <h2 className="text-5xl lg:text-6xl no-italic py-8">
           {content.industries.title}
         </h2>
+        <span className="text-3xl text-center p-4">{content.industries.tagline}</span>
         <div className="flex flex-col justify-center gap-6 sm:gap-16 lg:gap-12 items-center sm:flex-row sm:flex-wrap sm:items-start">
           {/* Iterated rendering of industries */}
           {Object.entries(content.industries)
-            .filter(([key]) => key !== "title") // Excluding the title field
+            .filter(([key]) => key !== "title" && key !== "tagline") // Excluding the title field
             .map(([key, item]) => {
               return <Industry key={key} entry={item as IndustryContent} />;
             })}

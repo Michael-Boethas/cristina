@@ -22,7 +22,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
       className={`w-[80vw] xs:w-[70vw] sm:w-[33vw] md:w-64 flex flex-col items-center`}
     >
       <button
-        className="relative aspect-square w-full border border-4 border-bg-2"
+        className="relative aspect-square w-full border border-[6px] border-bg-2 rounded-[36px]"
         onClick={toggleContent}
         aria-label="expand"
       >
@@ -31,10 +31,10 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
           alt={`Icon representing ${entry.label}`}
           fill
           sizes="(max-width: 768px) 500px, (max-width: 1200px) 400px"
-          className="object-cover"
+          className="object-cover rounded-[30px]"
         />
-        <div className="industry__overlay">
-          <h3 className="text-white text-3xl">{entry.label}</h3>
+        <div className="industry__overlay rounded-[30px]">
+          <h3 className="text-white text-2xl">{entry.label}</h3>
         </div>
       </button>
 

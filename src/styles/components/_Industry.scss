@@ -59,7 +59,7 @@
   @media screen and (min-width: $breakpoint-xl) {
     width: 33vw;
   }
- 
+
   // Fix for landscape mode
   @media screen and (max-height: $breakpoint-sm) {
     min-height: min-content;
