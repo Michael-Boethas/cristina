@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PreviewPDF from "components/PreviewPDF/PreviewPDF";
 import CareerTimeline from "components/CareerTimeline/CareerTimeline";
 import content from "../../content/resume-content.json" assert { type: "json" };
@@ -8,8 +9,18 @@ export default function Resume(): React.JSX.Element {
       <h2 className="text-4xl lg:text-5xl no-italic px-4 lg:px-16 py-8">
         {content.title}
       </h2>
-      <div className="flex ps-10">
-        <CareerTimeline classes="w-full xl:w-1/2 flex flex-col items-left md:p-6" />
+      <div className="flex">
+        <div className="w-full xl:w-1/2 flex flex-col items-left md:p-6">
+          <CareerTimeline classes="ps-10"/>
+          <Link
+            href="/CV.pdf"
+            target="_blank"
+            rel="noopener"
+            className="max-w-max self-center hover-bg-1 bg-bg-2 p-4 m-12 text-fg-2 text-lg sm:text-xl rounded-xl"
+          >
+            View my resume
+          </Link>
+        </div>
         <PreviewPDF
           classes="hidden md:block w-[820px] h-[80vh] md:translate-y-[-50px]"
           pdf="CV.pdf"

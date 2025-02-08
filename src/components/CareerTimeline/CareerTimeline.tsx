@@ -1,4 +1,3 @@
-import Link from "next/link";
 import TimelineItem from "components/TimelineItem/TimelineItem";
 import content from "../../content/resume-content.json";
 import { ExperienceContent } from "types";
@@ -17,14 +16,6 @@ export default function CareerTimeline({
         .map(([key, item]) => {
           return <TimelineItem key={key} entry={item as ExperienceContent} />;
         })}
-      <Link
-        href="/CV.pdf"
-        target="_blank"
-        rel="noopener"
-        className="max-w-max md:self-center hover-bg-1 bg-bg-2 p-4 m-12 text-fg-2 rounded-xl"
-      >
-        View my resume
-      </Link>
     </aside>
   );
 }
