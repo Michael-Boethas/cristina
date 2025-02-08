@@ -43,7 +43,7 @@ export default function Header(): React.JSX.Element {
             aria-label="Redirect to Linkedin profile"
           >
             <i
-              className={`${pathname === "/home" ? "fa-brands fa-linkedin-in text-2xl bg-bg-1 flex justify-end md:absolute md:top-18 md:right-8 lg:top-4 lg:right-5  px-3 py-2 m-6 md:m-0" : "hidden"}`}
+              className="fa-brands fa-linkedin-in text-2xl bg-bg-1 rounded-lg flex justify-end md:absolute md:top-18 md:right-8 lg:top-4 lg:right-5 px-3 py-2 m-6 md:m-0"
             ></i>
           </Link>
         </div>

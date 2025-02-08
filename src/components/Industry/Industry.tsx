@@ -22,7 +22,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
       className={`w-[80vw] xs:w-[70vw] sm:w-[33vw] md:w-64 flex flex-col items-center`}
     >
       <button
-        className="relative aspect-square w-full bg-bg-2 border border-[5px] border-bg-2 rounded-[35px]"
+        className="relative aspect-square w-full bg-bg-2 border border-[2px] border-bg-2 rounded-[32px]"
         onClick={toggleContent}
         aria-label="Show content"
       >
@@ -49,7 +49,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
           onClick={(event) => event.stopPropagation()}
         >
           <div className="flex justify-between items-start">
-            <h3 className="sm:opacity-1 text-3xl sm:text-4xl">{entry.label}</h3>
+            <h3 className="sm:opacity-1 text-3xl sm:text-4xl ps-3">{entry.label}</h3>
             <button aria-label="Close button" onClick={toggleContent}>
               <i className="hover-fg-1 text-2xl fa-solid fa-xmark"></i>
             </button>
