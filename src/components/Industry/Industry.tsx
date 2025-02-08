@@ -51,7 +51,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
           <div className="flex justify-between items-start">
             <h3 className="sm:opacity-1 text-3xl sm:text-4xl ps-3">{entry.label}</h3>
             <button aria-label="Close button" onClick={toggleContent}>
-              <i className="hover-fg-1 text-2xl fa-solid fa-xmark"></i>
+              <i className="hover-fg-1 text-2xl fa-solid fa-xmark" />
             </button>
           </div>
           <div className="p-3 py-6 sm:p-">

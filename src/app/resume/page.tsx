@@ -9,18 +9,22 @@ export default function Resume(): React.JSX.Element {
       <h2 className="text-4xl lg:text-5xl no-italic px-4 lg:px-16 py-8">
         {content.title}
       </h2>
+
       <div className="flex">
         <div className="w-full xl:w-1/2 flex flex-col items-center lg:items-start md:p-6">
-          <CareerTimeline classes="ps-10"/>
+          <CareerTimeline experiences={content.experiences} classes="ps-10" />
+
           <Link
             href="/CV.pdf"
             target="_blank"
             rel="noopener"
-            className="max-w-max self-center hover-bg-1 bg-bg-2 p-4 py-6 m-12 text-fg-2 text-lg sm:text-xl rounded-xl"
+            className="max-w-max self-center hover-bg-1 bg-bg-2 p-4 py-6 m-12
+                       text-fg-2 text-lg sm:text-xl rounded-xl"
           >
             View my resume
           </Link>
         </div>
+
         <PreviewPDF
           classes="hidden lg:block w-[820px] h-[80vh] md:translate-y-[-50px]"
           pdf="CV.pdf"
