@@ -4,11 +4,16 @@ export interface ExpertiseContent {
     readonly text: string;
 }
 
+export interface CompanyDetail {
+    readonly name: string;
+    readonly url: string;
+    readonly text: string;
+}
+
 export interface IndustryContent {
     readonly image: string;
     readonly label: string;
-    readonly url: string;
-    readonly text: string[];  // Make sure it's an array
+    readonly textContent: CompanyDetail[];
 }
 
 export interface ExperienceContent {

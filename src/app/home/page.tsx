@@ -50,7 +50,7 @@ export default function Home(): React.JSX.Element {
         </h2>
         <div className="w-full flex flex-col justify-evenly items-center py-6 text-2xl sm:text-3xl lg:text-4xl md:flex-row md:flex-wrap md:gap-12 md:items-start">
           {/* Iterated rendering of expertise */}
-          {Object.entries(content.expertise)
+          {Object.entries(content.expertise) // Converting to array for map iteration
             .filter(([key]) => key !== "title") // Excluding the title field
             .map(([key, item]) => {
               return <Expertise key={key} entry={item as ExpertiseContent} />;
@@ -75,10 +75,10 @@ export default function Home(): React.JSX.Element {
                         sm:flex-row sm:flex-wrap sm:items-start"
         >
           {/* Iterated rendering of industries */}
-          {Object.entries(content.industries)
-            .filter(([key]) => key !== "title" && key !== "tagline") // Excluding the title field
-            .map(([key, item]) => {
-              return <Industry key={key} entry={item as IndustryContent} />;
+          {Object.entries(content.industries) // Converting to array for map iteration
+            .filter(([key]) => key !== "title" && key !== "tagline") // Excluding the title and tagline
+            .map(([key, industry]) => {
+              return <Industry key={key} entry={industry as IndustryContent} />;
             })}
         </div>
       </section>

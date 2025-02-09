@@ -28,51 +28,56 @@
     "1": {
       "image": "/images/industries/audit.webp",
       "label": "Audit",
-      "url": "https://www.forvismazars.us/",
-      "text": [
-        "Forvis Mazars:",
-        "[br]",
-        "Mazars, now merged with Forvis, is a leading international audit, tax, and advisory firm delivering integrated solutions to help businesses navigate complex global markets."
+      "textContent": [
+        {
+          "name": "Forvis Mazars:",
+          "url": "https://www.forvismazars.us/",
+          "text": "Mazars, now merged with Forvis, is a leading international audit, tax, and advisory firm delivering integrated solutions to help businesses navigate complex global markets."
+        }
       ]
     },
     "2": {
       "image": "/images/industries/biodiversity.webp",
       "label": "Biodiversity Conservation",
-      "url": "https://www.giz.de/en/html/index.html",
-      "text": [
-        "GIZ:",
-        "[br]",
-        "The Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) is a global organization committed to sustainable development, focusing on biodiversity conservation, climate change, and fostering resilient communities worldwide."
+      "textContent": [
+        {
+          "name": "GIZ:",
+          "url": "https://www.giz.de/en/html/index.html",
+          "text": "The Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) is a global organization committed to sustainable development, focusing on biodiversity conservation, climate change, and fostering resilient communities worldwide."
+        }
       ]
     },
     "3": {
       "image": "/images/industries/cosmetics.webp",
       "label": "Cosmetics",
-      "url": "https://www.esteelauder.com/",
-      "text": [
-        "The Estée Lauder Companies:",
-        "[br]",
-        "It is a global leader in prestige beauty, home to iconic brands such as Estée Lauder, MAC, and Clinique, offering innovative products across skincare, makeup, and fragrance."
+      "textContent": [
+        {
+          "name": "The Estée Lauder Companies:",
+          "url": "https://www.esteelauder.com/",
+          "text": "It is a global leader in prestige beauty, home to iconic brands such as Estée Lauder, MAC, and Clinique, offering innovative products across skincare, makeup, and fragrance."
+        }
       ]
     },
     "4": {
       "image": "/images/industries/education.webp",
       "label": "Education",
-      "url": "https://www.intec.edu.do/",
-      "text": [
-        "INTEC:",
-        "[br]",
-        "The Instituto Tecnológico de Santo Domingo (INTEC) is one of the leading universities in the Dominican Republic, renowned for its excellence in engineering, medicine, and business education."
+      "textContent": [
+        {
+          "name": "INTEC:",
+          "url": "https://www.intec.edu.do/",
+          "text": "The Instituto Tecnológico de Santo Domingo (INTEC) is one of the leading universities in the Dominican Republic, renowned for its excellence in engineering, medicine, and business education."
+        }
       ]
     },
     "5": {
       "image": "/images/industries/finance.webp",
       "label": "Financial Services",
-      "url": "https://www.euronext.com/en",
-      "text": [
-        "Euronext:",
-        "[br]",
-        "It is the largest pan-European stock exchange, facilitating capital market access and driving innovation and growth in financial services across multiple markets."
+      "textContent": [
+        {
+          "name": "Euronext:",
+          "url": "https://www.euronext.com/en",
+          "text": "It is the largest pan-European stock exchange, facilitating capital market access and driving innovation and growth in financial services across multiple markets."
+        }
       ]
     }
   }

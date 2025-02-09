@@ -13,7 +13,8 @@ export default function CareerTimeline({
 }: CareerTimelineProps): React.JSX.Element {
   return (
     <aside className={classes}>
-      {Object.entries(experiences)
+      {/* Iteration over experiences */}
+      {Object.entries(experiences) // Converting to array for map iteration
         .filter(([key]) => key !== "title") // Excluding the title field
         .map(([key, item]) => {
           return <TimelineItem key={key} entry={item as ExperienceContent} />;
