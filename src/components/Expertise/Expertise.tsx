@@ -19,7 +19,7 @@ export default function Expertise({
 
   return (
     <div
-      className={`max-w-md flex flex-col flex-grow items-center text-center gap-4 p-6 m-2 ${isCollapsed ? "" : "bg-bg-5 shadow-2xl"}`}
+      className={`m-2 flex max-w-md flex-grow flex-col items-center gap-4 p-6 text-center ${isCollapsed ? "" : "bg-bg-5 shadow-2xl"}`}
     >
       <Image
         src={entry.icon}
@@ -27,7 +27,7 @@ export default function Expertise({
         width={400}
         height={400}
         unoptimized
-        className="w-20 h-auto xs:w-28 lg:w-auto max-w-36"
+        className="h-auto w-20 max-w-36 xs:w-28 lg:w-auto"
       />
       <h3 className="md:min-h-[80px]">{entry.label}</h3>
       <button
@@ -37,7 +37,7 @@ export default function Expertise({
         <i className="hover-pop fa-sharp fa-solid fa-plus" />
       </button>
       <p
-        className={`md:max-w-sm text-[80%] ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
+        className={`text-[80%] md:max-w-sm ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
       >
         {entry.text}
       </p>

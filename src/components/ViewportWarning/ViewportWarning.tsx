@@ -1,8 +1,8 @@
-import {JSX} from "react";
+import { JSX } from "react";
 
-export default function ViewportWarning(): JSX.Element{
+export default function ViewportWarning(): JSX.Element {
   return (
-    <div className="SMALLEST:hidden bg-yellow-200 p-4 text-center text-orange-500 font-bold">
+    <div className="bg-yellow-200 p-4 text-center font-bold text-orange-500 SMALLEST:hidden">
       <div className="flex flex-col items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

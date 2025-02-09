@@ -12,17 +12,11 @@ export default function Metadata({
       {/* Meta Tags */}
       <meta charSet="utf-8" />
       <title>{title}</title>
-      <meta
-        name="description"
-        content={description}
-      />
+      <meta name="description" content={description} />
 
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={title} />
-      <meta
-        property="og:description"
-        content={description}
-      />
+      <meta property="og:description" content={description} />
       <meta
         property="og:image"
         content={`${process.env.NEXT_PUBLIC_BASE_URL}/og-image.png`}
@@ -34,18 +28,12 @@ export default function Metadata({
         content="Cristina's Portfolio Open Graph Image"
       />
       <meta property="og:type" content="website" />
-      <meta
-        property="og:url"
-        content={process.env.NEXT_PUBLIC_BASE_URL}
-      />
+      <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL} />
 
       {/* Twitter Cards */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
-      <meta
-        name="twitter:description"
-        content={description}
-      />
+      <meta name="twitter:description" content={description} />
       <meta
         name="twitter:image"
         content={`${process.env.NEXT_PUBLIC_BASE_URL}/twitter-card-image.png`}

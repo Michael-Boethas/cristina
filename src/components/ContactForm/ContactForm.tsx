@@ -7,7 +7,7 @@ export default function ContactForm() {
   const [state, handleSubmit] = useForm("mwpvbloo");
   if (state.succeeded) {
     return (
-      <p className="text-2xl md:text-3xl p-4 pt-8 sm:pt-16">
+      <p className="p-4 pt-8 text-2xl sm:pt-16 md:text-3xl">
         Thank you for your message, I will review it and get back to you shortly
         !
       </p>
@@ -16,7 +16,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-stretch gap-4 p-3 w-full sm:p-8 lg:w-3/4"
+      className="flex w-full flex-col items-stretch gap-4 p-3 sm:p-8 lg:w-3/4"
     >
       <label htmlFor="email" className="font-medium">
         Email Address :
@@ -25,7 +25,7 @@ export default function ContactForm() {
         id="email"
         type="email"
         name="email"
-        className="leading-10 border-2 border-[var(--bg-1)]"
+        className="border-2 border-[var(--bg-1)] leading-10"
       />
       <ValidationError prefix="Email" field="email" errors={state.errors} />
       <label htmlFor="message" className="font-medium">
@@ -40,7 +40,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state.submitting}
-        className="hover-bg-1 self-center px-12 py-6 text-lg sm:text-xl font-medium rounded-xl bg-bg-2-transparent text-fg-2"
+        className="hover-bg-1 self-center rounded-xl bg-bg-2-transparent px-12 py-6 text-lg font-medium text-fg-2 sm:text-xl"
       >
         Submit
       </button>
