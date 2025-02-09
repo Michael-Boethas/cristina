@@ -19,10 +19,11 @@ export default function TimelineItem({
           href={entry.url}
           target="_blank"
           rel="noopener"
-          className="hover-fg-1 max-w-max"
+          className="hover-fg-1 max-w-max italic"
         >
           {entry.company}
         </Link>
+        <span>{entry.position}</span>
       </div>
     </div>
   );

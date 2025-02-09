@@ -17,7 +17,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
   };
 
   return (
-    <div className="flex w-[80vw] flex-col items-center xs:w-[70vw] sm:w-[33vw] md:w-64">
+    <div className="flex w-[80vw] flex-col items-center xs:w-[70vw] sm:w-[33vw] md:w-80">
       {/* Button to open modal */}
       <button
         className="relative aspect-square w-full rounded-[32px] border border-[2px] border-bg-2 bg-bg-2"
@@ -40,7 +40,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
       {!isCollapsed && (
         <div className="backdrop" onClick={toggleContent}>
           <div
-            className="industry__content"
+            className="industry__content fade-in"
             onClick={(event) => event.stopPropagation()} // Prevent closing modal when clicking inside
           >
             {/* Modal header */}

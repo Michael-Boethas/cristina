@@ -13,10 +13,10 @@ export default function Header(): React.JSX.Element {
   return (
     <header className="fixed z-50 flex w-full justify-between bg-bg-3-transparent pb-2 pt-5 md:gap-12 md:px-6 lg:gap-28 lg:ps-24">
       <div className="flex flex-col gap-2 px-6 lg:px-1">
-        <h1 className="text-3xl">Cristina Jiménez</h1>
+        <h1 className="text-4xl">Cristina Jiménez</h1>
 
         {pathname === "/home" ? (
-          <span className="text-sm md:text-lg">
+          <span className="text-md md:text-xl">
             From the Dominican Republic, based in Paris.
           </span>
         ) : null}

@@ -18,6 +18,16 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="flex w-full flex-col items-stretch gap-4 p-3 sm:p-8 lg:w-3/4"
     >
+      <label htmlFor="name" className="font-medium">
+        Name :
+      </label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        className="border-2 border-[var(--bg-1)] leading-10"
+      />
+      <ValidationError prefix="Name" field="name" errors={state.errors} />
       <label htmlFor="email" className="font-medium">
         Email Address :
       </label>

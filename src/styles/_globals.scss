@@ -1,3 +1,5 @@
+@use "./_breakpoints" as *;
+
 * {
   margin: 0;
   padding: 0;
@@ -44,8 +46,8 @@ strong {
   overflow: hidden;
   opacity: 0;
   transition:
-    max-height 250ms ease-in-out,
-    opacity 80ms ease-in-out;
+    max-height 300ms ease-in-out,
+    opacity 150ms ease-in-out;
 }
 
 .text--expanded {
@@ -55,4 +57,22 @@ strong {
   transition:
     max-height 600ms ease-in-out,
     opacity 300ms ease-in-out 80ms;
+}
+
+///////// Animations ///////////////
+
+.fade-in {
+  @media screen and (min-width: $breakpoint-md) {
+    animation: fade-in 500ms ease-out forwards;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

@@ -20,4 +20,5 @@ export interface ExperienceContent {
   readonly dates: string;
   readonly company: string;
   readonly url: string;
+  readonly position: string;
 }
