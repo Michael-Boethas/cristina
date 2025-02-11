@@ -1,16 +1,16 @@
 import Link from "next/link";
-import Expertise from "components/Expertise/Expertise";
+import ExpertiseSection from "components/ExpertiseSection/ExpertiseSection";
 import Industry from "components/Industry/Industry";
 import ContactForm from "components/ContactForm/ContactForm";
 import { renderWithLineBreaks } from "utils/utils";
-import { ExpertiseContent, IndustryContent } from "../../types";
+import { IndustryContent } from "../../types";
 import content from "../../content/home-content.json" assert { type: "json" };
 
 export default function Home(): React.JSX.Element {
   const introText = renderWithLineBreaks(content.introduction);
 
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="max-w-screen flex min-h-screen flex-col overflow-hidden">
       {/* Introduction */}
       <section
         id="intro-section"
@@ -54,42 +54,18 @@ export default function Home(): React.JSX.Element {
       </section>
 
       {/* Expertise section */}
-      <section
-        id="expertise-section"
-        aria-label="Description of Cristina Jiménez's work expertise"
-        className="expertise-section__background relative flex min-h-screen flex-grow flex-col items-center gap-12 bg-bg-4 md:gap-28 md:pt-28"
-      >
-        <h2 className="no-italic py-8 text-5xl lg:text-6xl">
-          {content.expertise.title}
-        </h2>
-        <div className="flex h-full w-full flex-col items-center justify-evenly py-6 text-2xl sm:text-3xl md:flex-row md:flex-wrap md:items-start md:gap-12 lg:text-4xl">
-          {/* Iterated rendering of expertise */}
-          {Object.entries(content.expertise) // Converting to array for map iteration
-            .filter(([key]) => key !== "title") // Excluding the title field
-            .map(([key, item]) => {
-              return <Expertise key={key} entry={item as ExpertiseContent} />;
-            })}
-        </div>
-
-        {/* Sroll down button */}
-        <div className="absolute bottom-16 right-0 hidden md:block">
-          <Link
-            href="#industries-section"
-            role="button"
-            aria-label="Scroll down"
-          >
-            <i className="hover-fg-1 fa-solid fa-chevron-down p-8 text-5xl text-[#000a] xl:text-7xl" />
-          </Link>
-        </div>
-      </section>
+      <ExpertiseSection
+        content={content.expertise}
+        classes="expertise-section__background relative flex min-h-screen flex-grow flex-col items-center gap-16 bg-bg-4 md:gap-28 md:pt-28"
+      />
 
       {/* Industries section */}
       <section
         id="industries-section"
         aria-label="Industries and companies Cristina Jiménez has workded for"
-        className="industries-section__background relative flex min-h-screen flex-col items-center gap-12 pb-12 sm:px-12 md:pt-28"
+        className="industries-section__background relative flex min-h-screen flex-col items-center gap-16 pb-12 sm:px-12 md:pt-28"
       >
-        <h2 className="no-italic py-8 text-5xl lg:text-6xl">
+        <h2 className="no-italic py-8 text-5xl lg:text-7xl">
           {content.industries.title}
         </h2>
         <span className="p-4 text-center text-3xl">

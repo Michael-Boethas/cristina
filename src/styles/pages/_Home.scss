@@ -11,12 +11,12 @@
 
   p+div>a:nth-of-type(1) {
     transform: translate(-150%, 0);
-    animation: intro--slide-in 500ms 300ms ease-out forwards;
+    animation: intro--slide-in 500ms 300ms ease forwards;
   }
 
   p+div>a:nth-of-type(2) {
     transform: translate(-150%, 0);
-    animation: intro--slide-in 500ms 400ms forwards;
+    animation: intro--slide-in 500ms 400ms ease forwards;
   }
 
   // Scroll-down chevron
@@ -134,20 +134,11 @@
   }
 }
 
-////// Expertise section background //////
-
-.expertise-section__background {
-  background-repeat: repeat;
-  background-color: var(--bg-4);
-  background-image: url("/images/expertise-background.svg");
-  background-size: 10px;
-}
-
 ////// Industry section animated background //////
 
 .industries-section__background {
 
-  animation: industries-bg-animation 90s ease-in-out infinite;
+  animation: industries-bg-animation 90s ease infinite;
   will-change: background;
   background-color: var(--bg-3);
   background-image: url("/images/industries-background.svg");

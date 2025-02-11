@@ -1,3 +1,7 @@
+export interface ExpertiseSectionInterface {
+  readonly title: string;
+  readonly expertiseList: Record<string, ExpertiseContent>;
+}
 export interface ExpertiseContent {
   readonly icon: string;
   readonly label: string;
