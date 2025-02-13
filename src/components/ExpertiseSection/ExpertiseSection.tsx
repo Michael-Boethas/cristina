@@ -4,10 +4,10 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Expertise from "components/Expertise/Expertise";
 import { viewportAddClasses } from "utils/utils";
-import { ExpertiseContent, ExpertiseSectionInterface } from "types";
+import { IExpertiseItem, IExpertiseSection } from "types";
 
 interface ExpertiseSectionProps {
-  content: ExpertiseSectionInterface;
+  content: IExpertiseSection;
   classes: string;
 }
 
@@ -16,7 +16,7 @@ export default function ExpertiseSection({
   classes,
 }: ExpertiseSectionProps): React.JSX.Element {
   useEffect(() => {
-    document.querySelectorAll("[Expertise]").forEach((expertiseCard, index) => {
+    document.querySelectorAll("[Expertise]").forEach((expertiseCard) => {
       return viewportAddClasses(expertiseCard, "fade-in");
     });
   }, []);
@@ -27,18 +27,18 @@ export default function ExpertiseSection({
       aria-label="Description of Cristina Jiménez's work expertise"
       className={classes}
     >
-      <h2 className="no-italic py-8 text-5xl lg:text-7xl">{content.title}</h2>
+      <h2 className="no-italic py-4 text-5xl lg:text-7xl">{content.title}</h2>
       <div className="flex h-full w-full flex-col items-center justify-evenly py-6 text-2xl sm:text-3xl md:flex-row md:flex-wrap md:items-start md:gap-12 lg:text-4xl">
         {/* Iterated rendering of expertise */}
         {Object.entries(content.expertiseList) // Converting to array for map iteration
           .filter(([key]) => key !== "title") // Excluding the title field
           .map(([key, item]) => {
-            return <Expertise key={key} entry={item as ExpertiseContent} />;
+            return <Expertise key={key} entry={item as IExpertiseItem} />;
           })}
       </div>
 
       {/* Sroll down button */}
-      <div className="absolute bottom-16 right-0 hidden md:block">
+      <div className="absolute bottom-0 right-0 hidden md:block">
         <Link href="#industries-section" role="button" aria-label="Scroll down">
           <i className="hover-fg-1 fa-solid fa-chevron-down p-8 text-5xl text-[#000a] xl:text-7xl" />
         </Link>

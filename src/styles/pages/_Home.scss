@@ -6,17 +6,17 @@
 
   p {
     opacity: 0;
-    animation: intro--slide-in 500ms 200ms cubic-bezier(.44, .58, .65, 1.17) forwards;
+    animation: 'intro--slide-in' 500ms 200ms cubic-bezier(.44, .58, .65, 1.17) forwards;
   }
 
   p+div>a:nth-of-type(1) {
     transform: translate(-150%, 0);
-    animation: intro--slide-in 500ms 300ms ease forwards;
+    animation: 'intro--slide-in' 500ms 300ms ease-out forwards;
   }
 
   p+div>a:nth-of-type(2) {
     transform: translate(-150%, 0);
-    animation: intro--slide-in 500ms 400ms ease forwards;
+    animation: 'intro--slide-in' 500ms 400ms forwards;
   }
 
   // Scroll-down chevron
@@ -32,23 +32,23 @@
     border: 2px solid var(--bg-1);
     border-radius: 50%;
     box-shadow: 0 0 15px var(--bg-1), inset 0 0 30px var(--bg-1);
-    animation: chevron--ripple 900ms 2000ms ease-in-out;
+    animation: 'chevron--ripple' 900ms 2000ms linear;
   }
 
   @media screen and (min-width: $breakpoint-md) {
     p {
       transform: translate(-150%, 0);
-      animation: intro--slide-in 800ms 400ms cubic-bezier(.44, .58, .65, 1.17) forwards;
+      animation: 'intro--slide-in' 800ms 400ms cubic-bezier(.44, .58, .65, 1.17) forwards;
     }
 
     p+div>a:nth-of-type(1) {
       transform: translate(-150%, 0);
-      animation: intro--slide-in 500ms 1000ms cubic-bezier(.44, .58, .65, 1.17) forwards;
+      animation: 'intro--slide-in' 500ms 1000ms cubic-bezier(.44, .58, .65, 1.17) forwards;
     }
 
     p+div>a:nth-of-type(2) {
       transform: translate(-300%, 0);
-      animation: intro--slide-in 600ms 800ms cubic-bezier(.44, .58, .65, 1.17) forwards;
+      animation: 'intro--slide-in' 600ms 800ms cubic-bezier(.44, .58, .65, 1.17) forwards;
     }
   }
 }
@@ -67,8 +67,8 @@
 
   100% {
     opacity: 0;
-    width: 300%;
-    height: 300%;
+    width: 400%;
+    height: 400%;
   }
 }
 
@@ -76,7 +76,7 @@
 ////// Intro section animated background ///////
 
 .introduction__background {
-  animation: intro-bg-animation 80s ease infinite;
+  animation: 'intro-bg-animation' 80s ease infinite;
   will-change: background-position, background-size;
   background-color: var(--bg-3);
   background-image: url("/images/intro-background.svg");
@@ -138,7 +138,7 @@
 
 .industries-section__background {
 
-  animation: industries-bg-animation 90s ease infinite;
+  animation: 'industries-bg-animation' 90s ease-in-out infinite;
   will-change: background;
   background-color: var(--bg-3);
   background-image: url("/images/industries-background.svg");

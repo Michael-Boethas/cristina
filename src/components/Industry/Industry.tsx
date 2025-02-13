@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { IndustryContent, CompanyDetail } from "../../types";
+import { IIndustryItem, ICompanyItem } from "../../types";
 
 interface IndustryProps {
-  entry: IndustryContent;
+  entry: IIndustryItem;
 }
 
 export default function Industry({ entry }: IndustryProps): React.JSX.Element {
@@ -17,7 +17,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
   };
 
   return (
-    <div className="flex w-[80vw] flex-col items-center xs:w-[70vw] sm:w-[33vw] md:w-80">
+    <div className="flex w-[80vw] flex-col items-center xs:w-[70vw] sm:w-[33vw] md:w-72">
       {/* Button to open modal */}
       <button
         className="relative aspect-square w-full rounded-[32px] border border-[2px] border-bg-2 bg-bg-2"
@@ -56,22 +56,20 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
             {/* Companies List */}
             <div className="p-3 py-6">
               {/* Iteration over companies */}
-              {entry.textContent.map(
-                (company: CompanyDetail, index: number) => (
-                  <div key={index} className="mb-4">
-                    <Link
-                      href={company.url}
-                      target="_blank"
-                      rel="noopener"
-                      aria-label={`Visit ${company.name}'s website`}
-                      className="hover-fg-1 text-xl font-semibold sm:text-2xl"
-                    >
-                      {company.name}
-                    </Link>
-                    <p className="sm:text-xl">{company.text}</p>
-                  </div>
-                ),
-              )}
+              {entry.companies.map((company: ICompanyItem, index: number) => (
+                <div key={index} className="mb-4">
+                  <Link
+                    href={company.url}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={`Visit ${company.name}'s website`}
+                    className="hover-fg-1 text-xl font-semibold sm:text-2xl"
+                  >
+                    {company.name}
+                  </Link>
+                  <p className="sm:text-xl">{company.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

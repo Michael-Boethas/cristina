@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ExpertiseContent } from "../../types";
+import { IExpertiseItem } from "../../types";
 
 interface ExpertiseProps {
-  entry: ExpertiseContent;
+  entry: IExpertiseItem;
 }
 
 export default function Expertise({
@@ -19,7 +19,7 @@ export default function Expertise({
 
   return (
     <div
-      className={`fade-in m-2 flex max-w-md flex-grow flex-col items-center gap-4 bg-bg-5 p-6 text-center shadow-2xl`}
+      className={`m-2 flex max-w-md flex-grow flex-col items-center gap-4 bg-bg-5 p-6 text-center shadow-2xl`}
     >
       <Image
         src={entry.icon}
