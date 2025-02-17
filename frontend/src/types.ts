@@ -1,12 +1,23 @@
-export interface IHomePageStructure {
-  readonly introduction: string;
-  readonly expertise: IExpertiseSection;
-  readonly industries: IIndustriesSection;
+/////// Header //////////////////////////////
+
+export interface IHeaderData {
+  readonly title: string;
+  readonly tagline: string;
+  readonly location: string;
 }
 
-export interface IExpertiseSection {
+/////// Home ////////////////////////////////
+
+export interface IHomePageData {
+  readonly introduction: string;
+  readonly CTA_1: string;
+  readonly CTA_2: string;
+  readonly contactMessage: string;
+}
+
+export interface IExpertiseSectionData {
   readonly title: string;
-  readonly expertiseList: Record<string, IExpertiseItem>;
+  readonly expertiseList: IExpertiseItem[];
 }
 
 export interface IExpertiseItem {
@@ -15,10 +26,10 @@ export interface IExpertiseItem {
   readonly text: string;
 }
 
-export interface IIndustriesSection {
+export interface IIndustriesSectionData {
   readonly title: string;
   readonly tagline: string;
-  readonly industriesList: Record<string, IIndustryItem>;
+  readonly industriesList: IIndustryItem[];
 }
 
 export interface IIndustryItem {
@@ -33,7 +44,30 @@ export interface ICompanyItem {
   readonly text: string;
 }
 
-export interface IExperienceItem {
+
+/////// About /////////////////////////////////
+
+export interface IAboutPageData {
+  readonly title: string;
+  readonly intro: string;
+  readonly paragraphs: { paragraph: string }[];
+}
+
+/////// Portfolio ////////////////////////////////
+
+
+/////// Resume ////////////////////////////////
+
+
+export interface IResumePageData {
+  readonly title: string;
+  readonly pdf_url: string;
+  readonly CTA: string;
+}
+export interface ICareerTimelineData {
+  readonly experienceList: ITimelineItem[];
+}
+export interface ITimelineItem {
   readonly dates: string;
   readonly company: string;
   readonly url: string;

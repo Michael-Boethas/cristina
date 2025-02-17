@@ -1,0 +1,20 @@
+{
+  "title": "My Expertise",
+  "expertiseList": [
+    {
+      "icon": "/images/expertise/phone.svg",
+      "label": "Social Media Management",
+      "text": "I create strategies that spark conversations and build communities, blending creative content with data-driven campaigns to grow and engage audiences."
+    },
+    {
+      "icon": "/images/expertise/network.svg",
+      "label": "Corporate and Internal communications",
+      "text": "I craft clear, inspiring messaging that connects teams, strengthens cultures, and keeps everyone aligned, from top executives to global teams."
+    },
+    {
+      "icon": "/images/expertise/laptop.svg",
+      "label": "Content creation",
+      "text": "I bring ideas to life with scroll-stopping visuals, engaging copy, and stories that truly resonate, always tailored to the platform and audience."
+    }
+  ]
+}

@@ -4,17 +4,18 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Expertise from "components/Expertise/Expertise";
 import { viewportAddClasses } from "utils/utils";
-import { IExpertiseItem, IExpertiseSection } from "types";
+import { IExpertiseItem, IExpertiseSectionData } from "types";
+import data from "../../content/expertise-section.json" assert { type: "json" };
 
 interface ExpertiseSectionProps {
-  content: IExpertiseSection;
-  classes: string;
+  classes?: string;
 }
 
 export default function ExpertiseSection({
-  content,
   classes,
 }: ExpertiseSectionProps): React.JSX.Element {
+  const content: IExpertiseSectionData = data;
+
   useEffect(() => {
     document.querySelectorAll("[Expertise]").forEach((expertiseCard) => {
       return viewportAddClasses(expertiseCard, "fade-in");
@@ -30,11 +31,9 @@ export default function ExpertiseSection({
       <h2 className="no-italic py-4 text-5xl lg:text-7xl">{content.title}</h2>
       <div className="flex h-full w-full flex-col items-center justify-evenly py-6 text-2xl sm:text-3xl md:flex-row md:flex-wrap md:items-start md:gap-12 lg:text-4xl">
         {/* Iterated rendering of expertise */}
-        {Object.entries(content.expertiseList) // Converting to array for map iteration
-          .filter(([key]) => key !== "title") // Excluding the title field
-          .map(([key, item]) => {
-            return <Expertise key={key} entry={item as IExpertiseItem} />;
-          })}
+        {content.expertiseList.map((item: IExpertiseItem, index: number) => {
+          return <Expertise key={index} entry={item} />;
+        })}
       </div>
 
       {/* Sroll down button */}

@@ -1,16 +1,17 @@
 import Link from "next/link";
 import Industry from "components/Industry/Industry";
-import { IIndustryItem, IIndustriesSection } from "../../types";
+import { IIndustryItem, IIndustriesSectionData } from "../../types";
+import data from "../../content/industries-section.json" assert { type: "json" };
 
 interface IndustriesSectionProps {
-  content: IIndustriesSection;
-  classes: string;
+  classes?: string;
 }
 
 export default function IndustriesSection({
-  content,
   classes,
 }: IndustriesSectionProps): React.JSX.Element {
+  const content: IIndustriesSectionData = data;
+
   return (
     <section
       id="industries-section"
@@ -22,11 +23,11 @@ export default function IndustriesSection({
       <span className="p-4 text-center text-3xl">{content.tagline}</span>
       <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:flex-wrap sm:items-start sm:gap-16 lg:gap-12">
         {/* Iterated rendering of industries */}
-        {Object.entries(content.industriesList) // Converting to array for map iteration
-          .filter(([key]) => key !== "title" && key !== "tagline") // Excluding the title and tagline
-          .map(([key, industry]) => {
-            return <Industry key={key} entry={industry as IIndustryItem} />;
-          })}
+        {content.industriesList.map(
+          (industry: IIndustryItem, index: number) => {
+            return <Industry key={index} entry={industry} />;
+          },
+        )}
       </div>
       {/* Sroll down button */}
       <div className="absolute bottom-0 right-0 hidden md:block">

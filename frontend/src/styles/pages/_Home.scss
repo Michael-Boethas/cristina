@@ -23,6 +23,7 @@
   div>a>i::after {
     content: ' ';
     position: absolute;
+    z-index: 5;
     top: 50%;
     left: 50%;
     translate: -50% -50%;

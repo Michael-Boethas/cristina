@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Header",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Cristina Jiménez",
+      "required": true,
+      "unique": true
+    },
+    "tagline": {
+      "type": "string",
+      "default": "From the Dominican Republic, based in",
+      "unique": true
+    },
+    "location": {
+      "type": "string",
+      "unique": true,
+      "default": "Paris "
+    }
+  }
+}

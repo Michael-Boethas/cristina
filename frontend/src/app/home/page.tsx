@@ -2,9 +2,11 @@ import Link from "next/link";
 import ExpertiseSection from "components/ExpertiseSection/ExpertiseSection";
 import IndustriesSection from "components/IndustriesSection/IndustriesSection";
 import ContactForm from "components/ContactForm/ContactForm";
-import content from "../../content/home-content.json" assert { type: "json" };
+import { IHomePageData } from "types";
+import data from "../../content/home-page.json" assert { type: "json" }; // Fallback
 
 export default function Home(): React.JSX.Element {
+  const content: IHomePageData = data;
   return (
     <main className="max-w-screen flex min-h-screen flex-col overflow-hidden">
       {/* Introduction */}
@@ -23,7 +25,7 @@ export default function Home(): React.JSX.Element {
             aria-label="Check out Cristina Jiménez's portfolio"
             className="hover-bg-1 w-2/3 content-center rounded-xl bg-bg-2 p-3 sm:w-1/2 sm:self-stretch"
           >
-            Check out my portfolio
+            {content.CTA_1}
           </Link>
           <Link
             href="/resume"
@@ -31,7 +33,7 @@ export default function Home(): React.JSX.Element {
             aria-label="View Cristina Jiménez's career"
             className="hover-bg-1 w-2/3 content-center rounded-xl bg-bg-2 p-3 sm:w-1/2 sm:self-stretch"
           >
-            See my Resume
+            {content.CTA_2}
           </Link>
         </div>
         {/* Sroll down button */}
@@ -47,16 +49,10 @@ export default function Home(): React.JSX.Element {
       </section>
 
       {/* Expertise section */}
-      <ExpertiseSection
-        content={content.expertise}
-        classes="expertise-section__background relative flex min-h-[50vh] flex-col items-center gap-8 bg-bg-4 md:py-24"
-      />
+      <ExpertiseSection classes="expertise-section__background relative flex min-h-[50vh] flex-col items-center gap-8 bg-bg-4 md:py-24" />
 
       {/* Industries section */}
-      <IndustriesSection
-        content={content.industries}
-        classes="industries-section__background relative flex min-h-[50vh] flex-col items-center gap-8 pb-12 sm:px-12 md:py-24"
-      />
+      <IndustriesSection classes="industries-section__background relative flex min-h-[50vh] flex-col items-center gap-8 pb-12 sm:px-12 md:py-24" />
 
       {/* Contact form */}
       <section
@@ -65,7 +61,7 @@ export default function Home(): React.JSX.Element {
         aria-label="Form to contact Cristina Jiménez"
       >
         <h2 className="no-italic p-8 text-4xl lg:text-5xl">
-          Let&apos;s work together!
+          {content.contactMessage}
         </h2>
         <ContactForm />
 

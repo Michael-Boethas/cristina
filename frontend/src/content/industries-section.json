@@ -1,0 +1,61 @@
+{
+  "title": "Industries",
+  "tagline": "Get to know more about the companies I've worked for",
+  "industriesList": [
+    {
+      "image": "/images/industries/audit.webp",
+      "label": "Audit",
+      "companies": [
+        {
+          "name": "Forvis Mazars:",
+          "url": "https://www.forvismazars.us/",
+          "text": "Mazars, now merged with Forvis, is a leading international audit, tax, and advisory firm delivering integrated solutions to help businesses navigate complex global markets."
+        }
+      ]
+    },
+    {
+      "image": "/images/industries/biodiversity.webp",
+      "label": "Biodiversity Conservation",
+      "companies": [
+        {
+          "name": "GIZ:",
+          "url": "https://www.giz.de/en/html/index.html",
+          "text": "The Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) is a global organization committed to sustainable development, focusing on biodiversity conservation, climate change, and fostering resilient communities worldwide."
+        }
+      ]
+    },
+    {
+      "image": "/images/industries/cosmetics.webp",
+      "label": "Cosmetics",
+      "companies": [
+        {
+          "name": "The Estée Lauder Companies:",
+          "url": "https://www.esteelauder.com/",
+          "text": "It is a global leader in prestige beauty, home to iconic brands such as Estée Lauder, MAC, and Clinique, offering innovative products across skincare, makeup, and fragrance."
+        }
+      ]
+    },
+    {
+      "image": "/images/industries/education.webp",
+      "label": "Education",
+      "companies": [
+        {
+          "name": "INTEC:",
+          "url": "https://www.intec.edu.do/",
+          "text": "The Instituto Tecnológico de Santo Domingo (INTEC) is one of the leading universities in the Dominican Republic, renowned for its excellence in engineering, medicine, and business education."
+        }
+      ]
+    },
+    {
+      "image": "/images/industries/finance.webp",
+      "label": "Financial Services",
+      "companies": [
+        {
+          "name": "Euronext:",
+          "url": "https://www.euronext.com/en",
+          "text": "It is the largest pan-European stock exchange, facilitating capital market access and driving innovation and growth in financial services across multiple markets."
+        }
+      ]
+    }
+  ]
+}

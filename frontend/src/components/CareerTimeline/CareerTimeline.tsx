@@ -1,24 +1,21 @@
 import TimelineItem from "components/TimelineItem/TimelineItem";
-// import content from "../../content/resume-content.json";
-import { ExperienceContent } from "types";
+import { ITimelineItem, ICareerTimelineData } from "types";
+import data from "../../content/career-timeline.json" assert { type: "json" };
 
 interface CareerTimelineProps {
-  experiences: Record<string, ExperienceContent>; // Pass experiences without title
   classes?: string;
 }
 
 export default function CareerTimeline({
-  experiences,
   classes,
 }: CareerTimelineProps): React.JSX.Element {
+  const content: ICareerTimelineData = data;
   return (
     <aside className={classes}>
       {/* Iteration over experiences */}
-      {Object.entries(experiences) // Converting to array for map iteration
-        .filter(([key]) => key !== "title") // Excluding the title field
-        .map(([key, item]) => {
-          return <TimelineItem key={key} entry={item as ExperienceContent} />;
-        })}
+      {content.experienceList.map((item: ITimelineItem, index: number) => {
+        return <TimelineItem key={index} entry={item as ITimelineItem} />;
+      })}
     </aside>
   );
 }

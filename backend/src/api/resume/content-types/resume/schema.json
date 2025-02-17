@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "resumes",
+  "info": {
+    "singularName": "resume",
+    "pluralName": "resumes",
+    "displayName": "Resume",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "My professional journey",
+      "required": true,
+      "unique": true
+    },
+    "pdf_url": {
+      "type": "text",
+      "required": true,
+      "unique": true,
+      "default": "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy84MGE2MGFkMThjMTk3NDBkL0VRMTBHWXpSQ3FZZ2dJRENGQUFBQUFBQmpkZjJzVS0ydXhhMnpLU1ZnWmxGWXc%5FZT00OkFPS3NkUCZzaGFyaW5ndjI9dHJ1ZSZmcm9tU2hhcmU9dHJ1ZSZhdD05&cid=80A60AD18C19740D&id=80A60AD18C19740D%215314&parId=80A60AD18C19740D%211665&o=OneUp"
+    },
+    "CTA": {
+      "type": "string",
+      "default": "View my resume ",
+      "unique": true,
+      "required": true
+    }
+  }
+}

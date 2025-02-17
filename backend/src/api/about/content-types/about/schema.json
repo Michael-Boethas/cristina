@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "A little bit about me…",
+      "unique": true
+    },
+    "intro": {
+      "type": "text",
+      "default": "Hello! I’m Cristina Jiménez, a creative and innovative communications specialist based in Paris, France. ",
+      "unique": true
+    },
+    "paragraphs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::about-paragraph.about-paragraph"
+    }
+  }
+}

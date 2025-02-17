@@ -1,18 +1,25 @@
+"use client";
+
 import Link from "next/link";
 import PreviewPDF from "components/PreviewPDF/PreviewPDF";
 import CareerTimeline from "components/CareerTimeline/CareerTimeline";
-import content from "../../content/resume-content.json" assert { type: "json" };
+import { useFetch } from "hooks/useFetch";
+import { IResumePageData } from "types";
+import fallbackData from "../../content/resume-page.json" assert { type: "json" };
 
 export default function Resume(): React.JSX.Element {
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/resume`;
+  const { data, loading } = useFetch<IResumePageData>(url);
+  const content: IResumePageData = data ?? fallbackData;
   return (
     <main className="flex min-h-screen flex-col pt-16 sm:px-8 lg:px-10 lg:pt-36 xl:px-16">
       <h2 className="no-italic px-4 py-8 text-4xl lg:px-16 lg:text-5xl">
-        {content.title}
+        {loading ? "Loading..." : content.title}
       </h2>
 
       <div className="flex">
         <div className="flex w-full flex-col items-center md:p-6 lg:items-start xl:w-1/2">
-          <CareerTimeline experiences={content.experiences} classes="ps-10" />
+          <CareerTimeline classes="ps-10" />
 
           <Link
             href="/CV.pdf"
@@ -20,13 +27,13 @@ export default function Resume(): React.JSX.Element {
             rel="noopener"
             className="hover-bg-1 m-12 max-w-max self-center rounded-xl bg-bg-2 p-4 py-6 text-lg text-fg-2 sm:text-xl"
           >
-            View my resume
+            {content.CTA}
           </Link>
         </div>
 
         <PreviewPDF
           classes="hidden lg:block w-[820px] h-[80vh] md:translate-y-[-50px]"
-          pdf="CV.pdf"
+          pdf={content.pdf_url}
         />
       </div>
     </main>

@@ -3,21 +3,27 @@
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Nav from "../Nav/Nav";
+import { useFetch } from "hooks/useFetch";
+import { IHeaderData } from "types";
+import fallbackData from "../../content/header.json" assert { type: "json" }; // Fallback
 
 export default function Header(): React.JSX.Element {
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/header`;
+  const { data, loading } = useFetch<IHeaderData>(url);
+  const content = data ?? fallbackData;
+
   const pathname = usePathname();
   const [isCollapsed, setIsCollapsed] = useState(true);
-
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
   return (
     <header className="fixed z-50 flex w-full justify-between bg-bg-3-transparent pb-2 pt-5 md:gap-12 md:px-6 lg:gap-28 lg:ps-24">
       <div className="flex flex-col gap-2 px-6 lg:px-1">
-        <h1 className="text-4xl">Cristina Jiménez</h1>
+        <h1 className="text-4xl">{loading ? "Loading..." : content?.title}</h1>
 
         {pathname === "/home" ? (
           <span className="text-md md:text-xl">
-            From the Dominican Republic, based in Paris.
+            {`${content?.tagline} ${content?.location}`}
           </span>
         ) : null}
       </div>

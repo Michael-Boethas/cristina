@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ExperienceContent } from "types";
+import { ITimelineItem } from "types";
 
 interface TimelineItemProps {
-  entry: ExperienceContent;
+  entry: ITimelineItem;
 }
 
 export default function TimelineItem({

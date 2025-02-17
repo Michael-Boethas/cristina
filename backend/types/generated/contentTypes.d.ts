@@ -369,6 +369,150 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutParagraphAboutParagraph
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'about_paragraphs';
+  info: {
+    displayName: 'About paragraph';
+    pluralName: 'about-paragraphs';
+    singularName: 'about-paragraph';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-paragraph.about-paragraph'
+    > &
+      Schema.Attribute.Private;
+    paragraph: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAboutAbout extends Struct.SingleTypeSchema {
+  collectionName: 'abouts';
+  info: {
+    description: '';
+    displayName: 'About';
+    pluralName: 'abouts';
+    singularName: 'about';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    intro: Schema.Attribute.Text &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'Hello! I\u2019m Cristina Jim\u00E9nez, a creative and innovative communications specialist based in Paris, France. '>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
+      Schema.Attribute.Private;
+    paragraphs: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-paragraph.about-paragraph'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'A little bit about me\u2026'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
+  collectionName: 'headers';
+  info: {
+    description: '';
+    displayName: 'Header';
+    pluralName: 'headers';
+    singularName: 'header';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::header.header'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'Paris '>;
+    publishedAt: Schema.Attribute.DateTime;
+    tagline: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'From the Dominican Republic, based in'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'Cristina Jim\u00E9nez'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResumeResume extends Struct.SingleTypeSchema {
+  collectionName: 'resumes';
+  info: {
+    description: '';
+    displayName: 'Resume';
+    pluralName: 'resumes';
+    singularName: 'resume';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CTA: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'View my resume '>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resume.resume'
+    > &
+      Schema.Attribute.Private;
+    pdf_url: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy84MGE2MGFkMThjMTk3NDBkL0VRMTBHWXpSQ3FZZ2dJRENGQUFBQUFBQmpkZjJzVS0ydXhhMnpLU1ZnWmxGWXc%5FZT00OkFPS3NkUCZzaGFyaW5ndjI9dHJ1ZSZmcm9tU2hhcmU9dHJ1ZSZhdD05&cid=80A60AD18C19740D&id=80A60AD18C19740D%215314&parId=80A60AD18C19740D%211665&o=OneUp'>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'My professional journey'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -878,6 +1022,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-paragraph.about-paragraph': ApiAboutParagraphAboutParagraph;
+      'api::about.about': ApiAboutAbout;
+      'api::header.header': ApiHeaderHeader;
+      'api::resume.resume': ApiResumeResume;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
