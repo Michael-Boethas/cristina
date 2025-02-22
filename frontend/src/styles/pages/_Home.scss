@@ -6,7 +6,7 @@
 
   p {
     opacity: 0;
-    animation: 'intro--slide-in' 500ms 200ms cubic-bezier(.44, .58, .65, 1.17) forwards;
+    animation: 'intro--slide-in' 500ms 500ms cubic-bezier(.44, .58, .65, 1.17) forwards;
   }
 
   p+div>a:nth-of-type(1) {

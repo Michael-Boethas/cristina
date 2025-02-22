@@ -1,12 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import ExpertiseSection from "components/ExpertiseSection/ExpertiseSection";
 import IndustriesSection from "components/IndustriesSection/IndustriesSection";
 import ContactForm from "components/ContactForm/ContactForm";
+import { useFetch } from "hooks/useFetch";
 import { IHomePageData } from "types";
-import data from "../../content/home-page.json" assert { type: "json" }; // Fallback
+import fallbackData from "../../content/home-page.json" assert { type: "json" }; // Fallback
 
 export default function Home(): React.JSX.Element {
-  const content: IHomePageData = data;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/home`;
+  const { data } = useFetch<IHomePageData>(url);
+  const content = data ?? fallbackData;
+
   return (
     <main className="max-w-screen flex min-h-screen flex-col overflow-hidden">
       {/* Introduction */}
@@ -61,7 +67,7 @@ export default function Home(): React.JSX.Element {
         aria-label="Form to contact Cristina Jiménez"
       >
         <h2 className="no-italic p-8 text-4xl lg:text-5xl">
-          {content.contactMessage}
+          {content.contact_message}
         </h2>
         <ContactForm />
 

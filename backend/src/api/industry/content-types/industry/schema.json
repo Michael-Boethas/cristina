@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "industries",
+  "info": {
+    "singularName": "industry",
+    "pluralName": "industries",
+    "displayName": "Industry",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "image": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "label": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    }
+  }
+}

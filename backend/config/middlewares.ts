@@ -5,14 +5,15 @@ export default [
     name: 'strapi::security',
     config: {
       contentSecurityPolicy: {
+        useDefaults: true,
         directives: {
-          "default-src": ["'self'", "http://localhost:1337"],
-          "frame-ancestors": ["'self'", "http://localhost:3000"], // Allow Next.js frontend
-          "script-src": ["'self'", "'unsafe-inline'", "http://localhost:1337"],
-          "img-src": ["'self'", "data:", "blob:"],
-          "media-src": ["'self'", "data:", "blob:"],
+          'frame-ancestors': ["'self'", "http://localhost:3000"], // Allow embedding in iframe from your frontend
+          'default-src': ["'self'", 'data:', 'blob:', 'https://market-assets.strapi.io'], // Adjust allowed sources
+          'media-src': ["'self'", 'data:', 'blob:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'https://market-assets.strapi.io'],
         },
       },
+      xframe: 'ALLOWALL', // Allow all iframes (optional, but useful)
     },
   },
   'strapi::cors',

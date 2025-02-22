@@ -1,6 +1,6 @@
 {
   "title": "My Expertise",
-  "expertiseList": [
+  "expertise": [
     {
       "icon": "/images/expertise/phone.svg",
       "label": "Social Media Management",

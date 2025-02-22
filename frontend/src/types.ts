@@ -12,12 +12,12 @@ export interface IHomePageData {
   readonly introduction: string;
   readonly CTA_1: string;
   readonly CTA_2: string;
-  readonly contactMessage: string;
+  readonly contact_message: string;
 }
 
 export interface IExpertiseSectionData {
   readonly title: string;
-  readonly expertiseList: IExpertiseItem[];
+  readonly expertise: IExpertiseItem[];
 }
 
 export interface IExpertiseItem {
@@ -29,7 +29,7 @@ export interface IExpertiseItem {
 export interface IIndustriesSectionData {
   readonly title: string;
   readonly tagline: string;
-  readonly industriesList: IIndustryItem[];
+  readonly industries: IIndustryItem[];
 }
 
 export interface IIndustryItem {

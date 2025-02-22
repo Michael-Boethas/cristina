@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "expertises",
+  "info": {
+    "singularName": "expertise",
+    "pluralName": "expertises",
+    "displayName": "Expertise"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "label": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "text": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    }
+  }
+}

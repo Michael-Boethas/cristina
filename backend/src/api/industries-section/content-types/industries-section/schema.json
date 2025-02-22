@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "industries_sections",
+  "info": {
+    "singularName": "industries-section",
+    "pluralName": "industries-sections",
+    "displayName": "Industries section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Industries",
+      "required": true,
+      "unique": true
+    },
+    "tagline": {
+      "type": "text",
+      "default": "Get to know more about the companies I've worked for",
+      "unique": true
+    },
+    "industries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::industry.industry"
+    }
+  }
+}

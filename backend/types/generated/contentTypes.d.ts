@@ -435,6 +435,110 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
+  collectionName: 'companies';
+  info: {
+    displayName: 'Company';
+    pluralName: 'companies';
+    singularName: 'company';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::company.company'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text & Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String & Schema.Attribute.Unique;
+  };
+}
+
+export interface ApiExpertiseSectionExpertiseSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'expertise_sections';
+  info: {
+    displayName: 'Expertise section';
+    pluralName: 'expertise-sections';
+    singularName: 'expertise-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    expertise: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::expertise.expertise'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::expertise-section.expertise-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'My Expertise'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiExpertiseExpertise extends Struct.CollectionTypeSchema {
+  collectionName: 'expertises';
+  info: {
+    displayName: 'Expertise';
+    pluralName: 'expertises';
+    singularName: 'expertise';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    icon: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::expertise.expertise'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
   collectionName: 'headers';
   info: {
@@ -467,6 +571,119 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.DefaultTo<'Cristina Jim\u00E9nez'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    displayName: 'Home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contact_message: Schema.Attribute.Text &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<"Let's work together!">;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CTA_1: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'Check out my portfolio'>;
+    CTA_2: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'See my resume'>;
+    introduction: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'Hello, I am Cristina - \\na communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies.'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIndustriesSectionIndustriesSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'industries_sections';
+  info: {
+    displayName: 'Industries section';
+    pluralName: 'industries-sections';
+    singularName: 'industries-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    industries: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::industry.industry'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::industries-section.industries-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tagline: Schema.Attribute.Text &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<"Get to know more about the companies I've worked for">;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'Industries'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
+  collectionName: 'industries';
+  info: {
+    description: '';
+    displayName: 'Industry';
+    pluralName: 'industries';
+    singularName: 'industry';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    companies: Schema.Attribute.Relation<'oneToMany', 'api::company.company'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::industry.industry'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1024,7 +1241,13 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-paragraph.about-paragraph': ApiAboutParagraphAboutParagraph;
       'api::about.about': ApiAboutAbout;
+      'api::company.company': ApiCompanyCompany;
+      'api::expertise-section.expertise-section': ApiExpertiseSectionExpertiseSection;
+      'api::expertise.expertise': ApiExpertiseExpertise;
       'api::header.header': ApiHeaderHeader;
+      'api::home.home': ApiHomeHome;
+      'api::industries-section.industries-section': ApiIndustriesSectionIndustriesSection;
+      'api::industry.industry': ApiIndustryIndustry;
       'api::resume.resume': ApiResumeResume;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

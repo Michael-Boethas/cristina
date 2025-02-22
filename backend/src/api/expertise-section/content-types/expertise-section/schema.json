@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "expertise_sections",
+  "info": {
+    "singularName": "expertise-section",
+    "pluralName": "expertise-sections",
+    "displayName": "Expertise section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "default": "My Expertise"
+    },
+    "expertise": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::expertise.expertise"
+    }
+  }
+}

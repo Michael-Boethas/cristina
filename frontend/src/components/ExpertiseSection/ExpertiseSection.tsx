@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Link from "next/link";
 import Expertise from "components/Expertise/Expertise";
-import { viewportAddClasses } from "utils/utils";
+// import { viewportAddClasses } from "utils/utils";
+import { useFetch } from "hooks/useFetch";
 import { IExpertiseItem, IExpertiseSectionData } from "types";
-import data from "../../content/expertise-section.json" assert { type: "json" };
+import fallbackData from "../../content/expertise-section.json" assert { type: "json" };
 
 interface ExpertiseSectionProps {
   classes?: string;
@@ -14,13 +15,15 @@ interface ExpertiseSectionProps {
 export default function ExpertiseSection({
   classes,
 }: ExpertiseSectionProps): React.JSX.Element {
-  const content: IExpertiseSectionData = data;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/expertise-section?populate=expertise`;
+  const { data, loading } = useFetch<IExpertiseSectionData>(url);
+  const content = data ?? fallbackData;
 
-  useEffect(() => {
-    document.querySelectorAll("[Expertise]").forEach((expertiseCard) => {
-      return viewportAddClasses(expertiseCard, "fade-in");
-    });
-  }, []);
+  // useEffect(() => {
+  //   document.querySelectorAll("[Expertise]").forEach((expertiseCard) => {
+  //     return viewportAddClasses(expertiseCard, "fade-in");
+  //   });
+  // }, []);
 
   return (
     <section
@@ -31,9 +34,11 @@ export default function ExpertiseSection({
       <h2 className="no-italic py-4 text-5xl lg:text-7xl">{content.title}</h2>
       <div className="flex h-full w-full flex-col items-center justify-evenly py-6 text-2xl sm:text-3xl md:flex-row md:flex-wrap md:items-start md:gap-12 lg:text-4xl">
         {/* Iterated rendering of expertise */}
-        {content.expertiseList.map((item: IExpertiseItem, index: number) => {
-          return <Expertise key={index} entry={item} />;
-        })}
+        {loading
+          ? "Loading..."
+          : content.expertise.map((item: IExpertiseItem, index: number) => {
+              return <Expertise key={index} entry={item} />;
+            })}
       </div>
 
       {/* Sroll down button */}

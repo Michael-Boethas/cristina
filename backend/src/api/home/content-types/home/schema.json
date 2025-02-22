@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "introduction": {
+      "type": "text",
+      "default": "Hello, I am Cristina - \\na communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies.",
+      "unique": true,
+      "required": true
+    },
+    "CTA_1": {
+      "type": "string",
+      "default": "Check out my portfolio",
+      "required": true,
+      "unique": true
+    },
+    "CTA_2": {
+      "type": "string",
+      "default": "See my resume",
+      "required": true,
+      "unique": true
+    },
+    "contact_message": {
+      "type": "text",
+      "default": "Let's work together!",
+      "unique": true
+    }
+  }
+}
