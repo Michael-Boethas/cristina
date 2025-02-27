@@ -7,16 +7,22 @@ export default [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'frame-ancestors': ["'self'", "http://localhost:3000"], // Allow embedding in iframe from your frontend
-          'default-src': ["'self'", 'data:', 'blob:', 'https://market-assets.strapi.io'], // Adjust allowed sources
+          'frame-ancestors': ["'self'", "http://localhost:3000", "https://cristina-jimenez.netlify.app/"], // Allow embedding in iframe from frontend
+          'default-src': ["'self'", 'data:', 'blob:', 'https://market-assets.strapi.io'], 
           'media-src': ["'self'", 'data:', 'blob:'],
           'img-src': ["'self'", 'data:', 'blob:', 'https://market-assets.strapi.io'],
         },
       },
-      xframe: 'ALLOWALL', // Allow all iframes (optional, but useful)
+      xframe: 'ALLOWALL', 
     },
   },
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['http://localhost:3000', 'https://cristina-jimenez.netlify.app/', 'https://cristina-jimenez-strapi-admin-dashboard.onrender.com'], 
+      credentials: true, 
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
