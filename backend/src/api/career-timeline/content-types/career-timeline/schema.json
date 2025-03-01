@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "career_timelines",
+  "info": {
+    "singularName": "career-timeline",
+    "pluralName": "career-timelines",
+    "displayName": "Career timeline"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "experiences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experience.experience"
+    }
+  }
+}

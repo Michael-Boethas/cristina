@@ -1,9 +1,5 @@
-"use client";
-
-// import { useEffect } from "react";
 import Link from "next/link";
 import Expertise from "components/Expertise/Expertise";
-// import { viewportAddClasses } from "utils/utils";
 import { useFetch } from "hooks/useFetch";
 import { IExpertiseItem, IExpertiseSectionData } from "types";
 import fallbackData from "../../content/expertise-section.json" assert { type: "json" };
@@ -18,12 +14,6 @@ export default function ExpertiseSection({
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/expertise-section?populate=expertise`;
   const { data, loading } = useFetch<IExpertiseSectionData>(url);
   const content = data ?? fallbackData;
-
-  // useEffect(() => {
-  //   document.querySelectorAll("[Expertise]").forEach((expertiseCard) => {
-  //     return viewportAddClasses(expertiseCard, "fade-in");
-  //   });
-  // }, []);
 
   return (
     <section

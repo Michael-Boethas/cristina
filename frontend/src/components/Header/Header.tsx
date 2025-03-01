@@ -9,7 +9,7 @@ import fallbackData from "../../content/header.json" assert { type: "json" }; //
 
 export default function Header(): React.JSX.Element {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/header`;
-  const { data, loading } = useFetch<IHeaderData>(url);
+  const { data } = useFetch<IHeaderData>(url);
   const content = data ?? fallbackData;
 
   const pathname = usePathname();
@@ -19,7 +19,7 @@ export default function Header(): React.JSX.Element {
   return (
     <header className="fixed z-50 flex w-full justify-between bg-bg-3-transparent pb-2 pt-5 md:gap-12 md:px-6 lg:gap-28 lg:ps-24">
       <div className="flex flex-col gap-2 px-6 lg:px-1">
-        <h1 className="text-4xl">{loading ? "Loading..." : content?.title}</h1>
+        <h1 className="text-4xl">{content?.title}</h1>
 
         {pathname === "/home" ? (
           <span className="text-md md:text-xl">

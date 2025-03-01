@@ -435,6 +435,38 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCareerTimelineCareerTimeline
+  extends Struct.SingleTypeSchema {
+  collectionName: 'career_timelines';
+  info: {
+    displayName: 'Career timeline';
+    pluralName: 'career-timelines';
+    singularName: 'career-timeline';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    experiences: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience.experience'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-timeline.career-timeline'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
   collectionName: 'companies';
   info: {
@@ -460,6 +492,44 @@ export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
       Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     text: Schema.Attribute.Text & Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String & Schema.Attribute.Unique;
+  };
+}
+
+export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
+  collectionName: 'experiences';
+  info: {
+    description: '';
+    displayName: 'Experience';
+    pluralName: 'experiences';
+    singularName: 'experience';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dates: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience.experience'
+    > &
+      Schema.Attribute.Private;
+    position: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1241,7 +1311,9 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-paragraph.about-paragraph': ApiAboutParagraphAboutParagraph;
       'api::about.about': ApiAboutAbout;
+      'api::career-timeline.career-timeline': ApiCareerTimelineCareerTimeline;
       'api::company.company': ApiCompanyCompany;
+      'api::experience.experience': ApiExperienceExperience;
       'api::expertise-section.expertise-section': ApiExpertiseSectionExpertiseSection;
       'api::expertise.expertise': ApiExpertiseExpertise;
       'api::header.header': ApiHeaderHeader;

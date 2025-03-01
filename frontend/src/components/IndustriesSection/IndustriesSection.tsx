@@ -3,7 +3,6 @@ import Industry from "components/Industry/Industry";
 import { useFetch } from "hooks/useFetch";
 import { IIndustryItem, IIndustriesSectionData } from "../../types";
 import fallbackData from "../../content/industries-section.json" assert { type: "json" };
-
 interface IndustriesSectionProps {
   classes?: string;
 }
@@ -23,7 +22,7 @@ export default function IndustriesSection({
     >
       <h2 className="no-italic py-4 text-5xl lg:text-7xl">{content.title}</h2>
       <span className="p-4 text-center text-3xl">{content.tagline}</span>
-      <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:flex-wrap sm:items-start sm:gap-16 lg:gap-12">
+      <div className="flex flex-col items-center justify-center gap-6 text-4xl sm:flex-row sm:flex-wrap sm:items-start sm:gap-16 lg:gap-12">
         {/* Iterated rendering of industries */}
         {loading
           ? "Loading..."

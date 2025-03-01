@@ -40,7 +40,7 @@ export interface IIndustryItem {
 
 export interface ICompanyItem {
   readonly name: string;
-  readonly url: string;
+  readonly url?: string;
   readonly text: string;
 }
 
@@ -65,11 +65,11 @@ export interface IResumePageData {
   readonly CTA: string;
 }
 export interface ICareerTimelineData {
-  readonly experienceList: ITimelineItem[];
+  readonly experiences: ITimelineItem[];
 }
 export interface ITimelineItem {
   readonly dates: string;
   readonly company: string;
-  readonly url: string;
+  readonly url?: string;
   readonly position: string;
 }
