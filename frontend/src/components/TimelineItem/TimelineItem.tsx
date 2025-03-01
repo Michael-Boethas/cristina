@@ -15,14 +15,20 @@ export default function TimelineItem({
       </div>
       <div className="flex flex-col ps-2 text-lg md:text-2xl">
         <span className="font--barlow">{entry.dates}</span>
-        <Link
-          href={entry.url}
-          target="_blank"
-          rel="noopener"
-          className="hover-fg-1 max-w-max italic"
-        >
-          {entry.company}
-        </Link>
+
+        {entry.url ? (
+          <Link
+            href={entry.url}
+            target="_blank"
+            rel="noopener"
+            aria-label={`Visit ${entry.company}'s website`}
+            className="hover-fg-1 max-w-max italic"
+          >
+            {entry.company}
+          </Link>
+        ) : (
+          <span className="max-w-max italic">{entry.company}</span>
+        )}
         <span>{entry.position}</span>
       </div>
     </div>

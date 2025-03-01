@@ -12,7 +12,7 @@ export default function Resume(): React.JSX.Element {
   const { data, loading } = useFetch<IResumePageData>(url);
   const content = data ?? fallbackData;
   return (
-    <main className="flex min-h-screen flex-col pt-16 sm:px-8 lg:px-10 lg:pt-36 xl:px-16">
+    <main className="flex min-h-screen flex-col pt-20 sm:px-8 lg:px-10 lg:pt-36 xl:px-16">
       <h2 className="no-italic px-4 py-8 text-4xl lg:px-16 lg:text-5xl">
         {content.title}
       </h2>
@@ -38,7 +38,7 @@ export default function Resume(): React.JSX.Element {
         </div>
 
         <PreviewPDF
-          classes="hidden lg:block w-[820px] h-[80vh] md:translate-y-[-50px]"
+          classes="hidden lg:block w-[820px] h-[90vh] md:translate-y-[-50px]"
           pdf={content.pdf_url}
         />
       </div>

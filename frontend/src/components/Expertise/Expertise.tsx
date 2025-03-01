@@ -34,7 +34,7 @@ export default function Expertise({
         onClick={toggleContent}
         aria-label={isCollapsed ? "Expand content" : "Collapse content"}
       >
-        <i className="hover-pop fa-sharp fa-solid fa-plus" />
+        <i className="hover-pop hover-fg-1 fa-sharp fa-solid fa-plus" />
       </button>
       <p
         className={`text-[80%] md:max-w-sm ${isCollapsed ? "text--collapsed" : "text--expanded"}`}

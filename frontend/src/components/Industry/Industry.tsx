@@ -58,16 +58,22 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
               {/* Iteration over companies */}
               {entry.companies.map((company: ICompanyItem, index: number) => (
                 <div key={index} className="mb-4">
-                  <Link
-                    href={company.url}
-                    target="_blank"
-                    rel="noopener"
-                    aria-label={`Visit ${company.name}'s website`}
-                    className="hover-fg-1 text-xl font-semibold sm:text-2xl"
-                  >
-                    {company.name}
-                  </Link>
-                  <p className="sm:text-xl">{company.text}</p>
+                  {company.url ? (
+                    <Link
+                      href={company.url}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={`Visit ${company.name}'s website`}
+                      className="hover-fg-1 text-xl font-semibold sm:text-2xl"
+                    >
+                      {company.name}
+                    </Link>
+                  ) : (
+                    <span className="text-xl font-semibold sm:text-2xl">
+                      {company.name}
+                    </span>
+                  )}
+                  <p className="text-lg md:text-xl">{company.text}</p>
                 </div>
               ))}
             </div>
