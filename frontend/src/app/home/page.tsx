@@ -42,7 +42,7 @@ export default function Home(): React.JSX.Element {
             {content.CTA_2}
           </Link>
         </div>
-        {/* Sroll down button */}
+        {/* Scroll down button */}
         <div className="absolute bottom-4 right-0 hidden md:block">
           <Link
             href="#expertise-section"
@@ -71,7 +71,7 @@ export default function Home(): React.JSX.Element {
         </h2>
         <ContactForm />
 
-        {/* Sroll to top button */}
+        {/* Scroll to top button */}
         <div className="absolute bottom-5 right-0 hidden md:block">
           <Link href="#intro-section" role="button" aria-label="Scroll to top">
             <div className="hover-fg-1 flex flex-col">

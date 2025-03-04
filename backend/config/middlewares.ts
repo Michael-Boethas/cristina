@@ -19,7 +19,7 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:3000', 'https://cristina-jimenez.netlify.app/', 'https://cristina-jimenez-strapi-admin-dashboard.onrender.com/', 'https://gigantic-clareta-cristina-180c122a.koyeb.app/'], 
+      origin: ['http://localhost:3000', 'http://192.168.1.15:3000', 'https://cristina-jimenez.netlify.app/', 'https://cristina-jimenez-strapi-admin-dashboard.onrender.com/', 'https://gigantic-clareta-cristina-180c122a.koyeb.app/'], 
       credentials: false, 
     },
   },

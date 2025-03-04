@@ -38,7 +38,7 @@ export default function Resume(): React.JSX.Element {
         </div>
 
         <PreviewPDF
-          classes="hidden lg:block w-[820px] h-[90vh] md:translate-y-[-50px]"
+          classes="hidden lg:block w-[820px] bg-blue-400 h-[90vh] md:translate-y-[-50px]"
           pdf={content.pdf_url}
         />
       </div>

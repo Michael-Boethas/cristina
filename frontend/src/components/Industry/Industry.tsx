@@ -49,7 +49,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
                 {entry.label}
               </h3>
               <button aria-label="Close button" onClick={toggleContent}>
-                <i className="hover-fg-1 fa-solid fa-xmark text-2xl" />
+                <i className="hover-fg-1 fa-solid fa-xmark -translate-y-2 ps-4 text-2xl" />
               </button>
             </div>
 
@@ -64,7 +64,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
                       target="_blank"
                       rel="noopener"
                       aria-label={`Visit ${company.name}'s website`}
-                      className="hover-fg-1 text-xl font-semibold sm:text-2xl"
+                      className="hover-fg-1 inline-block pb-2 text-xl font-semibold sm:text-2xl"
                     >
                       {company.name}
                     </Link>
