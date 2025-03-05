@@ -14,6 +14,7 @@ module.exports = ({ env }) => ({
       },
       actionOptions: {
         upload: {
+          transformation: [{ flags: 'fl_sanitize' }], // Adds sanitize flag
           resource_type: "auto", // Allows images, PDFs, videos, etc.
         },
         delete: {},

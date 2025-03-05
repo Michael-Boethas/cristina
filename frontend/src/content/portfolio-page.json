@@ -1,0 +1,54 @@
+{
+  "title": "Here’s a selection of projects I’ve worked on across different industries.",
+  "tagline": "Each project reflects my passion for storytelling and strategic communication.",
+  "projects": [
+    {
+      "layout": 1,
+      "slug": "mazars-sustainability-campaign",
+      "label": "Mazars’ Sustainability Campaign",
+      "thumbnail_url": "https://img.youtube.com/vi/mpcdrO8QvYQ/sddefault.jpg"
+    },
+    {
+      "layout": 1,
+      "slug": "net-zero-internal-campaign",
+      "label": "Net Zero internal campaign",
+      "thumbnail_url": "https://img.youtube.com/vi/slHa6gzCw4Q/sddefault.jpg"
+    },
+    {
+      "layout": 2,
+      "slug": "breast-cancer-campaign-emea-2022",
+      "label": "Breast Cancer Campaign EMEA 2022",
+      "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4E22AQGUvhCDI_HtGg/feedshare-shrink_1280/feedshare-shrink_1280/0/1664638414117?e=1744243200&v=beta&t=ldIJMIRnZZMKNZ0fdukEo7QjJAq7dElEOu47jRvkTpk"
+    },
+    {
+      "layout": 3,
+      "slug": "monthly-key-open-positions",
+      "label": "Monthly Key Open Positions",
+      "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741198532/1_7f93789dfb.webp"
+    },
+    {
+      "layout": 4,
+      "slug": "biodiversity-stories",
+      "label": "Biodiversity Stories",
+      "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741203877/biodiversity_stories_8eeeca53d5.webp"
+    },
+    {
+      "layout": 4,
+      "slug": "lets-talk-about-biodiversity",
+      "label": "Let's Talk About Biodiversity",
+      "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741205537/let_s_talk_about_biodiversity_a1a640eaf5.webp"
+    },
+    {
+      "layout": 2,
+      "slug": "el-seibo-resiliente",
+      "label": "El Seibo Resiliente",
+      "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741206716/el_seibo_resiliente_bda6b660e1.webp"
+    },
+    {
+      "layout": 5,
+      "slug": "public-releases",
+      "label": "Public Releases",
+      "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741432597/public_releases_1786c584fb.webp.webp"
+    }
+  ]
+}

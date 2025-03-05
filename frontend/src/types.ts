@@ -55,6 +55,34 @@ export interface IAboutPageData {
 
 /////// Portfolio ////////////////////////////////
 
+export interface IPortfolioPageData {
+  readonly title: string;
+  readonly tagline: string;
+  readonly projects: IPortfolioItem[];
+}
+
+export interface IPortfolioItem {
+  readonly layout: number;
+  readonly slug: string;
+  readonly label: string;
+  readonly thumbnail_url: string;
+}
+
+export interface IProjectData {
+  readonly label: string;
+  readonly description: string[];
+  readonly content: IProjectContent[]
+  readonly results?: IProjectResult[]
+}
+
+export interface IProjectContent {
+  type: string;
+  url: string;
+}
+export interface IProjectResult {
+  figure: string;
+  text: string
+}
 
 /////// Resume ////////////////////////////////
 

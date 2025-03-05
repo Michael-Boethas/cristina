@@ -28,7 +28,7 @@ export default function Nav({ classes }: NavProps): React.JSX.Element {
       </Link>
       <Link
         href="/portfolio"
-        className={`${pathname === "/portfolio" ? "border-b-4 border-b-bg-1" : ""}`}
+        className={`${pathname.startsWith("/portfolio") ? "border-b-4 border-b-bg-1" : ""}`}
         aria-label="Navigate to Portfolio"
       >
         <span>Portfolio</span>

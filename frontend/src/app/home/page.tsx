@@ -42,7 +42,7 @@ export default function Home(): React.JSX.Element {
             {content.CTA_2}
           </Link>
         </div>
-        {/* Scroll down button */}
+        {/* Scroll down button namename*/}
         <div className="absolute bottom-4 right-0 hidden md:block">
           <Link
             href="#expertise-section"
