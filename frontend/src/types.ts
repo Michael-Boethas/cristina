@@ -1,3 +1,22 @@
+/////// Global styles ///////////////////////
+
+export interface IGlobalStylesData {
+  readonly background_1: string;
+  readonly background_1_transparent: string;
+  readonly background_2: string;
+  readonly background_2_transparent: string;
+  readonly background_3: string;
+  readonly background_3_transparent: string;
+  readonly background_4: string;
+  readonly background_4_transparent: string;
+  readonly background_5: string;
+  readonly background_5_transparent: string;
+  readonly text_dark: string;
+  readonly text_light: string;
+  readonly intro_background: string;
+  readonly industries_background: string;
+}
+
 /////// Header //////////////////////////////
 
 export interface IHeaderData {

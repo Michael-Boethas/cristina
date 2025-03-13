@@ -26,7 +26,7 @@ export default function ExpertiseSection({
         {/* Iterated rendering of expertise */}
         {loading
           ? "Loading..."
-          : content.expertise.map((item: IExpertiseItem, index: number) => {
+          : content?.expertise?.map((item: IExpertiseItem, index: number) => {
               return <Expertise key={index} entry={item} />;
             })}
       </div>

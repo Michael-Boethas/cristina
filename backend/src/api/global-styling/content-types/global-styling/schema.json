@@ -1,0 +1,81 @@
+{
+  "kind": "singleType",
+  "collectionName": "global_stylings",
+  "info": {
+    "singularName": "global-styling",
+    "pluralName": "global-stylings",
+    "displayName": "Global styling",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "background_1": {
+      "type": "string",
+      "required": true,
+      "default": "eg: #bb6b00"
+    },
+    "background_1_transparent": {
+      "type": "string",
+      "required": true,
+      "default": "Just add \"f2\" at the end of the  non transparent hex value, e.g: #bb6b00f2"
+    },
+    "background_2": {
+      "type": "string",
+      "required": true,
+      "default": "eg: #832232"
+    },
+    "background_2_transparent": {
+      "type": "string",
+      "required": true,
+      "default": "Just add \"f2\" at the end of the  non transparent hex value, e.g: #832232f2"
+    },
+    "background_3": {
+      "type": "string",
+      "required": true,
+      "default": "eg: #f3f9e3"
+    },
+    "background_3_transparent": {
+      "type": "string",
+      "required": true,
+      "default": "Just add \"f2\" at the end of the  non transparent hex value, e.g: #f3f9e3f2"
+    },
+    "background_4": {
+      "type": "string",
+      "required": true,
+      "default": "eg: #c89fa3"
+    },
+    "background_4_transparent": {
+      "type": "string",
+      "required": true,
+      "default": "Just add \"f2\" at the end of the  non transparent hex value, e.g: #c89fa3f2"
+    },
+    "background_5": {
+      "type": "string",
+      "required": true,
+      "default": "eg: #d3b7ba"
+    },
+    "background_5_transparent": {
+      "type": "string",
+      "required": true,
+      "default": "Just add \"f2\" at the end of the  non transparent hex value, e.g: #d3b7baf2"
+    },
+    "text_dark": {
+      "type": "string",
+      "required": true,
+      "default": "eg: #171717"
+    },
+    "text_light": {
+      "type": "string",
+      "required": true,
+      "default": "eg: #ffffff"
+    },
+    "intro_background": {
+      "type": "text"
+    },
+    "industries_background": {
+      "type": "string"
+    }
+  }
+}

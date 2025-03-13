@@ -609,6 +609,72 @@ export interface ApiExpertiseExpertise extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGlobalStylingGlobalStyling extends Struct.SingleTypeSchema {
+  collectionName: 'global_stylings';
+  info: {
+    description: '';
+    displayName: 'Global styling';
+    pluralName: 'global-stylings';
+    singularName: 'global-styling';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    background_1: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'eg: #bb6b00'>;
+    background_1_transparent: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Just add "f2" at the end of the  non transparent hex value, e.g: #bb6b00f2'>;
+    background_2: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'eg: #832232'>;
+    background_2_transparent: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Just add "f2" at the end of the  non transparent hex value, e.g: #832232f2'>;
+    background_3: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'eg: #f3f9e3'>;
+    background_3_transparent: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Just add "f2" at the end of the  non transparent hex value, e.g: #f3f9e3f2'>;
+    background_4: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'eg: #c89fa3'>;
+    background_4_transparent: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Just add "f2" at the end of the  non transparent hex value, e.g: #c89fa3f2'>;
+    background_5: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'eg: #d3b7ba'>;
+    background_5_transparent: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Just add "f2" at the end of the  non transparent hex value, e.g: #d3b7baf2'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    industries_background: Schema.Attribute.String;
+    intro_background: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global-styling.global-styling'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text_dark: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'eg: #171717'>;
+    text_light: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'eg: #ffffff'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
   collectionName: 'headers';
   info: {
@@ -1316,6 +1382,7 @@ declare module '@strapi/strapi' {
       'api::experience.experience': ApiExperienceExperience;
       'api::expertise-section.expertise-section': ApiExpertiseSectionExpertiseSection;
       'api::expertise.expertise': ApiExpertiseExpertise;
+      'api::global-styling.global-styling': ApiGlobalStylingGlobalStyling;
       'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;
       'api::industries-section.industries-section': ApiIndustriesSectionIndustriesSection;

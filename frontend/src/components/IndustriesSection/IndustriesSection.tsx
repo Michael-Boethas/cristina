@@ -26,7 +26,7 @@ export default function IndustriesSection({
         {/* Iterated rendering of industries */}
         {loading
           ? "Loading..."
-          : content.industries.map((item: IIndustryItem, index: number) => {
+          : content?.industries?.map((item: IIndustryItem, index: number) => {
               return <Industry key={index} entry={item} />;
             })}
       </div>

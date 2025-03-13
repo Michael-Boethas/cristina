@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Layout1 from "components/ProjectLayouts/Layout1/Layout1";
-import Layout2 from "components/ProjectLayouts/Layout2/Layout2";
-import Layout3 from "components/ProjectLayouts/Layout3/Layout3";
-import Layout4 from "components/ProjectLayouts/Layout4/Layout4";
+import Layout1 from "components/ProjectLayouts/ProjectLayout1/ProjectLayout1";
+import Layout2 from "components/ProjectLayouts/ProjectLayout2/ProjectLayout2";
+import Layout3 from "components/ProjectLayouts/ProjectLayout3/ProjectLayout3";
+import Layout4 from "components/ProjectLayouts/ProjectLayout4/ProjectLayout4";
 import fallbackData from "../../../content/portfolio-page.json";
 
 interface ProjectPageProps {
