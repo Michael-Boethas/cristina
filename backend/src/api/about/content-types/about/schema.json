@@ -22,9 +22,8 @@
       "unique": true
     },
     "paragraphs": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::about-paragraph.about-paragraph"
+      "type": "richtext",
+      "required": true
     }
   }
 }

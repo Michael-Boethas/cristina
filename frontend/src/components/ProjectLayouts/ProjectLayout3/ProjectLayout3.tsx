@@ -18,7 +18,7 @@ export default async function Layout3({ projectId }: LayoutProps) {
       <h2 className="px-4 py-8 text-4xl lg:px-16 lg:text-5xl">
         {project.label}
       </h2>
-      <p className="whitespace-pre-line p-4 text-xl">{project.description}</p>
+      <p className="p-4 text-xl">{project.description}</p>
     </>
   );
 }

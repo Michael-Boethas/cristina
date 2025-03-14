@@ -21,7 +21,7 @@ export default function Home(): React.JSX.Element {
         aria-label="Short introduction of Cristina Jiménez"
         className="intro__content--animation introduction__background relative flex min-h-screen flex-col gap-16 px-4 pb-24 pt-52 md:px-24 xl:justify-end"
       >
-        <p className="whitespace-pre-line rounded-xl bg-bg-5-transparent p-6 text-2xl sm:p-12 sm:text-3xl lg:text-4xl xl:w-1/2">
+        <p className="rounded-xl bg-bg-5-transparent p-6 text-2xl sm:p-12 sm:text-3xl lg:text-4xl xl:w-1/2">
           {content.introduction}
         </p>
         <div className="flex flex-col items-center gap-6 text-center text-lg text-fg-2 md:w-1/3 md:w-full md:items-start md:text-2xl lg:w-2/3 xl:w-1/2 xl:flex-row 2xl:w-1/3">
