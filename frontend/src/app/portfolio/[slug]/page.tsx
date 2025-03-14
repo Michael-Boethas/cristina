@@ -12,7 +12,7 @@ interface ProjectPageProps {
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   // Next.js expects `params` to be treated asynchronously, even though it's already resolved.
-  // Using `await Promise.resolve(params)` ensures compliance with this requirement.
+  // Using `await Promise.resolve(params)` to satisfy this requirement.
   const { slug } = await Promise.resolve(params);
   const content = fallbackData;
   const portfolioItem = content.projects.find(
@@ -39,15 +39,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   };
 
   return (
-    <main className="flex min-h-screen flex-col pt-28 lg:pt-36">
+    <main className="relative flex min-h-screen flex-col pt-28 lg:pt-36">
       {renderLayout()}
 
       <Link
         href={"/portfolio"}
-        className="hover-bg-1 m-6 max-w-max content-center self-center rounded-xl bg-bg-2 p-3 text-xl text-fg-2 md:self-end"
+        role="button"
+        className="absolute bottom-0 m-6 max-w-max content-center self-center rounded-xl bg-[#0007] p-3 text-xl text-fg-2 hover:bg-[#000b] md:self-end xl:fixed"
         aria-label="Go back to portfolio gallery"
       >
-        Go back to portfolio
+        Go back to my portfolio
       </Link>
     </main>
   );

@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_content_project_contents",
+  "info": {
+    "displayName": "Project content",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "layout": {
+      "type": "integer",
+      "required": true
+    },
+    "thumbnail_url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "cover_image": {
+      "type": "string"
+    },
+    "links": {
+      "displayName": "links",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.links"
+    },
+    "result_1": {
+      "displayName": "Result",
+      "type": "component",
+      "repeatable": false,
+      "component": "content.result"
+    },
+    "result_2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.result"
+    },
+    "result_3": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.result"
+    },
+    "result_4": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.result"
+    }
+  }
+}

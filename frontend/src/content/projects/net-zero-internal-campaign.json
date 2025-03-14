@@ -1,16 +1,13 @@
 {
   "label": "Net Zero Internal Campaign",
-  "description": "Reaching net zero by 2030 was a major sustainability goal for Mazars, but we discovered that employee actions had a significant impact on the company’s carbon footprint. To educate and engage the workforce, we launched an internal campaign highlighting Mazars’ sustainability initiative and how employees could contribute.\n\nThe campaign featured a mix of intranet articles, posters, screensavers, and an engaging video. I played a key role in scriptwriting, voiceover recording, and video editing, using visual storytelling to maximize impact.",
-  "content": [
-    {
-      "type": "youtube",
-      "url": "https://youtube.com/embed/slHa6gzCw4Q"
-    }
-  ],
-  "results": [
-    {
-      "figure": "10%",
-      "text": "increase in employee engagement with net zero initiatives."
-    }
-  ]
+  "content": {
+    "description": "Reaching net zero by 2030 was a major sustainability goal for Mazars, but we discovered that employee actions had a significant impact on the company’s carbon footprint. To educate and engage the workforce, we launched an internal campaign highlighting Mazars’ sustainability initiative and how employees could contribute.\n\nThe campaign featured a mix of intranet articles, posters, screensavers, and an engaging video. I played a key role in scriptwriting, voiceover recording, and video editing, using visual storytelling to maximize impact.",
+    "video_url": "https://youtube.com/embed/slHa6gzCw4Q",
+    "results": [
+      {
+        "figure": "10%",
+        "text": "increase in employee engagement with net zero initiatives."
+      }
+    ]
+  }
 }

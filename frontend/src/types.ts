@@ -69,7 +69,7 @@ export interface ICompanyItem {
 export interface IAboutPageData {
   readonly title: string;
   readonly intro: string;
-  readonly paragraphs: { paragraph: string }[];
+  readonly text: string;
 }
 
 /////// Portfolio ////////////////////////////////
@@ -89,14 +89,15 @@ export interface IPortfolioItem {
 
 export interface IProjectData {
   readonly label: string;
-  readonly description: string[];
-  readonly content: IProjectContent[]
-  readonly results?: IProjectResult[]
+  readonly content: IProjectContent;
 }
 
 export interface IProjectContent {
-  type: string;
-  url: string;
+  readonly description: string;
+  readonly video_url?: string;
+  readonly cover_image?: string;
+  readonly links?: string[];
+  readonly results?: IProjectResult[]
 }
 export interface IProjectResult {
   figure: string;

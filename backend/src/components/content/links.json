@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_content_links",
+  "info": {
+    "displayName": "links",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link_1": {
+      "type": "string"
+    },
+    "link_2": {
+      "type": "string"
+    },
+    "link_3": {
+      "type": "string"
+    },
+    "link_4": {
+      "type": "string"
+    },
+    "link_5": {
+      "type": "string"
+    },
+    "link_6": {
+      "type": "string"
+    },
+    "link_7": {
+      "type": "string"
+    },
+    "link_8": {
+      "type": "string"
+    }
+  }
+}

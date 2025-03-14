@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Expertise from "components/Expertise/Expertise";
-import { useFetch } from "hooks/useFetch";
+import { fetchStrapi } from "utils/utils";
 import { IExpertiseItem, IExpertiseSectionData } from "types";
 import fallbackData from "../../content/expertise-section.json" assert { type: "json" };
 
@@ -8,12 +8,12 @@ interface ExpertiseSectionProps {
   classes?: string;
 }
 
-export default function ExpertiseSection({
+export default async function ExpertiseSection({
   classes,
-}: ExpertiseSectionProps): React.JSX.Element {
+}: ExpertiseSectionProps): Promise<React.JSX.Element> {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/expertise-section?populate=expertise`;
-  const { data, loading } = useFetch<IExpertiseSectionData>(url);
-  const content = data ?? fallbackData;
+  const content: IExpertiseSectionData =
+    (await fetchStrapi(url)) ?? fallbackData;
 
   return (
     <section
@@ -24,11 +24,9 @@ export default function ExpertiseSection({
       <h2 className="no-italic py-4 text-5xl lg:text-7xl">{content.title}</h2>
       <div className="flex h-full w-full flex-col items-center justify-evenly py-6 text-2xl sm:text-3xl md:flex-row md:flex-wrap md:items-start md:gap-12 lg:text-4xl">
         {/* Iterated rendering of expertise */}
-        {loading
-          ? "Loading..."
-          : content?.expertise?.map((item: IExpertiseItem, index: number) => {
-              return <Expertise key={index} entry={item} />;
-            })}
+        {content?.expertise?.map((item: IExpertiseItem, index: number) => {
+          return <Expertise key={index} entry={item} />;
+        })}
       </div>
 
       {/* Scroll down button */}

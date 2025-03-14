@@ -1,15 +1,11 @@
-"use client";
-
 import AboutDecoration from "../../components/AboutDecoration/AboutDecoration";
-import { useFetch } from "hooks/useFetch";
 import { IAboutPageData } from "types";
-import fallbackData from "../../content/about-page.json" assert { type: "json" }; // Fallback
+import { fetchStrapi } from "utils/utils";
+import fallbackData from "../../content/about-page.json" assert { type: "json" };
 
-export default function About(): React.JSX.Element {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/about?populate=paragraphs`;
-  const { data } = useFetch<IAboutPageData>(url);
-
-  const content = data ?? fallbackData;
+export default async function About(): Promise<React.JSX.Element> {
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/about`;
+  const content: IAboutPageData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (
     <main className="flex gap-6 pt-16 lg:pt-32">
@@ -20,11 +16,7 @@ export default function About(): React.JSX.Element {
       >
         <h2 className="py-8 text-4xl italic md:text-5xl">{content.title}</h2>
         <em className="text-xl md:text-3xl">{content.intro}</em>
-        {content.paragraphs?.map((item, index) => (
-          <p key={index} className="py-2">
-            {typeof item === "string" ? item : item.paragraph}
-          </p>
-        ))}
+        <p>{content.text}</p>
       </section>
     </main>
   );

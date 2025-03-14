@@ -1,18 +1,18 @@
 import Link from "next/link";
 import Industry from "components/Industry/Industry";
-import { useFetch } from "hooks/useFetch";
+import { fetchStrapi } from "utils/utils";
 import { IIndustryItem, IIndustriesSectionData } from "../../types";
 import fallbackData from "../../content/industries-section.json" assert { type: "json" };
 interface IndustriesSectionProps {
   classes?: string;
 }
 
-export default function IndustriesSection({
+export default async function IndustriesSection({
   classes,
-}: IndustriesSectionProps): React.JSX.Element {
+}: IndustriesSectionProps): Promise<React.JSX.Element> {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/industries-section?populate[industries][populate]=companies`;
-  const { data, loading } = useFetch<IIndustriesSectionData>(url);
-  const content = data ?? fallbackData;
+  const content: IIndustriesSectionData =
+    (await fetchStrapi(url)) ?? fallbackData;
 
   return (
     <section
@@ -24,11 +24,9 @@ export default function IndustriesSection({
       <span className="p-4 text-center text-3xl">{content.tagline}</span>
       <div className="flex flex-col items-center justify-center gap-6 text-4xl sm:flex-row sm:flex-wrap sm:items-start sm:gap-16 lg:gap-12">
         {/* Iterated rendering of industries */}
-        {loading
-          ? "Loading..."
-          : content?.industries?.map((item: IIndustryItem, index: number) => {
-              return <Industry key={index} entry={item} />;
-            })}
+        {content?.industries?.map((item: IIndustryItem, index: number) => {
+          return <Industry key={index} entry={item} />;
+        })}
       </div>
       {/* Scroll down button */}
       <div className="absolute bottom-0 right-0 hidden md:block">

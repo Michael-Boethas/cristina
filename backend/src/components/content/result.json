@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_content_results",
+  "info": {
+    "displayName": "Result"
+  },
+  "options": {},
+  "attributes": {
+    "figure": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

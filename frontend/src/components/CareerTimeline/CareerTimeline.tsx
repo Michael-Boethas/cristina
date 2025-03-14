@@ -1,5 +1,5 @@
 import TimelineItem from "components/TimelineItem/TimelineItem";
-import { useFetch } from "hooks/useFetch";
+import { fetchStrapi } from "utils/utils";
 import { ITimelineItem, ICareerTimelineData } from "types";
 import fallbackData from "../../content/career-timeline.json" assert { type: "json" };
 
@@ -7,12 +7,11 @@ interface CareerTimelineProps {
   classes?: string;
 }
 
-export default function CareerTimeline({
+export default async function CareerTimeline({
   classes,
-}: CareerTimelineProps): React.JSX.Element {
+}: CareerTimelineProps): Promise<React.JSX.Element> {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/career-timeline?populate=experiences`;
-  const { data } = useFetch<ICareerTimelineData>(url);
-  const content = data ?? fallbackData;
+  const content: ICareerTimelineData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (
     <aside className={classes}>

@@ -21,10 +21,9 @@
       "default": "Hello! I’m Cristina Jiménez, a creative and innovative communications specialist based in Paris, France. ",
       "unique": true
     },
-    "paragraphs": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::about-paragraph.about-paragraph"
+    "text": {
+      "type": "richtext",
+      "required": true
     }
   }
 }
