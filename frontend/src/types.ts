@@ -81,18 +81,14 @@ export interface IPortfolioPageData {
 }
 
 export interface IPortfolioItem {
-  readonly layout: number;
+  readonly label: string;
   readonly slug: string;
-  readonly label: string;
-  readonly thumbnail_url: string;
-}
-
-export interface IProjectData {
-  readonly label: string;
-  readonly content: IProjectContent;
+  readonly project_content: IProjectContent;
 }
 
 export interface IProjectContent {
+  readonly layout: number;
+  readonly thumbnail_url: string;
   readonly description: string;
   readonly video_url?: string;
   readonly cover_image?: string;

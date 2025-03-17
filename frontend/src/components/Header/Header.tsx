@@ -3,15 +3,13 @@
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Nav from "../Nav/Nav";
-import { useFetch } from "hooks/useFetch";
 import { IHeaderData } from "types";
-import fallbackData from "../../content/header.json" assert { type: "json" }; // Fallback
 
-export default function Header(): React.JSX.Element {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/header`;
-  const { data } = useFetch<IHeaderData>(url);
-  const content = data ?? fallbackData;
+interface IHeaderProps {
+  content: IHeaderData;
+}
 
+export default function Header({ content }: IHeaderProps): React.JSX.Element {
   const pathname = usePathname();
   const [isCollapsed, setIsCollapsed] = useState(true);
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);

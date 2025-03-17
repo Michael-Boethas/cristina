@@ -1,24 +1,28 @@
-import { notFound } from "next/navigation";
+import ResultsBanner from "../ResultsBanner/ResultsBanner";
+import { IProjectContent } from "types";
 
-interface LayoutProps {
-  projectId: string;
+interface ProjectLayoutProps {
+  label: string;
+  content: IProjectContent;
+  classes?: string;
 }
 
-export default async function Layout4({ projectId }: LayoutProps) {
-  const project = await import(
-    `../../../content/projects/${projectId}.json`
-  ).then((m) => m.default);
-
-  if (!project) {
-    return notFound();
-  }
-
+export default async function ProjectLayout4({
+  label,
+  content,
+  classes,
+}: ProjectLayoutProps) {
   return (
-    <>
-      <h2 className="px-4 py-8 text-4xl lg:px-16 lg:text-5xl">
-        {project.label}
-      </h2>
-      <p className="p-4 text-xl">{project.description}</p>
-    </>
+    <article className={classes}>
+      <div className="mx-4 flex flex-col sm:px-10 lg:px-12 xl:px-28">
+        <h2 className="mb-10 max-w-max rounded-xl bg-bg-1 px-4 py-4 text-4xl text-fg-2 lg:px-12 lg:text-5xl">
+          {label}
+        </h2>
+        <p className="text-xl md:text-2xl">{content.description}</p>
+      </div>
+      {content.results ? (
+        <ResultsBanner results={content.results} classes="bg-bg-1 text-fg-2" />
+      ) : null}
+    </article>
   );
 }

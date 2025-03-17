@@ -2,15 +2,21 @@ import Metadata from "./Metadata";
 import GlobalStyles from "components/GlobalStyles/GlobalStyles";
 import ViewportWarning from "../components/ViewportWarning/ViewportWarning";
 import Header from "../components/Header/Header";
+import { fetchStrapi } from "utils/utils";
+import { IHeaderData } from "types";
+import fallbackData from "../content/header.json" assert { type: "json" };
 import "../styles/main.scss";
 
 interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: RootLayoutProps): React.JSX.Element {
+}: RootLayoutProps): Promise<React.JSX.Element> {
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/header`;
+  const headerProps: IHeaderData = (await fetchStrapi(url)) ?? fallbackData;
+
   return (
     <html lang="en">
       <head>
@@ -19,7 +25,7 @@ export default function RootLayout({
       <body>
         <GlobalStyles />
         <ViewportWarning />
-        <Header />
+        <Header content={headerProps} />
         {children}
       </body>
     </html>

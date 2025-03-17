@@ -14,7 +14,11 @@ export default function PortfolioItem({
   return (
     <figure className={`${classes}`}>
       <Link href={`/portfolio/${entry.slug}`}>
-        <Image src={entry.thumbnail_url} alt={entry.label} fill />
+        <Image
+          src={entry.project_content.thumbnail_url}
+          alt={entry.label}
+          fill
+        />
         <figcaption className="absolute left-0 top-0 z-10 flex min-h-full min-w-full items-center justify-center bg-black bg-opacity-55 p-4 text-center font-semibold text-fg-2 hover:bg-opacity-75">
           {entry.label}
         </figcaption>

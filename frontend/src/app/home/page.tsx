@@ -4,12 +4,11 @@ import IndustriesSection from "components/IndustriesSection/IndustriesSection";
 import ContactForm from "components/ContactForm/ContactForm";
 import { fetchStrapi } from "utils/utils";
 import { IHomePageData } from "types";
-import fallbackData from "../../content/home-page.json" assert { type: "json" }; // Fallback
+import fallbackData from "../../content/home-page.json" assert { type: "json" };
 
 export default async function Home(): Promise<React.JSX.Element> {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/home`;
   const content: IHomePageData = (await fetchStrapi(url)) ?? fallbackData;
-
   return (
     <main className="max-w-screen flex min-h-screen flex-col overflow-hidden">
       {/* Introduction */}
