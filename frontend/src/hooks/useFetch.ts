@@ -13,7 +13,7 @@ export function useFetch<T>(url: string) {
         setData(json.data ?? json); // Strapi wraps the response in a "data" object
 
       } catch (err) {
-        console.error("Error fetching data:", err);
+        console.error("Error fetching data:", (err as Error).stack);
       } finally {
       }
     }

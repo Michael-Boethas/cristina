@@ -1,15 +1,17 @@
 {
   "collectionName": "components_content_results",
   "info": {
-    "displayName": "Result"
+    "displayName": "Results"
   },
   "options": {},
   "attributes": {
     "figure": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "text": {
-      "type": "text"
+      "type": "text",
+      "required": false
     }
   }
 }

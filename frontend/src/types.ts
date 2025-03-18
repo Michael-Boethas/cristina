@@ -92,12 +92,29 @@ export interface IProjectContent {
   readonly description: string;
   readonly video_url?: string;
   readonly cover_image?: string;
-  readonly links?: string[];
+  readonly social_media_section?: ISocialMediaSection;
+  readonly carousel?: string[];
+  readonly articles?: IArticleItem[]
   readonly results?: IProjectResult[]
 }
+
+export interface ISocialMediaSection {
+  readonly label: string;
+  readonly item: ISocialMediaItem[]
+}
+
+export interface ISocialMediaItem {
+  readonly link: string;
+  readonly thumbnail_url: string;
+}
+export interface IArticleItem {
+  readonly title: string;
+  readonly thumbnail_url: string;
+  readonly preview_text: string;
+}
 export interface IProjectResult {
-  figure: string;
-  text: string
+  readonly figure: string;
+  readonly text: string
 }
 
 /////// Resume ////////////////////////////////

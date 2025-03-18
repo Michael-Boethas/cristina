@@ -28,7 +28,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   // Next.js expects `params` to be treated asynchronously, even though it's already resolved.
   // Using `await Promise.resolve(params)` to satisfy this requirement.
   const { slug } = await Promise.resolve(params);
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio?populate[projects][populate][project_content]=true`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio?populate[projects][populate][project_content][populate][results]=*&populate[projects][populate][project_content][populate][carousel]=*&populate[projects][populate][project_content][populate][articles]=*&populate[projects][populate][project_content][populate][social_media_section][populate][item]=*`;
+
   const response = await fetchStrapi(url);
   const projects = response?.projects ?? fallbackData.projects;
   const entry = projects.find((item: IPortfolioItem) => item.slug === slug);

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_content_social_media_items",
+  "info": {
+    "displayName": "Social Media item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "thumbnail_url": {
+      "type": "string"
+    }
+  }
+}

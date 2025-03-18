@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_content_articles",
+  "info": {
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "required": true
+    },
+    "preview_text": {
+      "type": "richtext",
+      "maxLength": 100
+    }
+  }
+}
