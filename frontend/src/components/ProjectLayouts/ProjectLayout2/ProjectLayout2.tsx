@@ -37,7 +37,7 @@ export default async function ProjectLayout2({
       {content.social_media_section ? (
         <SocialMediaSection
           content={content.social_media_section}
-          classes="flex min-h-[30vh] border border-bg-2 flex-col"
+          classes="flex min-h-[30vh] flex-col py-8"
         />
       ) : null}
       {content.results ? (
