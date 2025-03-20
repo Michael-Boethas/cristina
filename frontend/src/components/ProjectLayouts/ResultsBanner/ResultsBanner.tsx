@@ -14,7 +14,7 @@ export default function ResultsBanner({
       className={`${classes} flex min-h-[30vh] w-full flex-col items-center p-4 font-semibold`}
     >
       <h3 className="pb-8 pt-4 text-3xl lg:text-4xl xl:text-5xl">Results</h3>
-      <div className="flex w-full flex-col items-center justify-center gap-32 pb-24 sm:flex-row sm:items-baseline">
+      <div className="flex w-full flex-col items-center justify-center gap-8 pb-24 sm:flex-row sm:items-baseline sm:gap-32">
         {results.map((item: IProjectResult, index) => {
           return (
             <div
