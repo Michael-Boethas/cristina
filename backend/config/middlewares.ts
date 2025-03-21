@@ -13,6 +13,11 @@ export default [
           'img-src': ["'self'", 'data:', 'blob:', 'https://market-assets.strapi.io'],
         },
       },
+      permissionsPolicy: {
+        'geolocation': "'none'",
+        'microphone': "'none'",
+        'camera': "'none'",
+      },
       xframe: 'ALLOWALL',
     },
   },

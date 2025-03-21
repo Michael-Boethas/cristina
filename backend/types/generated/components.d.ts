@@ -72,6 +72,7 @@ export interface ContentProjectContent extends Struct.ComponentSchema {
     >;
     thumbnail_url: Schema.Attribute.String;
     video_url: Schema.Attribute.String;
+    website_url: Schema.Attribute.String;
   };
 }
 

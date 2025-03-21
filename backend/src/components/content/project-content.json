@@ -42,6 +42,9 @@
       "type": "component",
       "repeatable": false,
       "component": "content.social-media-links"
+    },
+    "website_url": {
+      "type": "string"
     }
   }
 }
