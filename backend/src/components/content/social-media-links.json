@@ -9,11 +9,17 @@
     "label": {
       "type": "string"
     },
-    "item": {
+    "links": {
       "displayName": "social_media_item",
       "type": "component",
       "repeatable": true,
       "component": "content.social-media-item"
+    },
+    "embed": {
+      "displayName": "embed",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.embed"
     }
   }
 }

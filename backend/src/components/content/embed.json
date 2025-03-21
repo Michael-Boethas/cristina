@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_content_embeds",
+  "info": {
+    "displayName": "embed",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

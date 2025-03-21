@@ -7,6 +7,7 @@ export interface ContentArticle extends Struct.ComponentSchema {
     displayName: 'Article';
   };
   attributes: {
+    link: Schema.Attribute.String & Schema.Attribute.Required;
     preview_text: Schema.Attribute.RichText &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
@@ -31,6 +32,17 @@ export interface ContentCarousel extends Struct.ComponentSchema {
     image_6: Schema.Attribute.String;
     image_7: Schema.Attribute.String;
     image_8: Schema.Attribute.String;
+  };
+}
+
+export interface ContentEmbed extends Struct.ComponentSchema {
+  collectionName: 'components_content_embeds';
+  info: {
+    description: '';
+    displayName: 'embed';
+  };
+  attributes: {
+    url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -94,8 +106,8 @@ export interface ContentSocialMediaItem extends Struct.ComponentSchema {
     displayName: 'Social Media item';
   };
   attributes: {
-    link: Schema.Attribute.String & Schema.Attribute.Required;
     thumbnail_url: Schema.Attribute.String;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -106,8 +118,9 @@ export interface ContentSocialMediaLinks extends Struct.ComponentSchema {
     displayName: 'Social Media links';
   };
   attributes: {
-    item: Schema.Attribute.Component<'content.social-media-item', true>;
+    embed: Schema.Attribute.Component<'content.embed', true>;
     label: Schema.Attribute.String;
+    links: Schema.Attribute.Component<'content.social-media-item', true>;
   };
 }
 
@@ -116,6 +129,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'content.article': ContentArticle;
       'content.carousel': ContentCarousel;
+      'content.embed': ContentEmbed;
       'content.links': ContentLinks;
       'content.project-content': ContentProjectContent;
       'content.results': ContentResults;

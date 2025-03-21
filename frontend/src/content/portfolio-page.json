@@ -1,10 +1,10 @@
 {
-  "title": "~~FALLBACK~~Here’s a selection of projects I’ve worked on across different industries.",
+  "title": "[FALLBACK DATA] Here’s a selection of projects I’ve worked on across different industries.",
   "tagline": "Each project reflects my passion for storytelling and strategic communication.",
   "projects": [
     {
       "slug": "mazars-sustainability-campaign",
-      "label": "~~FALLBACK~~Mazars’ Sustainability Campaign",
+      "label": "[FALLBACK DATA] Mazars’ Sustainability Campaign",
       "project_content": {
         "layout": 1,
         "thumbnail_url": "https://img.youtube.com/vi/mpcdrO8QvYQ/sddefault.jpg",
@@ -24,7 +24,7 @@
     },
     {
       "slug": "net-zero-internal-campaign",
-      "label": "~~FALLBACK~~Net Zero Internal Campaign",
+      "label": "[FALLBACK DATA] Net Zero Internal Campaign",
       "project_content": {
         "layout": 1,
         "thumbnail_url": "https://img.youtube.com/vi/slHa6gzCw4Q/sddefault.jpg",
@@ -40,32 +40,30 @@
     },
     {
       "slug": "breast-cancer-campaign-EMEA-2022",
-      "label": "~~FALLBACK~~Cancer Campaign EMEA 2022",
+      "label": "[FALLBACK DATA] Cancer Campaign EMEA 2022",
       "project_content": {
         "layout": 2,
         "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4E22AQGUvhCDI_HtGg/feedshare-shrink_1280/feedshare-shrink_1280/0/1664638414117?e=1744243200&v=beta&t=ldIJMIRnZZMKNZ0fdukEo7QjJAq7dElEOu47jRvkTpk",
         "description": "The Estée Lauder Companies’ Breast Cancer Campaign is a global movement dedicated to raising awareness and funding for breast cancer research, education, and medical services. In 2022, I contributed to its EMEA rollout, leading employee engagement efforts to ensure internal communities were informed and actively participating.\n\nI developed internal communication materials, including emails, digital posters, intranet articles, videos, and social media strategy. That year, we introduced employee ambassadors, providing them with pre-approved captions and personalized photos wearing pink ribbons to encourage participation.",
+        "website_url": "https://www.linkedin.com/posts/nadine-graf-2477949_timetoendbreastcancer-elcemployees-elcfamily-activity-6981999573229563904-yqo4/",
         "cover_image": "https://media.licdn.com/dms/image/v2/C4E22AQGUvhCDI_HtGg/feedshare-shrink_1280/feedshare-shrink_1280/0/1664638414117?e=1744848000&v=beta&t=KDYh52wuwlBKOxCWG4LDis4zRRl7xqDUhm35dPHvxAY",
         "social_media_section": {
           "label": "Employee engagement",
-          "items": [
+          "links": [
             {
-              "link": "https://www.linkedin.com/posts/nadine-graf-2477949_timetoendbreastcancer-elcemployees-elcfamily-activity-6981999573229563904-yqo4/",
+              "url": "https://www.linkedin.com/posts/nadine-graf-2477949_timetoendbreastcancer-elcemployees-elcfamily-activity-6981999573229563904-yqo4/",
               "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4E22AQGUvhCDI_HtGg/feedshare-shrink_1280/feedshare-shrink_1280/0/1664638414117?e=1745452800&v=beta&t=COQoTNYuC7Cpb4QTEFNza-eyUrO6JBc_skf486pXNlg"
             },
             {
-              "link": "https://www.linkedin.com/posts/ga%C3%ABlle-le-meur-68b0069_timetoendbreastcancer-elcemployee-elcfamily-activity-6981879911246356480-NA1t/?originalSubdomain=fr",
-
+              "url": "https://www.linkedin.com/posts/ga%C3%ABlle-le-meur-68b0069_timetoendbreastcancer-elcemployee-elcfamily-activity-6981879911246356480-NA1t/?originalSubdomain=fr",
               "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4E22AQFA2ZgYst29kw/feedshare-shrink_1280/feedshare-shrink_1280/0/1664609886422?e=1745452800&v=beta&t=Dq2AMI-GvypN-o5HXcxPdKGHmTdirhE1hiqFhoM2f2Q"
             },
             {
-              "link": "https://www.linkedin.com/posts/tandonaashna_timetoendbreastcancer-activity-6987061211074846721-r6cj/",
-
+              "url": "https://www.linkedin.com/posts/tandonaashna_timetoendbreastcancer-activity-6987061211074846721-r6cj/",
               "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4D22AQHupD5FxoO2jA/feedshare-shrink_800/feedshare-shrink_800/0/1665845205352?e=1745452800&v=beta&t=M0DFH_fLFCZOImBJ7H8-tRImD_AyWyMi9x-0z88eWjg"
             },
             {
-              "link": "https://www.linkedin.com/posts/francesca-riela-73550929_timetoendbreastcancer-elcemea-elcemployee-activity-6982794387135033344-ko_O/?trk=public_profile_like_view ",
-
+              "url": "https://www.linkedin.com/posts/francesca-riela-73550929_timetoendbreastcancer-elcemea-elcemployee-activity-6982794387135033344-ko_O/?trk=public_profile_like_view",
               "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4D22AQEdDrkbgFsVrA/feedshare-shrink_1280/feedshare-shrink_1280/0/1664827914341?e=1745452800&v=beta&t=1CTQC2A03DonRfqyfwaj5vlt90jIEWrwHwVibbL_zGM"
             }
           ]
@@ -84,45 +82,108 @@
     },
     {
       "slug": "monthly-key-open-positions",
-      "label": "~~FALLBACK~~Monthly Key Open Positions",
+      "label": "[FALLBACK DATA] Monthly Key Open Positions",
       "project_content": {
         "layout": 3,
         "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741198532/1_7f93789dfb.webp",
-        "description": "",
+        "description": "A common concern among ELC EMEA employees was the lack of visibility into internal job openings across the region. To address this, we launched Monthly Key Open Positions, an exclusive Instagram Stories series on ELC EMEA’s private account, ensuring only employees had access.\n\nEvery month, HR provided vacancy details, which I reviewed, designed into visually engaging content, and scheduled for publication.",
+        "carousel": [
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198532/1_7f93789dfb.webp",
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198520/3_886c25fc07.webp",
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198518/2_94324e8a3a.webp",
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198518/5_4dd7aab68c.webp",
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198517/4_68a8fabb1e.webp"
+        ],
         "results": [
           {
-            "figure": "",
-            "text": ""
+            "figure": "20%",
+            "text": "increase in internal job applications"
           }
         ]
       }
     },
     {
       "slug": "biodiversity-stories",
-      "label": "~~FALLBACK~~Biodiversity Stories",
+      "label": "[FALLBACK DATA] Biodiversity Stories",
       "project_content": {
         "layout": 4,
         "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741203877/biodiversity_stories_8eeeca53d5.webp",
-        "description": "",
+        "description": "As part of the From Farm to Fork Program, we worked with banana and pineapple producers adopting biodiversity-friendly agricultural practices. To showcase their success and inspire more farms to follow suit, we created Historias de Biodiversidad—a content series for the Business and Biodiversity social media channels.\n\nWe selected three standout farms, and I crafted engaging articles spotlighting their achievements while coordinating professional photography to enhance storytelling.",
+        "social_media_section": {
+          "label": "Employee engagement",
+          "embed": [
+            {
+              "url": "https://www.instagram.com/p/CTX8iLGnbsi/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            },
+            {
+              "url": "https://www.instagram.com/p/CTX8iLGnbsi/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            },
+            {
+              "url": "https://www.instagram.com/p/CTX8iLGnbsi/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          ]
+        },
         "results": [
           {
-            "figure": "",
-            "text": ""
+            "figure": "500+",
+            "text": "articles views"
+          },
+          {
+            "figure": "2%",
+            "text": "average engagement rate on IG and FB"
+          }
+        ],
+        "articles": [
+          {
+            "title": "Quinta Pasadena: una finca sostenible",
+            "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1742653703/quinta_pasadena_c9a7341c10.webp",
+            "preview_text": "",
+            "link": "https://storymaps.arcgis.com/stories/1c4eeb5f4d6943148ef1456899a3aaa9"
+          },
+          {
+            "title": "Hacienda Paso Robles: un uso responsable de los recursos",
+            "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1742653703/hacienda_paso_robles_a9a6cdb25f.webp",
+            "preview_text": "",
+            "link": "https://storymaps.arcgis.com/stories/1bb5c7d741f6452ca0cbf7c323accd1f?fbclid=IwY2xjawIUd_pleHRuA2FlbQIxMAABHZNtLvNofx1LUgcydZxRP-5AM8xBTMTg89BA0EXDyNpimZ7LJJ755cPjCw_aem_Aa37g_Tf1gK3XFaAR2PPCw"
+          },
+          {
+            "title": "Rancho Carlos: invirtiendo en biodiversidad",
+            "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1742653703/rancho_carlos_40f05a356f.webp",
+            "preview_text": "",
+            "link": "https://storymaps.arcgis.com/stories/cffd314bb0bc499cb3d10b3c4561d603"
           }
         ]
       }
     },
     {
       "slug": "let-s-talk-about-biodiversity",
-      "label": "~~FALLBACK~~Let's Talk About Biodiversity",
+      "label": "[FALLBACK DATA] Let's Talk About Biodiversity",
       "project_content": {
         "layout": 4,
         "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741205537/let_s_talk_about_biodiversity_a1a640eaf5.webp",
-        "description": "",
+        "description": "Another initiative under the From Farm to Fork program was Hablemos de Biodiversidad, a social media series featuring interviews with farmers implementing innovative biodiversity solutions.\n\nI conducted interviews with four farm owners and reviewed additional interviews from colleagues to ensure high-quality content. The final product was a series of audio cards with interview snippets, making their stories accessible and engaging.",
+        "social_media_section": {
+          "label": "",
+          "embed": [
+            {
+              "url": "https://www.instagram.com/p/CWEeGycNuno/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D"
+            },
+            {
+              "url": "https://www.instagram.com/p/CWlQBlrNvwg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D7"
+            },
+            {
+              "url": "https://www.instagram.com/p/CW3XBM7NVJ1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D"
+            }
+          ]
+        },
         "results": [
           {
-            "figure": "",
-            "text": ""
+            "figure": "9",
+            "text": "posts on Instagram and Facebook"
+          },
+          {
+            "figure": "5000+",
+            "text": "impressions"
           }
         ]
       }
@@ -133,10 +194,19 @@
       "project_content": {
         "layout": 2,
         "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741206716/el_seibo_resiliente_bda6b660e1.webp",
+        "website_url": "https://www.facebook.com/ElSeiboResiliente",
         "results": [
           {
-            "figure": "",
-            "text": ""
+            "figure": "30+",
+            "text": "press releases published"
+          },
+          {
+            "figure": "450+",
+            "text": "Facebook followers"
+          },
+          {
+            "figure": "1",
+            "text": "fully developed website"
           }
         ]
       }

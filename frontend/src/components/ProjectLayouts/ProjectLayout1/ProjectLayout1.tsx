@@ -22,8 +22,8 @@ export default async function ProjectLayout1({
         <iframe
           key={content.video_url}
           src={content.video_url}
-          className="mx-6 my-16 aspect-video min-h-[250px] max-w-full self-center border-2 border-bg-1 sm:min-h-[400px] md:w-3/4"
           allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          className="mx-6 my-16 aspect-video min-h-[250px] max-w-full self-center border-2 border-bg-1 sm:min-h-[400px] md:w-3/4"
         ></iframe>
       </div>
       {content.results ? (

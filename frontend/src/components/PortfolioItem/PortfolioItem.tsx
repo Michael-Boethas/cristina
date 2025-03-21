@@ -16,7 +16,7 @@ export default function PortfolioItem({
       <Link href={`/portfolio/${entry.slug}`}>
         <Image
           src={entry.project_content.thumbnail_url}
-          alt={entry.label}
+          alt={`Thumbnail for ${entry.label}`}
           fill
         />
         <figcaption className="absolute left-0 top-0 z-10 flex min-h-full min-w-full items-center justify-center bg-black bg-opacity-55 p-4 text-center font-semibold text-fg-2 hover:bg-opacity-75">

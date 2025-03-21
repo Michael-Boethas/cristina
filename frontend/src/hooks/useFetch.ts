@@ -14,7 +14,7 @@ export function useFetch<T>(url: string) {
 
       } catch (err) {
         console.error("Error fetching data:", (err as Error).stack);
-      } finally {
+        return null;
       }
     }
 

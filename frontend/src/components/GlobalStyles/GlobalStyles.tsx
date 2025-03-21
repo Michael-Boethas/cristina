@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useFetch } from "hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 import { IGlobalStylesData } from "types";
 
 export default function GlobalStyles() {
