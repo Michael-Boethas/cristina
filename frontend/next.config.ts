@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
         hostname: "localhost",
       },
     ],
+    unoptimized: true,
   },
   productionBrowserSourceMaps: true,
 };

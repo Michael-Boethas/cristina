@@ -19,7 +19,11 @@ export default async function Resume(): Promise<React.JSX.Element> {
           <CareerTimeline classes="ps-10" />
 
           <Link
-            href={content.pdf_url}
+            href={
+              content === fallbackData
+                ? content.pdf_url
+                : `${content.pdf_url}view`
+            }
             target="_blank"
             rel="noopener"
             className="hover-bg-1 m-12 max-w-max self-center rounded-xl bg-bg-2 p-4 py-6 text-lg text-fg-2 sm:text-xl"
@@ -29,8 +33,12 @@ export default async function Resume(): Promise<React.JSX.Element> {
         </div>
 
         <PreviewPDF
-          classes="hidden lg:block w-[820px] bg-blue-400 h-[90vh] md:translate-y-[-50px]"
-          pdf={content.pdf_url}
+          classes="hidden lg:block w-[820px] h-[90vh] md:translate-y-[-50px]"
+          pdf={
+            content === fallbackData
+              ? content.pdf_url
+              : `${content.pdf_url}preview`
+          }
         />
       </div>
     </main>

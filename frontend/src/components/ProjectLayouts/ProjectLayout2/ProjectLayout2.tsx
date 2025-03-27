@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import SocialMediaSection from "../../../components/SocialMediaSection/SocialMediaSection";
 import ResultsBanner from "../ResultsBanner/ResultsBanner";
 import { IProjectContent } from "types";
@@ -23,8 +24,17 @@ export default async function ProjectLayout2({
               src={`${content.cover_image}`}
               alt={`Image of ${label}`}
               fill
+              priority
+              sizes="50vw"
               className="hidden border border-bg-4 lg:block"
             />
+            {content.website_url ? (
+              <Link
+                href={content.website_url}
+                target="_blank"
+                className="absolute left-0 top-0 h-full w-full"
+              />
+            ) : null}
           </aside>
           <div className="flex flex-col gap-6 lg:w-[50vw]">
             <h2 className="mb-10 max-w-max rounded-xl bg-bg-4 px-4 py-4 text-4xl text-fg-1 lg:px-12 lg:text-5xl">

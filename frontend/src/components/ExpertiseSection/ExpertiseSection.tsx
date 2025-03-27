@@ -32,7 +32,7 @@ export default async function ExpertiseSection({
       {/* Scroll down button */}
       <div className="absolute bottom-0 right-0 hidden md:block">
         <Link href="#industries-section" role="button" aria-label="Scroll down">
-          <i className="hover-fg-1 fa-solid fa-chevron-down p-8 text-5xl text-[#000a] xl:text-7xl" />
+          <i className="hover-text-1 fa-solid fa-chevron-down p-8 text-5xl text-[#000a] xl:text-7xl" />
         </Link>
       </div>
     </section>

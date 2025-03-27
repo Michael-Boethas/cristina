@@ -1,13 +1,13 @@
 {
-  "title": "~~FALLBACK~~Here’s a selection of projects I’ve worked on across different industries.",
+  "title": "[FALLBACK DATA] Here’s a selection of projects I’ve worked on across different industries.",
   "tagline": "Each project reflects my passion for storytelling and strategic communication.",
   "projects": [
     {
       "slug": "mazars-sustainability-campaign",
-      "label": "~~FALLBACK~~Mazars’ Sustainability Campaign",
+      "label": "[FALLBACK DATA] Mazars’ Sustainability Campaign",
       "project_content": {
         "layout": 1,
-        "thumbnail_url": "https://img.youtube.com/vi/mpcdrO8QvYQ/sddefault.jpg",
+        "thumbnail_url": "/images/portfolio/thumbnails/mazars_sustainability_campaign.webp",
         "description": "Can a sustainability report double as a talent magnet? For Mazars, it did. Using its employer brand platform, Mazars, The Smart Choice, we launched a campaign that highlighted key takeaways from the company’s Sustainability Report—all while attracting Gen Z talent.\n\nI produced a video for the campaign using Adobe After Effects, which was shared across Mazars’ social media accounts. This was my first video project at Mazars, allowing me to showcase my motion design and video editing skills. The visuals aligned with the brand’s EB content, using vibrant footage and motion design to capture the attention of younger audiences.",
         "video_url": "https://www.youtube.com/embed/mpcdrO8QvYQ",
         "results": [
@@ -24,10 +24,10 @@
     },
     {
       "slug": "net-zero-internal-campaign",
-      "label": "~~FALLBACK~~Net Zero Internal Campaign",
+      "label": "[FALLBACK DATA] Net Zero Internal Campaign",
       "project_content": {
         "layout": 1,
-        "thumbnail_url": "https://img.youtube.com/vi/slHa6gzCw4Q/sddefault.jpg",
+        "thumbnail_url": "/images/portfolio/thumbnails/net_zero_internal_campaign.webp",
         "description": "Reaching net zero by 2030 was a major sustainability goal for Mazars, but we discovered that employee actions had a significant impact on the company’s carbon footprint. To educate and engage the workforce, we launched an internal campaign highlighting Mazars’ sustainability initiative and how employees could contribute.\n\nThe campaign featured a mix of intranet articles, posters, screensavers, and an engaging video. I played a key role in scriptwriting, voiceover recording, and video editing, using visual storytelling to maximize impact.",
         "video_url": "https://youtube.com/embed/slHa6gzCw4Q",
         "results": [
@@ -40,32 +40,30 @@
     },
     {
       "slug": "breast-cancer-campaign-EMEA-2022",
-      "label": "~~FALLBACK~~Cancer Campaign EMEA 2022",
+      "label": "[FALLBACK DATA] Cancer Campaign EMEA 2022",
       "project_content": {
         "layout": 2,
-        "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4E22AQGUvhCDI_HtGg/feedshare-shrink_1280/feedshare-shrink_1280/0/1664638414117?e=1744243200&v=beta&t=ldIJMIRnZZMKNZ0fdukEo7QjJAq7dElEOu47jRvkTpk",
+        "thumbnail_url": "/images/portfolio/thumbnails/breast_cancer_campaign_EMEA_2022.webp",
         "description": "The Estée Lauder Companies’ Breast Cancer Campaign is a global movement dedicated to raising awareness and funding for breast cancer research, education, and medical services. In 2022, I contributed to its EMEA rollout, leading employee engagement efforts to ensure internal communities were informed and actively participating.\n\nI developed internal communication materials, including emails, digital posters, intranet articles, videos, and social media strategy. That year, we introduced employee ambassadors, providing them with pre-approved captions and personalized photos wearing pink ribbons to encourage participation.",
-        "cover_image": "https://media.licdn.com/dms/image/v2/C4E22AQGUvhCDI_HtGg/feedshare-shrink_1280/feedshare-shrink_1280/0/1664638414117?e=1744848000&v=beta&t=KDYh52wuwlBKOxCWG4LDis4zRRl7xqDUhm35dPHvxAY",
+        "website_url": "https://www.linkedin.com/posts/nadine-graf-2477949_timetoendbreastcancer-elcemployees-elcfamily-activity-6981999573229563904-yqo4/",
+        "cover_image": "/images/portfolio/thumbnails/breast_cancer_campaign_EMEA_2022.webp",
         "social_media_section": {
           "label": "Employee engagement",
-          "items": [
+          "links": [
             {
-              "link": "https://www.linkedin.com/posts/nadine-graf-2477949_timetoendbreastcancer-elcemployees-elcfamily-activity-6981999573229563904-yqo4/",
+              "url": "https://www.linkedin.com/posts/nadine-graf-2477949_timetoendbreastcancer-elcemployees-elcfamily-activity-6981999573229563904-yqo4/",
               "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4E22AQGUvhCDI_HtGg/feedshare-shrink_1280/feedshare-shrink_1280/0/1664638414117?e=1745452800&v=beta&t=COQoTNYuC7Cpb4QTEFNza-eyUrO6JBc_skf486pXNlg"
             },
             {
-              "link": "https://www.linkedin.com/posts/ga%C3%ABlle-le-meur-68b0069_timetoendbreastcancer-elcemployee-elcfamily-activity-6981879911246356480-NA1t/?originalSubdomain=fr",
-
+              "url": "https://www.linkedin.com/posts/ga%C3%ABlle-le-meur-68b0069_timetoendbreastcancer-elcemployee-elcfamily-activity-6981879911246356480-NA1t/?originalSubdomain=fr",
               "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4E22AQFA2ZgYst29kw/feedshare-shrink_1280/feedshare-shrink_1280/0/1664609886422?e=1745452800&v=beta&t=Dq2AMI-GvypN-o5HXcxPdKGHmTdirhE1hiqFhoM2f2Q"
             },
             {
-              "link": "https://www.linkedin.com/posts/tandonaashna_timetoendbreastcancer-activity-6987061211074846721-r6cj/",
-
+              "url": "https://www.linkedin.com/posts/tandonaashna_timetoendbreastcancer-activity-6987061211074846721-r6cj/",
               "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4D22AQHupD5FxoO2jA/feedshare-shrink_800/feedshare-shrink_800/0/1665845205352?e=1745452800&v=beta&t=M0DFH_fLFCZOImBJ7H8-tRImD_AyWyMi9x-0z88eWjg"
             },
             {
-              "link": "https://www.linkedin.com/posts/francesca-riela-73550929_timetoendbreastcancer-elcemea-elcemployee-activity-6982794387135033344-ko_O/?trk=public_profile_like_view ",
-
+              "url": "https://www.linkedin.com/posts/francesca-riela-73550929_timetoendbreastcancer-elcemea-elcemployee-activity-6982794387135033344-ko_O/?trk=public_profile_like_view",
               "thumbnail_url": "https://media.licdn.com/dms/image/v2/C4D22AQEdDrkbgFsVrA/feedshare-shrink_1280/feedshare-shrink_1280/0/1664827914341?e=1745452800&v=beta&t=1CTQC2A03DonRfqyfwaj5vlt90jIEWrwHwVibbL_zGM"
             }
           ]
@@ -84,69 +82,144 @@
     },
     {
       "slug": "monthly-key-open-positions",
-      "label": "~~FALLBACK~~Monthly Key Open Positions",
+      "label": "[FALLBACK DATA] Monthly Key Open Positions",
       "project_content": {
         "layout": 3,
-        "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741198532/1_7f93789dfb.webp",
-        "description": "",
+        "thumbnail_url": "/images/portfolio/thumbnails/monthly_key_open_positions.webp",
+        "description": "A common concern among ELC EMEA employees was the lack of visibility into internal job openings across the region. To address this, we launched Monthly Key Open Positions, an exclusive Instagram Stories series on ELC EMEA’s private account, ensuring only employees had access.\n\nEvery month, HR provided vacancy details, which I reviewed, designed into visually engaging content, and scheduled for publication.",
+        "carousel": [
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198532/1_7f93789dfb.webp",
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198520/3_886c25fc07.webp",
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198518/2_94324e8a3a.webp",
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198518/5_4dd7aab68c.webp",
+          "https://res.cloudinary.com/dkioathqf/image/upload/v1741198517/4_68a8fabb1e.webp"
+        ],
         "results": [
           {
-            "figure": "",
-            "text": ""
+            "figure": "20%",
+            "text": "increase in internal job applications"
           }
         ]
       }
     },
     {
       "slug": "biodiversity-stories",
-      "label": "~~FALLBACK~~Biodiversity Stories",
+      "label": "[FALLBACK DATA] Biodiversity Stories",
       "project_content": {
         "layout": 4,
-        "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741203877/biodiversity_stories_8eeeca53d5.webp",
-        "description": "",
+        "thumbnail_url": "/images/portfolio/thumbnails/biodiversity_stories.webp",
+        "description": "As part of the From Farm to Fork Program, we worked with banana and pineapple producers adopting biodiversity-friendly agricultural practices. To showcase their success and inspire more farms to follow suit, we created Historias de Biodiversidad—a content series for the Business and Biodiversity social media channels.\n\nWe selected three standout farms, and I crafted engaging articles spotlighting their achievements while coordinating professional photography to enhance storytelling.",
+        "social_media_section": {
+          "label": "",
+          "embed": [
+            {
+              "url": "https://www.instagram.com/p/CTX8iLGnbsi/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            },
+            {
+              "url": "https://www.instagram.com/p/CUdknrTlWst/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            },
+            {
+              "url": "https://www.instagram.com/p/CY_s2w6ITnl/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          ]
+        },
         "results": [
           {
-            "figure": "",
-            "text": ""
+            "figure": "500+",
+            "text": "articles views"
+          },
+          {
+            "figure": "2%",
+            "text": "average engagement rate on IG and FB"
+          }
+        ],
+        "articles": [
+          {
+            "title": "Quinta Pasadena: una finca sostenible",
+            "thumbnail_url": "/images/portfolio/thumbnails/articles/biodiversity_stories/quinta_pasadena.webp",
+            "preview_text": "",
+            "link": "https://storymaps.arcgis.com/stories/1c4eeb5f4d6943148ef1456899a3aaa9"
+          },
+          {
+            "title": "Hacienda Paso Robles: un uso responsable de los recursos",
+            "thumbnail_url": "/images/portfolio/thumbnails/articles/biodiversity_stories/hacienda_paso_robles.webp",
+            "preview_text": "",
+            "link": "https://storymaps.arcgis.com/stories/1bb5c7d741f6452ca0cbf7c323accd1f?fbclid=IwY2xjawIUd_pleHRuA2FlbQIxMAABHZNtLvNofx1LUgcydZxRP-5AM8xBTMTg89BA0EXDyNpimZ7LJJ755cPjCw_aem_Aa37g_Tf1gK3XFaAR2PPCw"
+          },
+          {
+            "title": "Rancho Carlos: invirtiendo en biodiversidad",
+            "thumbnail_url": "/images/portfolio/thumbnails/articles/biodiversity_stories/rancho_carlos.webp",
+            "preview_text": "",
+            "link": "https://storymaps.arcgis.com/stories/cffd314bb0bc499cb3d10b3c4561d603"
           }
         ]
       }
     },
     {
       "slug": "let-s-talk-about-biodiversity",
-      "label": "~~FALLBACK~~Let's Talk About Biodiversity",
+      "label": "[FALLBACK DATA] Let's Talk About Biodiversity",
       "project_content": {
         "layout": 4,
-        "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741205537/let_s_talk_about_biodiversity_a1a640eaf5.webp",
-        "description": "",
+        "thumbnail_url": "/images/portfolio/thumbnails/let_s_talk_about_biodiversity.webp",
+        "description": "Another initiative under the From Farm to Fork program was Hablemos de Biodiversidad, a social media series featuring interviews with farmers implementing innovative biodiversity solutions.\n\nI conducted interviews with four farm owners and reviewed additional interviews from colleagues to ensure high-quality content. The final product was a series of audio cards with interview snippets, making their stories accessible and engaging.",
+        "social_media_section": {
+          "label": "",
+          "embed": [
+            {
+              "url": "https://www.instagram.com/p/CWEeGycNuno/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D"
+            },
+            {
+              "url": "https://www.instagram.com/p/CWlQBlrNvwg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D7"
+            },
+            {
+              "url": "https://www.instagram.com/p/CW3XBM7NVJ1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D"
+            }
+          ]
+        },
         "results": [
           {
-            "figure": "",
-            "text": ""
+            "figure": "9",
+            "text": "posts on Instagram and Facebook"
+          },
+          {
+            "figure": "5000+",
+            "text": "impressions"
           }
         ]
       }
     },
     {
       "slug": "el-seibo-resiliente",
-      "label": "~~FALLBACKDATA~~El Seibo Resiliente",
+      "label": "[FALLBACKDATA] El Seibo Resiliente",
       "project_content": {
         "layout": 2,
-        "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741206716/el_seibo_resiliente_bda6b660e1.webp",
+        "thumbnail_url": "/images/portfolio/thumbnails/el_seibo_resiliente.webp",
+        "description": "A collaboration between the Dominican Ministry of Environment, the European Union, and GIZ, El Seibo Resiliente aimed to educate the residents of Miches, El Seibo, on climate change, its effects, and risk mitigation strategies.\n\nAs part of the communications team, I played a key role in launching the program’s website, developing a targeted social media strategy (including a dedicated Facebook page), and writing press releases to generate public awareness.",
+        "website_url": "https://www.facebook.com/ElSeiboResiliente",
+        "cover_image": "/images/portfolio/thumbnails/el_seibo_resiliente.webp",
         "results": [
           {
-            "figure": "",
-            "text": ""
+            "figure": "30+",
+            "text": "press releases published"
+          },
+          {
+            "figure": "450+",
+            "text": "Facebook followers"
+          },
+          {
+            "figure": "1",
+            "text": "fully developed website"
           }
         ]
       }
     },
     {
       "slug": "public-releases",
-      "label": "~~FALLBACKDATA~~Public Releases",
+      "label": "[FALLBACKDATA] Public Releases",
       "project_content": {
         "layout": 5,
-        "thumbnail_url": "https://res.cloudinary.com/dkioathqf/image/upload/v1741432597/public_releases_1786c584fb.webp",
+        "thumbnail_url": "/images/portfolio/thumbnails/public_releases.webp",
+        "description": "A selection of press releases I’ve written, published across various media outlets.",
         "results": [
           {
             "figure": "",

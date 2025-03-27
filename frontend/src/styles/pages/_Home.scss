@@ -80,7 +80,7 @@
   animation: fade-in 800ms ease-in forwards, intro-bg-animation 80s ease infinite;
   will-change: background-position, background-size;
   background-color: var(--bg-3);
-  background-image: url("/images/intro-background.svg");
+  background-image: url("/images/intro_background.svg");
 }
 
 // Mobile version
@@ -142,7 +142,7 @@
   animation: industries-bg-animation 90s ease-in-out infinite;
   will-change: background;
   background-color: var(--bg-3);
-  background-image: url("/images/industries-background.svg");
+  background-image: url("/images/industries_background.svg");
 
   @media screen and (min-width: $breakpoint-md) {
     background-size: 40%;

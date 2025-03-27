@@ -90,6 +90,7 @@ export interface IProjectContent {
   readonly layout: number;
   readonly thumbnail_url: string;
   readonly description: string;
+  readonly website_url?: string;
   readonly video_url?: string;
   readonly cover_image?: string;
   readonly social_media_section?: ISocialMediaSection;
@@ -100,17 +101,20 @@ export interface IProjectContent {
 
 export interface ISocialMediaSection {
   readonly label: string;
-  readonly item: ISocialMediaItem[]
+  readonly links: ISocialMediaLink[]
+  readonly embed: { url: string }[]
 }
 
-export interface ISocialMediaItem {
-  readonly link: string;
+export interface ISocialMediaLink {
+  readonly url: string;
   readonly thumbnail_url: string;
 }
+
 export interface IArticleItem {
   readonly title: string;
   readonly thumbnail_url: string;
   readonly preview_text: string;
+  readonly link: string;
 }
 export interface IProjectResult {
   readonly figure: string;

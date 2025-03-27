@@ -22,7 +22,7 @@ export default function TimelineItem({
             target="_blank"
             rel="noopener"
             aria-label={`Visit ${entry.company}'s website`}
-            className="hover-fg-1 max-w-max italic"
+            className="hover-text-1 max-w-max italic"
           >
             {entry.company}
           </Link>

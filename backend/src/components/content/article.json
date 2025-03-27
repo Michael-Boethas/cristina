@@ -17,6 +17,10 @@
     "preview_text": {
       "type": "richtext",
       "maxLength": 100
+    },
+    "link": {
+      "type": "string",
+      "required": true
     }
   }
 }

@@ -28,16 +28,41 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   // Next.js expects `params` to be treated asynchronously, even though it's already resolved.
   // Using `await Promise.resolve(params)` to satisfy this requirement.
   const { slug } = await Promise.resolve(params);
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio?populate[projects][populate][project_content][populate][results]=*&populate[projects][populate][project_content][populate][carousel]=*&populate[projects][populate][project_content][populate][articles]=*&populate[projects][populate][project_content][populate][social_media_section][populate][item]=*`;
+
+  // Base URL
+  const baseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio`;
+
+  // Population parameters
+  const populateProjects = "populate[projects][populate][project_content]";
+  const populateResults = `${populateProjects}[populate][results]`;
+  const populateCarousel = `${populateProjects}[populate][carousel]`;
+  const populateArticles = `${populateProjects}[populate][articles]`;
+  const populateSocialMediaLinks = `${populateProjects}[populate][social_media_section][populate][links]`;
+  const populateSocialMediaEmbed = `${populateProjects}[populate][social_media_section][populate][embed]`;
+
+  // Combining the query parameters
+  const queryParams = [
+    `${populateResults}=*`,
+    `${populateCarousel}=*`,
+    `${populateArticles}=*`,
+    `${populateSocialMediaLinks}=*`,
+    `${populateSocialMediaEmbed}=*`, // Separate the links and embed into distinct parameters
+  ].join("&");
+
+  // Final query URL
+  const url = `${baseUrl}?${queryParams}`;
+
+  // const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio?populate[projects][populate][project_content][populate][results]=*&populate[projects][populate][project_content][populate][carousel]=*&populate[projects][populate][project_content][populate][articles]=*&populate[projects][populate][project_content][populate][social_media_section][populate][links]=*&populate[projects][populate][project_content][populate][social_media_section][populate][embed]=*`;
 
   const response = await fetchStrapi(url);
   const projects = response?.projects ?? fallbackData.projects;
   const entry = projects.find((item: IPortfolioItem) => item.slug === slug);
 
-  if (!projects) {
-    return notFound();
+  if (!entry) {
+    return notFound(); // 404 if no matching project
   }
 
+  const backButtonColour = "bg-[#222b] hover:bg-[#111c]";
   const renderLayout = () => {
     switch (entry?.project_content?.layout) {
       case 1:
@@ -60,7 +85,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <Link
         href={"/portfolio"}
         role="button"
-        className="absolute bottom-0 m-6 max-w-max content-center self-center rounded-xl bg-[#0007] p-3 text-xl text-fg-2 hover:bg-[#000b] md:self-end xl:fixed"
+        className={`${backButtonColour} absolute bottom-0 m-6 max-w-max content-center self-center rounded-xl p-3 text-xl text-fg-2 md:self-end xl:fixed`}
         aria-label="Go back to portfolio gallery"
       >
         Go back to my portfolio

@@ -17,7 +17,7 @@ export default async function Home(): Promise<React.JSX.Element> {
         aria-label="Short introduction of Cristina Jiménez"
         className="intro__content--animation introduction__background relative flex min-h-screen flex-col gap-16 px-4 pb-24 pt-52 md:px-24 xl:justify-end"
       >
-        <p className="rounded-xl bg-bg-5-transparent p-6 text-2xl sm:p-12 sm:text-3xl lg:text-4xl xl:w-1/2">
+        <p className="rounded-xl bg-bg-5-transparent p-6 text-2xl sm:p-12 sm:text-3xl lg:text-3xl xl:w-1/2">
           {content.introduction}
         </p>
         <div className="flex flex-col items-center gap-6 text-center text-lg text-fg-2 md:w-1/3 md:w-full md:items-start md:text-2xl lg:w-2/3 xl:w-1/2 xl:flex-row 2xl:w-1/3">
@@ -45,7 +45,7 @@ export default async function Home(): Promise<React.JSX.Element> {
             role="button"
             aria-label="Scroll down"
           >
-            <i className="hover-fg-1 fa-solid fa-chevron-down p-8 text-5xl text-[--bg-2] xl:text-7xl" />
+            <i className="hover-text-1 fa-solid fa-chevron-down p-8 text-5xl text-[--bg-2] xl:text-7xl" />
           </Link>
         </div>
       </section>
@@ -70,7 +70,7 @@ export default async function Home(): Promise<React.JSX.Element> {
         {/* Scroll to top button */}
         <div className="absolute bottom-5 right-0 hidden md:block">
           <Link href="#intro-section" role="button" aria-label="Scroll to top">
-            <div className="hover-fg-1 flex flex-col">
+            <div className="hover-text-1 flex flex-col">
               <i className="fa-solid fa-chevron-up -mb-14 px-8 text-5xl text-[#000a] text-inherit xl:text-7xl" />
               <i className="fa-solid fa-chevron-up px-8 text-5xl text-[#000a] text-inherit xl:text-7xl" />
             </div>
