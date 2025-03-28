@@ -36,9 +36,15 @@ export default async function ProjectLayout4({
       ) : null}
       {/* content.articles is always at least an empty array */}
       {content.articles && content.articles.length > 0 ? (
-        <div className="flex flex-col items-center justify-center gap-12 p-20 pb-28 md:flex-row md:flex-wrap md:items-baseline">
+        <div className="flex flex-col items-center justify-center gap-12 px-10 py-24 sm:flex-row sm:flex-wrap sm:items-baseline">
           {content.articles?.map((item, index) => {
-            return <ArticleItem key={index} entry={item} />;
+            return (
+              <ArticleItem
+                key={index}
+                entry={item}
+                classes="w-[90vw] xs:w-[75vw] sm:w-[40vw] md:w-[25vw]"
+              />
+            );
           })}
         </div>
       ) : null}

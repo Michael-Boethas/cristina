@@ -26,7 +26,7 @@ export default async function Resume(): Promise<React.JSX.Element> {
             }
             target="_blank"
             rel="noopener"
-            className="hover-bg-1 m-12 max-w-max self-center rounded-xl bg-bg-2 p-4 py-6 text-lg text-fg-2 sm:text-xl"
+            className="hover-bg-1 m-12 max-w-max self-center rounded-xl bg-bg-2 p-4 py-6 text-lg font-semibold text-fg-2 sm:text-xl"
           >
             {content.CTA}
           </Link>

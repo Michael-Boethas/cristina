@@ -10,7 +10,7 @@ export interface ContentArticle extends Struct.ComponentSchema {
     link: Schema.Attribute.String & Schema.Attribute.Required;
     preview_text: Schema.Attribute.RichText &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 600;
+        maxLength: 100;
       }>;
     thumbnail_url: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.Text & Schema.Attribute.Required;

@@ -12,35 +12,43 @@ export default function ArticlesItem({
   classes,
 }: IArticlesItemProps): React.JSX.Element {
   return (
-    <div className={`${classes}`}>
-      <Link href={entry.link} target="_blank">
-        <div className="relative aspect-[4/3] w-[90vw] sm:w-[45vw] lg:w-[25vw]">
-          <Image
-            src={entry.thumbnail_url}
-            alt={`Thumbnail of ${entry.title}`}
-            fill
-            sizes="90vw"
-          />
-          <div
-            className={`${entry.preview_text === null ? "relative top-0 hidden h-full w-full items-center justify-center text-2xl font-semibold text-[#0000] hover:bg-[#000b] hover:text-fg-2 lg:flex" : "hidden"}`}
-          >
-            View More
-          </div>
-        </div>
-
-        <h4
-          className={`${entry.preview_text ? "font--barlow" : "font--montserrat hover-text-1"} w-[90vw] p-2 text-2xl sm:w-[45vw] lg:w-[25vw] lg:text-3xl`}
+    <Link
+      href={entry.link}
+      target="_blank"
+      className={`${classes} flex flex-col`}
+    >
+      <div className="relative aspect-[4/3]">
+        <Image
+          src={entry.thumbnail_url}
+          alt={`Thumbnail of ${entry.title}`}
+          fill
+          sizes="90vw"
+        />
+        <div
+          className={`${entry.preview_text === null ? "relative top-0 hidden h-full w-full items-center justify-center text-2xl font-semibold text-[#0000] hover:bg-[#000b] hover:text-fg-2 lg:flex" : "hidden"}`}
         >
-          {entry.title}
-        </h4>
+          View More
+        </div>
+      </div>
 
-        {entry.preview_text ? (
-          <div>
-            <p>{entry.preview_text}</p>
-            <span className="hover-bg-1 underline">Read News</span>
-          </div>
-        ) : null}
-      </Link>
-    </div>
+      <div className="flex h-full flex-grow flex-col justify-between gap-4 p-2">
+        <div className="flex flex-col gap-4">
+          <h4
+            className={`${entry.preview_text ? "font--barlow text-2xl lg:text-3xl" : "font--montserrat hover-text-1 text-xl font-medium lg:text-2xl"}`}
+          >
+            {entry.title}
+          </h4>
+          {/* For press releases only */}
+          {entry.preview_text && (
+            <p className="gradient-text line-clamp-5 text-lg">{`${entry.preview_text}`}</p>
+          )}
+        </div>
+        {entry.preview_text && (
+          <span className="hover-text-1 block text-xl font-semibold lg:text-2xl">
+            Read News
+          </span>
+        )}
+      </div>
+    </Link>
   );
 }

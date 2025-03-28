@@ -51,7 +51,10 @@ export default async function ProjectLayout2({
         />
       ) : null}
       {content.results ? (
-        <ResultsBanner results={content.results} classes="bg-bg-2 text-fg-2" />
+        <ResultsBanner
+          results={content.results}
+          classes="bg-bg-2-transparent text-fg-2"
+        />
       ) : null}
     </article>
   );

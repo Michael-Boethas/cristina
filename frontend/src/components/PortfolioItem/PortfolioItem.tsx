@@ -24,7 +24,7 @@ export default function PortfolioItem({
           sizes="50vw"
           priority
         />
-        <figcaption className="absolute left-0 top-0 z-10 flex min-h-full min-w-full items-center justify-center bg-black bg-opacity-55 p-4 text-center font-semibold text-fg-2 hover:bg-opacity-75">
+        <figcaption className="absolute left-0 top-0 z-10 flex min-h-full min-w-full items-center justify-center bg-black bg-opacity-50 p-4 text-center font-semibold text-fg-2 hover:bg-opacity-80">
           {entry.label}
         </figcaption>
       </Link>

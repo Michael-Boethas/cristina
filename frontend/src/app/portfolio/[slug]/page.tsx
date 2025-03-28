@@ -85,10 +85,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <Link
         href={"/portfolio"}
         role="button"
-        className={`${backButtonColour} absolute bottom-0 m-6 max-w-max content-center self-center rounded-xl p-3 text-xl text-fg-2 md:self-end xl:fixed`}
+        className={`${backButtonColour} absolute bottom-0 m-6 max-w-max content-center self-center rounded-xl p-3 text-xl font-semibold text-fg-2 md:self-end lg:p-5 xl:fixed`}
         aria-label="Go back to portfolio gallery"
       >
-        Go back to my portfolio
+        Back to my portfolio
       </Link>
     </main>
   );

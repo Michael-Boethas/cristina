@@ -214,19 +214,57 @@
       }
     },
     {
-      "slug": "public-releases",
-      "label": "[FALLBACKDATA] Public Releases",
+      "slug": "press-releases",
+      "label": "[FALLBACKDATA] Press Releases",
       "project_content": {
-        "layout": 5,
-        "thumbnail_url": "/images/portfolio/thumbnails/public_releases.webp",
-        "description": "A selection of press releases I’ve written, published across various media outlets.",
-        "results": [
-          {
-            "figure": "",
-            "text": ""
-          }
-        ]
-      }
+        "layout": 3,
+        "thumbnail_url": "/images/portfolio/thumbnails/press_releases.webp",
+        "description": "A selection of press releases I’ve written, published across various media outlets."
+      },
+      "articles": [
+        {
+          "title": "Integration of biodiversity in Costa Rican and DR banana and pineapple value chains",
+          "thumbnail_url": "/images/portfolio/thumbnails/articles/press_releases/1.webp",
+          "preview_text": "The 2020-2021 Ideas Contest for biodiversity, which was organized by…",
+          "link": "https://www.freshplaza.com/north-america/article/9301629/integration-of-biodiversity-in-costa-rican-and-dominican-republic-banana-and-pineapple-value-chains/"
+        },
+        {
+          "title": "Empresas de RD y Costa Rica desarrollarán 30 proyectos en favor de la biodiversidad",
+          "thumbnail_url": "/images/portfolio/thumbnails/articles/public_releases/2.webp",
+          "preview_text": "Productores de piña y banano de República Dominicana y Costa Rica…",
+          "link": "https://acento.com.do/ecologia/empresas-de-republica-dominicana-y-costa-rica-desarrollaran-30-proyectos-en-favor-de-la-biodiversidad-8882059.html"
+        },
+        {
+          "title": "En Miches: ‘El Seibo resiliente’",
+          "thumbnail_url": "/images/portfolio/thumbnails/articles/public_releases/3.webp",
+          "preview_text": "Mejorar la capaci­dad de res­puesta de las comu­nidades y medios de vida ante los…",
+          "link": "https://listindiario.com/la-vida/2020/10/29/641533/en-miches-el-seibo-resiliente.html"
+        },
+        {
+          "title": "5 acciones para conservar biodiversidad desde las empresas",
+          "thumbnail_url": "/images/portfolio/thumbnails/articles/public_releases/4.webp",
+          "preview_text": "Conozca como el sector privado en la región desarrolla con éxito…",
+          "link": "https://storymaps.arcgis.com/stories/7108274440b8488f9eb8dabca9c870c4"
+        },
+        {
+          "title": "Cinco acciones para conservar la biodiversidad desde las empresas",
+          "thumbnail_url": "/images/portfolio/thumbnails/articles/public_releases/5.webp",
+          "preview_text": "El sector privado cumple un rol fundamental en la contribución al logro de…",
+          "link": "https://do.municipiosaldia.com/ultramar/item/35419-cinco-acciones-para-conservar-la-biodiversidad-desde-las-empresas"
+        },
+        {
+          "title": "Cinco acciones para conservar la biodiversidad desde el sector privado",
+          "thumbnail_url": "/images/portfolio/thumbnails/articles/public_releases/6.webp",
+          "preview_text": "En el Día Internacional de la Diversidad Biológica, presentamos cinco…",
+          "link": "https://listindiario.com/la-vida/2021/05/22/671535/cinco-acciones-para-conservar-la-biodiversidad-desde-el-sector-privado.html"
+        },
+        {
+          "title": "5 acciones para conservar biodiversidad desde el sector privado",
+          "thumbnail_url": "/images/portfolio/thumbnails/articles/public_releases/7.webp",
+          "preview_text": "Múltiples actores del sector privado en la región desarrollan con éxito…",
+          "link": "https://eldinero.com.do/161480/cinco-acciones-para-conservar-la-biodiversidad-desde-el-sector-privado/"
+        }
+      ]
     }
   ]
 }

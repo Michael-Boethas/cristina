@@ -1,5 +1,6 @@
 @use "./_breakpoints" as *;
 
+
 * {
   margin: 0;
   padding: 0;
@@ -34,6 +35,19 @@ p {
 strong {
   font-weight: lighter;
 }
+
+.gradient-text {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 40%,
+      rgba(0, 0, 0, 0) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
 
 .hover-pop {
   transition: transform 100ms ease-in-out;
