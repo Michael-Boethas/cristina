@@ -16,7 +16,7 @@
     },
     "preview_text": {
       "type": "richtext",
-      "maxLength": 100
+      "maxLength": 600
     },
     "link": {
       "type": "string",
