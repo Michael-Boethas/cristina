@@ -12,9 +12,9 @@ export default function SocialMediaSection({
   classes,
 }: ISocialMediaSectionProps): React.JSX.Element {
   return (
-    <div className={`${classes} items-center`}>
+    <div className={`${classes}`}>
       <h3 className="py-8 text-4xl md:text-5xl">{content.label}</h3>
-      <div className="flex flex-col justify-center gap-12 py-8 md:flex-row md:flex-wrap">
+      <div className="flex flex-col justify-center gap-12 py-8 sm:flex-row sm:flex-wrap">
         {/* Embedded IG */}
         {content.embed?.map((item, index) => {
           return (
@@ -33,11 +33,12 @@ export default function SocialMediaSection({
               key={index}
               href={item.url}
               target="_blank"
-              className="relative aspect-[3/4] w-[90vw] sm:w-[45vw] lg:w-[15vw]"
+              aria-label="Link to social media post"
+              className="relative aspect-[3/4] w-[90vw] shadow-2xl xs:w-[75vw] sm:w-[35vw] lg:w-[15vw]"
             >
               <Image
                 src={item.thumbnail_url}
-                alt="Social Media links"
+                alt="Social Media link"
                 fill
                 sizes="90vw"
               />

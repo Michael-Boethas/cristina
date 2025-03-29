@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Layout1 from "components/ProjectLayouts/ProjectLayout1/ProjectLayout1";
-import Layout2 from "components/ProjectLayouts/ProjectLayout2/ProjectLayout2";
-import Layout3 from "components/ProjectLayouts/ProjectLayout3/ProjectLayout3";
-import Layout4 from "components/ProjectLayouts/ProjectLayout4/ProjectLayout4";
+import LayoutV from "components/ProjectLayouts/ProjectLayoutV/ProjectLayoutV";
 import { fetchStrapi } from "utils/utils";
 import { IPortfolioItem } from "types";
 import fallbackData from "../../../content/portfolio-page.json";
@@ -66,13 +63,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const renderLayout = () => {
     switch (entry?.project_content?.layout) {
       case 1:
-        return <Layout1 label={entry.label} content={entry.project_content} />;
+        return <LayoutV label={entry.label} content={entry.project_content} />;
       case 2:
-        return <Layout2 label={entry.label} content={entry.project_content} />;
+        return <LayoutV label={entry.label} content={entry.project_content} />;
       case 3:
-        return <Layout3 label={entry.label} content={entry.project_content} />;
+        return <LayoutV label={entry.label} content={entry.project_content} />;
       case 4:
-        return <Layout4 label={entry.label} content={entry.project_content} />;
+        return <LayoutV label={entry.label} content={entry.project_content} />;
       default:
         return null;
     }
@@ -85,7 +82,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <Link
         href={"/portfolio"}
         role="button"
-        className={`${backButtonColour} absolute bottom-0 m-6 max-w-max content-center self-center rounded-xl p-3 text-xl font-semibold text-fg-2 md:self-end lg:p-5 xl:fixed`}
+        className={`${backButtonColour} absolute bottom-0 m-6 max-w-max content-center self-center rounded-xl p-3 text-xl font-semibold text-fg-2 shadow-xl md:self-end lg:p-5 xl:fixed`}
         aria-label="Go back to portfolio gallery"
       >
         Back to my portfolio

@@ -15,7 +15,7 @@ export default function Header({ content }: IHeaderProps): React.JSX.Element {
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
   return (
-    <header className="fixed z-50 flex w-full justify-between bg-bg-3-transparent pb-2 pt-5 md:gap-12 md:px-6 lg:gap-28 lg:ps-24">
+    <header className="fixed z-50 flex w-full justify-between bg-bg-3-transparent pb-2 pt-5 shadow-lg md:gap-12 md:px-6 lg:gap-28 lg:ps-24">
       <div className="flex flex-col gap-2 px-6 lg:px-1">
         <h1 className="text-4xl">{content?.title}</h1>
 

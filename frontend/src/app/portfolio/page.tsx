@@ -22,7 +22,7 @@ export default async function Portfolio(): Promise<React.JSX.Element> {
             <PortfolioItem
               key={index}
               entry={item}
-              classes="relative w-full hover-pop xs:w-[80%] sm:w-[40%] md:w-[30%] xl:w-[20%] overflow-hidden text-2xl lg:text-3xl rounded-[12%] aspect-square"
+              classes="relative shadow-[0_5px_8px_2px_#0006] w-full hover-pop xs:w-[80%] sm:w-[40%] md:w-[30%] xl:w-[20%] overflow-hidden text-2xl lg:text-3xl rounded-[12%] aspect-square"
             />
           );
         })}

@@ -41,7 +41,7 @@ export default async function ProjectLayout3({
         ) : null}
       </div>
       {content.results && content.results.length > 0 ? (
-        <ResultsBanner results={content.results} classes="bg-bg-1 text-fg-2" />
+        <ResultsBanner results={content.results} classes="bg-bg-2 text-fg-2" />
       ) : null}
     </article>
   );

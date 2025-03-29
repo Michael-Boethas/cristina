@@ -1,3 +1,4 @@
+import YoutubeEmbed from "components/YoutubeEmbed/YoutubeEmbed";
 import ResultsBanner from "../ResultsBanner/ResultsBanner";
 import { IProjectContent } from "types";
 
@@ -19,13 +20,17 @@ export default async function ProjectLayout1({
           {label}
         </h2>
         <p className="text-xl md:text-2xl">{content.description}</p>
-        <iframe
-          key={content.video_url}
-          src={content.video_url}
-          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-          className="mx-6 my-16 aspect-video min-h-[250px] max-w-full self-center border-2 border-bg-1 sm:min-h-[400px] md:w-3/4"
-        ></iframe>
+
+        {/* Youtube Embed */}
+        {content.video_url ? (
+          <YoutubeEmbed
+            url={content.video_url}
+            classes="mx-6 my-16 aspect-video min-h-[250px] max-w-full self-center border-2 border-bg-1 sm:min-h-[400px] md:w-3/4"
+          />
+        ) : null}
       </div>
+
+      {/* Results Banner */}
       {content.results ? (
         <ResultsBanner results={content.results} classes="bg-bg-1 text-fg-2" />
       ) : null}

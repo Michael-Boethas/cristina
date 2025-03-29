@@ -50,7 +50,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state.submitting}
-        className="hover-bg-1 self-center rounded-xl bg-bg-2-transparent px-12 py-6 text-lg font-medium text-fg-2 sm:text-xl"
+        className="hover-bg-1 self-center rounded-xl bg-bg-2-transparent px-12 py-6 text-lg font-medium text-fg-2 shadow-xl sm:text-xl"
       >
         Submit
       </button>

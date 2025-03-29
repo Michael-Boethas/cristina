@@ -17,7 +17,7 @@ export default function ArticlesItem({
       target="_blank"
       className={`${classes} flex flex-col`}
     >
-      <div className="relative aspect-[4/3]">
+      <div className="relative aspect-[4/3] shadow-[0_5px_5px_1px_#0004]">
         <Image
           src={entry.thumbnail_url}
           alt={`Thumbnail of ${entry.title}`}
@@ -40,7 +40,7 @@ export default function ArticlesItem({
           </h4>
           {/* For press releases only */}
           {entry.preview_text && (
-            <p className="gradient-text line-clamp-5 text-lg">{`${entry.preview_text}`}</p>
+            <p className="fading-text line-clamp-5 text-lg">{`${entry.preview_text}`}</p>
           )}
         </div>
         {entry.preview_text && (

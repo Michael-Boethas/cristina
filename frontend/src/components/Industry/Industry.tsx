@@ -7,9 +7,13 @@ import { IIndustryItem, ICompanyItem } from "../../types";
 
 interface IndustryProps {
   entry: IIndustryItem;
+  classes: string;
 }
 
-export default function Industry({ entry }: IndustryProps): React.JSX.Element {
+export default function Industry({
+  entry,
+  classes,
+}: IndustryProps): React.JSX.Element {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleContent = () => {
@@ -17,10 +21,10 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
   };
 
   return (
-    <div className="flex w-[80vw] flex-col items-center xs:w-[70vw] sm:w-[33vw] md:w-72">
+    <div className={classes}>
       {/* Button to open modal */}
       <button
-        className="relative aspect-square w-full rounded-[32px] border border-[2px] border-bg-2 bg-bg-2"
+        className="relative aspect-square w-full border border-[2px] border-bg-2 bg-bg-2"
         onClick={toggleContent}
         aria-label={`Show content for ${entry.label}`}
       >
@@ -31,7 +35,7 @@ export default function Industry({ entry }: IndustryProps): React.JSX.Element {
           sizes="(max-width: 768px) 500px, (max-width: 1200px) 400px"
           className="rounded-[30px] object-cover"
         />
-        <div className="industry__overlay rounded-[30px]">
+        <div className="industry__overlay">
           <h3 className="text-3xl text-white">{entry.label}</h3>
         </div>
       </button>

@@ -25,7 +25,13 @@ export default async function IndustriesSection({
       <div className="flex flex-col items-center justify-center gap-6 text-4xl sm:flex-row sm:flex-wrap sm:items-start sm:gap-16 lg:gap-12">
         {/* Iterated rendering of industries */}
         {content?.industries?.map((item: IIndustryItem, index: number) => {
-          return <Industry key={index} entry={item} />;
+          return (
+            <Industry
+              key={index}
+              entry={item}
+              classes="flex w-[80vw] shadow-xl rounded-[32px] overflow-hidden flex-col items-center xs:w-[70vw] sm:w-[33vw] md:w-72"
+            />
+          );
         })}
       </div>
       {/* Scroll down button */}

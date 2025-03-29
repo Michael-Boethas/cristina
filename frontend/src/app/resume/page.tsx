@@ -33,7 +33,7 @@ export default async function Resume(): Promise<React.JSX.Element> {
         </div>
 
         <PreviewPDF
-          classes="hidden lg:block w-[820px] h-[90vh] md:translate-y-[-50px]"
+          classes="hidden shadow-2xl lg:block w-[820px] h-[90vh] md:translate-y-[-50px]"
           pdf={
             content === fallbackData
               ? content.pdf_url

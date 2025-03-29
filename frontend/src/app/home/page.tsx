@@ -17,7 +17,7 @@ export default async function Home(): Promise<React.JSX.Element> {
         aria-label="Short introduction of Cristina Jiménez"
         className="intro__content--animation introduction__background relative flex min-h-screen flex-col gap-16 px-4 pb-24 pt-52 md:px-24 xl:justify-end"
       >
-        <p className="rounded-xl bg-bg-5-transparent p-6 text-2xl sm:p-12 sm:text-3xl lg:text-3xl xl:w-1/2">
+        <p className="rounded-xl bg-bg-5-transparent p-6 text-2xl shadow-xl sm:p-12 sm:text-3xl lg:text-3xl xl:w-1/2">
           {content.introduction}
         </p>
         <div className="flex flex-col items-center gap-6 text-center text-lg text-fg-2 md:w-1/3 md:w-full md:items-start md:text-2xl lg:w-2/3 xl:w-1/2 xl:flex-row 2xl:w-1/3">
@@ -25,7 +25,7 @@ export default async function Home(): Promise<React.JSX.Element> {
             href="/portfolio"
             role="button"
             aria-label="Check out Cristina Jiménez's portfolio"
-            className="hover-bg-1 w-2/3 content-center rounded-xl bg-bg-2 p-3 sm:w-1/2 sm:self-stretch"
+            className="hover-bg-1 w-2/3 content-center rounded-xl bg-bg-2 p-3 shadow-xl sm:w-1/2 sm:self-stretch"
           >
             {content.CTA_1}
           </Link>
@@ -33,7 +33,7 @@ export default async function Home(): Promise<React.JSX.Element> {
             href="/resume"
             role="button"
             aria-label="View Cristina Jiménez's career"
-            className="hover-bg-1 w-2/3 content-center rounded-xl bg-bg-2 p-3 sm:w-1/2 sm:self-stretch"
+            className="hover-bg-1 w-2/3 content-center rounded-xl bg-bg-2 p-3 shadow-xl sm:w-1/2 sm:self-stretch"
           >
             {content.CTA_2}
           </Link>

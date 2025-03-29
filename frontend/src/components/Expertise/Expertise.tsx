@@ -19,7 +19,7 @@ export default function Expertise({
 
   return (
     <div
-      className={`m-2 flex max-w-md flex-grow flex-col items-center gap-4 bg-bg-5 p-6 text-center shadow-2xl`}
+      className={`m-2 flex max-w-md flex-grow flex-col items-center gap-4 bg-bg-5 p-6 text-center shadow-xl`}
     >
       <Image
         src={entry.icon}
