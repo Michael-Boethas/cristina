@@ -5,6 +5,7 @@ import ResultsBanner from "../ResultsBanner/ResultsBanner";
 import SocialMediaSection from "components/SocialMediaSection/SocialMediaSection";
 import ArticleItem from "components/ArticleItem/ArticleItem";
 import { IProjectContent } from "types";
+import Carousel from "components/Carousel/Carousel";
 
 interface ProjectLayoutProps {
   label: string;
@@ -17,16 +18,22 @@ export default async function ProjectLayoutV({
   content,
   classes,
 }: ProjectLayoutProps) {
+  // Styling for the project
+  const label_colors = "bg-bg-1 text-fg-2";
+  const results_colors = "bg-bg-1 text-fg-2";
+
   return (
     <article className={classes}>
       <div className="mx-4 flex flex-col sm:px-10 lg:px-12">
-        {/*---------------------------------------------*/}
+        {/*---------------------------------------------------------------------------------------------------*/}
         {/* Label and description + cover/website link if applicable, or label and description only otherwise */}
-        {/*---------------------------------------------*/}
+        {/*---------------------------------------------------------------------------------------------------*/}
         {content.cover_image ? (
           // Responsive label + description + cover
           <div className="flex flex-col items-center gap-8 py-8 lg:gap-12 xl:flex-row xl:items-start xl:gap-20">
-            <h2 className="mb-10 max-w-max self-start rounded-xl bg-bg-4 px-4 py-4 text-4xl text-fg-1 lg:px-12 lg:text-5xl xl:hidden">
+            <h2
+              className={`${label_colors} mb-10 max-w-max self-start rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl xl:hidden`}
+            >
               {label}
             </h2>
             <aside className="relative aspect-square w-[90vw] shadow-2xl xs:w-[60vw] sm:w-[50vw] md:w-[40vw] lg:block">
@@ -47,7 +54,9 @@ export default async function ProjectLayoutV({
               ) : null}
             </aside>
             <div className="flex flex-col gap-6 xl:w-[50vw]">
-              <h2 className="mb-10 hidden max-w-max rounded-xl bg-bg-4 px-4 py-4 text-4xl text-fg-1 lg:px-12 lg:text-5xl xl:block">
+              <h2
+                className={`${label_colors} mb-10 hidden max-w-max rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl xl:block`}
+              >
                 {label}
               </h2>
               <p className="text-xl md:text-2xl">{content.description}</p>
@@ -56,7 +65,9 @@ export default async function ProjectLayoutV({
         ) : (
           // Label and description only
           <div>
-            <h2 className="mb-10 max-w-max rounded-xl bg-bg-1-transparent px-4 py-4 text-4xl text-fg-2 lg:px-12 lg:text-5xl">
+            <h2
+              className={`${label_colors} mb-10 max-w-max rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl`}
+            >
               {label}
             </h2>
             <p
@@ -72,7 +83,7 @@ export default async function ProjectLayoutV({
         )}
 
         {/*---------------------------------------------*/}
-        {/* Youtube Embed if applicable */}
+        {/* Youtube Embed if applicable                 */}
         {/*---------------------------------------------*/}
         {content.video_url ? (
           <YoutubeEmbed
@@ -81,13 +92,14 @@ export default async function ProjectLayoutV({
           />
         ) : null}
 
-        {/* Carousel if applicable  */}
-        {/**/}
-        {/**/}
-        {/**/}
+        {/*-----------------------------------------------------------------*/}
+        {/* LightboxGallery or Carousel for mobile viewports, if applicable */}
+        {/*-----------------------------------------------------------------*/}
+
+        {/* {content.carousel ? <Carousel pictures={content.carousel} /> : null} */}
 
         {/*---------------------------------------------*/}
-        {/* Social Media section if applicable */}
+        {/* Social Media section if applicable          */}
         {/*---------------------------------------------*/}
         {content.social_media_section ? (
           <SocialMediaSection
@@ -98,17 +110,15 @@ export default async function ProjectLayoutV({
       </div>
 
       {/*---------------------------------------------*/}
-      {/* Results Banner if applicable */}
+      {/* Results Banner if applicable                */}
       {/*---------------------------------------------*/}
-
       {content.results && content.results.length > 0 ? (
-        <ResultsBanner results={content.results} classes="bg-bg-1 text-fg-2" />
+        <ResultsBanner results={content.results} classes={results_colors} />
       ) : null}
 
       {/*---------------------------------------------*/}
-      {/* Articles section if applicable  */}
+      {/* Articles section if applicable              */}
       {/*---------------------------------------------*/}
-
       {content.articles && content.articles.length > 0 ? ( // content.articles is always at least an empty array
         <div className="flex flex-col items-center justify-center gap-12 px-10 pb-32 pt-12 sm:flex-row sm:flex-wrap sm:items-baseline sm:items-stretch sm:justify-between lg:px-20 xl:px-28">
           {content.articles?.map((item, index) => {

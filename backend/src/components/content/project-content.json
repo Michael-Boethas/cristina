@@ -23,11 +23,6 @@
     "cover_image": {
       "type": "string"
     },
-    "carousel": {
-      "type": "component",
-      "repeatable": false,
-      "component": "content.carousel"
-    },
     "articles": {
       "type": "component",
       "repeatable": true,
@@ -45,6 +40,11 @@
     },
     "website_url": {
       "type": "string"
+    },
+    "gallery": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.gallery"
     }
   }
 }

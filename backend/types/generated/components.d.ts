@@ -17,24 +17,6 @@ export interface ContentArticle extends Struct.ComponentSchema {
   };
 }
 
-export interface ContentCarousel extends Struct.ComponentSchema {
-  collectionName: 'components_content_carousels';
-  info: {
-    description: '';
-    displayName: 'Carousel';
-  };
-  attributes: {
-    image_1: Schema.Attribute.String & Schema.Attribute.Required;
-    image_2: Schema.Attribute.String;
-    image_3: Schema.Attribute.String;
-    image_4: Schema.Attribute.String;
-    image_5: Schema.Attribute.String;
-    image_6: Schema.Attribute.String;
-    image_7: Schema.Attribute.String;
-    image_8: Schema.Attribute.String;
-  };
-}
-
 export interface ContentEmbed extends Struct.ComponentSchema {
   collectionName: 'components_content_embeds';
   info: {
@@ -43,6 +25,17 @@ export interface ContentEmbed extends Struct.ComponentSchema {
   };
   attributes: {
     url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ContentGallery extends Struct.ComponentSchema {
+  collectionName: 'components_content_galleries';
+  info: {
+    description: '';
+    displayName: 'Gallery';
+  };
+  attributes: {
+    image: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -65,6 +58,17 @@ export interface ContentLinks extends Struct.ComponentSchema {
   };
 }
 
+export interface ContentPictureUrl extends Struct.ComponentSchema {
+  collectionName: 'components_content_picture_urls';
+  info: {
+    description: '';
+    displayName: 'picture_url';
+  };
+  attributes: {
+    image: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ContentProjectContent extends Struct.ComponentSchema {
   collectionName: 'components_content_project_contents';
   info: {
@@ -73,9 +77,9 @@ export interface ContentProjectContent extends Struct.ComponentSchema {
   };
   attributes: {
     articles: Schema.Attribute.Component<'content.article', true>;
-    carousel: Schema.Attribute.Component<'content.carousel', false>;
     cover_image: Schema.Attribute.String;
     description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    gallery: Schema.Attribute.Component<'content.gallery', true>;
     layout: Schema.Attribute.Integer & Schema.Attribute.Required;
     results: Schema.Attribute.Component<'content.results', true>;
     social_media_section: Schema.Attribute.Component<
@@ -128,9 +132,10 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'content.article': ContentArticle;
-      'content.carousel': ContentCarousel;
       'content.embed': ContentEmbed;
+      'content.gallery': ContentGallery;
       'content.links': ContentLinks;
+      'content.picture-url': ContentPictureUrl;
       'content.project-content': ContentProjectContent;
       'content.results': ContentResults;
       'content.social-media-item': ContentSocialMediaItem;

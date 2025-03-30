@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import LayoutV from "components/ProjectLayouts/ProjectLayoutV/ProjectLayoutV";
 import { fetchStrapi } from "utils/utils";
+import LayoutV from "components/ProjectLayouts/ProjectLayoutV/ProjectLayoutV";
 import { IPortfolioItem } from "types";
 import fallbackData from "../../../content/portfolio-page.json";
 

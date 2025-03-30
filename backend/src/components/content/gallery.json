@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_content_galleries",
+  "info": {
+    "displayName": "Gallery",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
