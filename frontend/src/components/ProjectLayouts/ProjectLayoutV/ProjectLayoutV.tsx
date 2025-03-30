@@ -6,6 +6,7 @@ import SocialMediaSection from "components/SocialMediaSection/SocialMediaSection
 import ArticleItem from "components/ArticleItem/ArticleItem";
 import { IProjectContent } from "types";
 import Carousel from "components/Carousel/Carousel";
+import LightboxGallery from "components/LightboxGallery/LightboxGallery";
 
 interface ProjectLayoutProps {
   label: string;
@@ -96,7 +97,18 @@ export default async function ProjectLayoutV({
         {/* LightboxGallery or Carousel for mobile viewports, if applicable */}
         {/*-----------------------------------------------------------------*/}
 
-        {/* {content.carousel ? <Carousel pictures={content.carousel} /> : null} */}
+        {/* Carousel for mobile */}
+        {/* {content.gallery ? (
+          <Carousel pictures={content.gallery} classes="lg:hidden" />
+        ) : null} */}
+
+        {/* Lightbox for large viewports */}
+        {content.gallery ? (
+          <LightboxGallery
+            gallery={content.gallery}
+            classes="hidden lg:flex gap-8 p-20 justify-around"
+          />
+        ) : null}
 
         {/*---------------------------------------------*/}
         {/* Social Media section if applicable          */}

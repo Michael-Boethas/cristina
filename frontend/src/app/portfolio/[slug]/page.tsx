@@ -32,7 +32,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   // Population parameters
   const populateProjects = "populate[projects][populate][project_content]";
   const populateResults = `${populateProjects}[populate][results]`;
-  const populateCarousel = `${populateProjects}[populate][carousel]`;
+  const populateCarousel = `${populateProjects}[populate][gallery]`;
   const populateArticles = `${populateProjects}[populate][articles]`;
   const populateSocialMediaLinks = `${populateProjects}[populate][social_media_section][populate][links]`;
   const populateSocialMediaEmbed = `${populateProjects}[populate][social_media_section][populate][embed]`;
@@ -43,13 +43,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     `${populateCarousel}=*`,
     `${populateArticles}=*`,
     `${populateSocialMediaLinks}=*`,
-    `${populateSocialMediaEmbed}=*`, // Separate the links and embed into distinct parameters
+    `${populateSocialMediaEmbed}=*`,
   ].join("&");
 
   // Final query URL
   const url = `${baseUrl}?${queryParams}`;
 
-  // const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio?populate[projects][populate][project_content][populate][results]=*&populate[projects][populate][project_content][populate][carousel]=*&populate[projects][populate][project_content][populate][articles]=*&populate[projects][populate][project_content][populate][social_media_section][populate][links]=*&populate[projects][populate][project_content][populate][social_media_section][populate][embed]=*`;
+  // const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio?populate[projects][populate][project_content][populate][results]=*&populate[projects][populate][project_content][populate][gallery]=*&populate[projects][populate][project_content][populate][articles]=*&populate[projects][populate][project_content][populate][social_media_section][populate][links]=*&populate[projects][populate][project_content][populate][social_media_section][populate][embed]=*`;
 
   const response = await fetchStrapi(url);
   const projects = response?.projects ?? fallbackData.projects;
@@ -60,24 +60,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   const backButtonColour = "bg-[#222b] hover:bg-[#111c]";
-  const renderLayout = () => {
-    switch (entry?.project_content?.layout) {
-      case 1:
-        return <LayoutV label={entry.label} content={entry.project_content} />;
-      case 2:
-        return <LayoutV label={entry.label} content={entry.project_content} />;
-      case 3:
-        return <LayoutV label={entry.label} content={entry.project_content} />;
-      case 4:
-        return <LayoutV label={entry.label} content={entry.project_content} />;
-      default:
-        return null;
-    }
-  };
 
   return (
     <main className="relative flex min-h-screen flex-col pt-28 lg:pt-36">
-      {renderLayout()}
+      <LayoutV label={entry.label} content={entry.project_content}></LayoutV>
 
       <Link
         href={"/portfolio"}
