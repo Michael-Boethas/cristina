@@ -58,17 +58,6 @@ export interface ContentLinks extends Struct.ComponentSchema {
   };
 }
 
-export interface ContentPictureUrl extends Struct.ComponentSchema {
-  collectionName: 'components_content_picture_urls';
-  info: {
-    description: '';
-    displayName: 'picture_url';
-  };
-  attributes: {
-    image: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface ContentProjectContent extends Struct.ComponentSchema {
   collectionName: 'components_content_project_contents';
   info: {
@@ -80,12 +69,16 @@ export interface ContentProjectContent extends Struct.ComponentSchema {
     cover_image: Schema.Attribute.String;
     description: Schema.Attribute.RichText & Schema.Attribute.Required;
     gallery: Schema.Attribute.Component<'content.gallery', true>;
-    layout: Schema.Attribute.Integer & Schema.Attribute.Required;
     results: Schema.Attribute.Component<'content.results', true>;
     social_media_section: Schema.Attribute.Component<
       'content.social-media-links',
       false
     >;
+    theme: Schema.Attribute.Enumeration<
+      ['theme 1', 'theme 2', 'theme 3', 'theme 4', 'theme 5']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'theme 1'>;
     thumbnail_url: Schema.Attribute.String;
     video_url: Schema.Attribute.String;
     website_url: Schema.Attribute.String;
@@ -95,10 +88,16 @@ export interface ContentProjectContent extends Struct.ComponentSchema {
 export interface ContentResults extends Struct.ComponentSchema {
   collectionName: 'components_content_results';
   info: {
+    description: '';
     displayName: 'Results';
   };
   attributes: {
-    figure: Schema.Attribute.String & Schema.Attribute.Required;
+    figure: Schema.Attribute.BigInteger;
+    figure_type: Schema.Attribute.Enumeration<
+      ['none (number only)', 'percentage (%)', 'growing (+)', 'monetary ($)']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'none (number only)'>;
     text: Schema.Attribute.Text;
   };
 }
@@ -135,7 +134,6 @@ declare module '@strapi/strapi' {
       'content.embed': ContentEmbed;
       'content.gallery': ContentGallery;
       'content.links': ContentLinks;
-      'content.picture-url': ContentPictureUrl;
       'content.project-content': ContentProjectContent;
       'content.results': ContentResults;
       'content.social-media-item': ContentSocialMediaItem;

@@ -12,50 +12,58 @@ export default function LightboxGallery({
   gallery,
   classes,
 }: ILightboxGalleryProps): React.JSX.Element {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-
-  const toggleContent = () => {
-    setIsCollapsed(!isCollapsed);
-  };
+  const [isOpen, setIsOpen] = useState<number | null>(null);
+  const [dimensions, setDimensions] = useState<
+    Record<number, { width: number; height: number; ratio: number }>
+  >({});
 
   return (
     <div className={classes}>
-      {gallery.map((gallery, index) => {
-        return (
-          // Button to open modal
+      {gallery.map((item, index) => (
+        <div key={index}>
+          {/* Button to open modal */}
           <button
-            key={index}
-            className="relative shadow-xl transition hover:scale-[1.15]"
-            onClick={toggleContent}
-            aria-label={`View image`}
+            className="relative shadow-[0_5px_6px_1px_#2229] transition hover:scale-[1.12]"
+            onClick={() => setIsOpen(index)}
+            aria-label={`View image #${index}`}
           >
             <Image
-              src={gallery.image}
+              src={item.image}
               alt={`Gallery image ${index}`}
-              width={439}
-              height={778}
+              width={600}
+              height={600}
+              onLoadingComplete={(img) =>
+                setDimensions((prev) => ({
+                  ...prev,
+                  [index]: {
+                    width: img.naturalWidth,
+                    height: img.naturalHeight,
+                    ratio: img.naturalWidth / img.naturalHeight,
+                  },
+                }))
+              }
             />
-            <div>
-              {/* Modal window */}
-              {!isCollapsed && (
-                <div className="backdrop" onClick={toggleContent}>
-                  <div
-                    className="fade-in"
-                    // Prevent closing modal when clicking inside
-                    onClick={(event) => event.stopPropagation()}
-                  >
-                    <Image
-                      src={gallery.image}
-                      alt={`Gallery image ${index}`}
-                      fill
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
           </button>
-        );
-      })}
+
+          {/* Modal window tied to clicked image */}
+          {isOpen === index && (
+            <div
+              className="backdrop fixed inset-0 flex items-center justify-center"
+              onClick={() => setIsOpen(null)}
+            >
+              <div
+                className={`fade-in relative border-8 border-[#fffa] lg:h-[66vh]`}
+                onClick={(event) => event.stopPropagation()}
+                style={{
+                  aspectRatio: dimensions[index]?.ratio || 1, // Default ratio 1:1 to prevent errors
+                }}
+              >
+                <Image src={item.image} alt={`Gallery image ${index}`} fill />
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

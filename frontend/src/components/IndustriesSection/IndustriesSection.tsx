@@ -29,7 +29,7 @@ export default async function IndustriesSection({
             <Industry
               key={index}
               entry={item}
-              classes="flex w-[80vw] shadow-xl rounded-[32px] overflow-hidden flex-col items-center xs:w-[70vw] sm:w-[33vw] md:w-72"
+              classes="flex w-[80vw] shadow-[0_4px_8px_2px_#1116] rounded-[32px] overflow-hidden flex-col items-center xs:w-[70vw] sm:w-[33vw] md:w-72"
             />
           );
         })}

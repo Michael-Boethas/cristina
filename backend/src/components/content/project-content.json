@@ -6,10 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "layout": {
-      "type": "integer",
-      "required": true
-    },
     "thumbnail_url": {
       "type": "string"
     },
@@ -45,6 +41,18 @@
       "type": "component",
       "repeatable": true,
       "component": "content.gallery"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "theme 1",
+        "theme 2",
+        "theme 3",
+        "theme 4",
+        "theme 5"
+      ],
+      "default": "theme 1",
+      "required": true
     }
   }
 }

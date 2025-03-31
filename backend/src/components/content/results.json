@@ -1,17 +1,28 @@
 {
   "collectionName": "components_content_results",
   "info": {
-    "displayName": "Results"
+    "displayName": "Results",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "figure": {
-      "type": "string",
-      "required": true
-    },
     "text": {
       "type": "text",
       "required": false
+    },
+    "figure": {
+      "type": "biginteger"
+    },
+    "figure_type": {
+      "type": "enumeration",
+      "enum": [
+        "none (number only)",
+        "percentage (%)",
+        "growing (+)",
+        "monetary ($)"
+      ],
+      "default": "none (number only)",
+      "required": true
     }
   }
 }
