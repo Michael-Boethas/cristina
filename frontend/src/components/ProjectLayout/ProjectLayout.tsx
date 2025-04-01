@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import YoutubeEmbed from "components/YoutubeEmbed/YoutubeEmbed";
-import ResultsBanner from "../ResultsBanner/ResultsBanner";
+import ResultsBanner from "../ResultBanner/ResultsBanner";
 import SocialMediaSection from "components/SocialMediaSection/SocialMediaSection";
 import ArticleItem from "components/ArticleItem/ArticleItem";
 import { IProjectContent } from "types";
@@ -20,8 +20,22 @@ export default async function ProjectLayoutV({
   classes,
 }: ProjectLayoutProps) {
   // Styling for the project
-  const label_colors = "bg-bg-1 text-fg-2";
-  const results_colors = "bg-bg-1 text-fg-2";
+
+  const themeStyles: { [key: string]: { label: string; results: string } } = {
+    "theme 1": { label: "bg-bg-1 text-fg-2", results: "bg-bg-1 text-fg-2" },
+    "theme 2": { label: "bg-bg-2 text-fg-2", results: "bg-bg-2 text-fg-2" },
+    "theme 3": { label: "bg-bg-4 text-fg-1", results: "bg-bg-2 text-fg-2" },
+    "theme 4": { label: "bg-bg-4 text-fg-1", results: "bg-bg-4 text-fg-1" },
+  };
+
+  const defaultStyles = {
+    label: "bg-bg-1 text-fg-2",
+    results: "bg-bg-1 text-fg-2",
+  };
+
+  // Assign styles based on content.theme
+  const { label: labelColor, results: resultsColor } =
+    themeStyles[content.theme] || defaultStyles;
 
   return (
     <article className={classes}>
@@ -33,7 +47,7 @@ export default async function ProjectLayoutV({
           // Responsive label + description + cover
           <div className="flex flex-col items-center gap-8 py-8 lg:gap-12 xl:flex-row xl:items-start xl:gap-20">
             <h2
-              className={`${label_colors} mb-10 max-w-max self-start rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl xl:hidden`}
+              className={`${labelColor} mb-10 max-w-max self-start rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl xl:hidden`}
             >
               {label}
             </h2>
@@ -56,7 +70,7 @@ export default async function ProjectLayoutV({
             </aside>
             <div className="flex flex-col gap-6 xl:w-[50vw]">
               <h2
-                className={`${label_colors} mb-10 hidden max-w-max rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl xl:block`}
+                className={`${labelColor} mb-10 hidden max-w-max rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl xl:block`}
               >
                 {label}
               </h2>
@@ -67,7 +81,7 @@ export default async function ProjectLayoutV({
           // Label and description only
           <div>
             <h2
-              className={`${label_colors} mb-10 max-w-max rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl`}
+              className={`${labelColor} mb-10 max-w-max rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl`}
             >
               {label}
             </h2>
@@ -125,7 +139,7 @@ export default async function ProjectLayoutV({
       {/* Results Banner if applicable                */}
       {/*---------------------------------------------*/}
       {content.results && content.results.length > 0 ? (
-        <ResultsBanner results={content.results} classes={results_colors} />
+        <ResultsBanner results={content.results} classes={resultsColor} />
       ) : null}
 
       {/*---------------------------------------------*/}

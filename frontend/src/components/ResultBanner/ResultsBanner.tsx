@@ -35,7 +35,7 @@ export default function ResultsBanner({
               <span className="font--barlow text-5xl font-extrabold lg:text-6xl xl:text-7xl">
                 {`${item.figure.toString()} ${unit}`}
               </span>
-              <span className="font--barlow text-3xl font-normal">
+              <span className="font--barlow text-3xl font-normal lg:text-4xl">
                 {item.text}
               </span>
             </div>

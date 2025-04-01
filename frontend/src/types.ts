@@ -87,7 +87,7 @@ export interface IPortfolioItem {
 }
 
 export interface IProjectContent {
-  readonly layout: number;
+  readonly theme: string;
   readonly thumbnail_url: string;
   readonly description: string;
   readonly website_url?: string;
@@ -117,8 +117,9 @@ export interface IArticleItem {
   readonly link: string;
 }
 export interface IProjectResult {
-  readonly figure: string;
   readonly text: string
+  readonly figure: number;
+  readonly figure_type: string;
 }
 
 /////// Resume ////////////////////////////////

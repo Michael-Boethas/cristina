@@ -48,7 +48,7 @@ export default function LightboxGallery({
           {/* Modal window tied to clicked image */}
           {isOpen === index && (
             <div
-              className="backdrop fixed inset-0 flex items-center justify-center"
+              className="backdrop inset-0 flex items-center justify-center"
               onClick={() => setIsOpen(null)}
             >
               <div
