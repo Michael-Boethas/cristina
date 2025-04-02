@@ -4,9 +4,9 @@ import YoutubeEmbed from "components/YoutubeEmbed/YoutubeEmbed";
 import ResultsBanner from "../ResultBanner/ResultsBanner";
 import SocialMediaSection from "components/SocialMediaSection/SocialMediaSection";
 import ArticleItem from "components/ArticleItem/ArticleItem";
-import { IProjectContent } from "types";
 import Carousel from "components/Carousel/Carousel";
 import LightboxGallery from "components/LightboxGallery/LightboxGallery";
+import { IProjectContent } from "types";
 
 interface ProjectLayoutProps {
   label: string;
@@ -36,6 +36,8 @@ export default async function ProjectLayout({
     label: "bg-bg-1 text-fg-2",
     results: "bg-bg-1 text-fg-2",
   };
+
+  const backButtonColour = "bg-[#222b] hover:bg-[#111c]";
 
   // Assign styles based on content.theme
   const { label: labelColor, results: resultsColor } =
@@ -162,6 +164,18 @@ export default async function ProjectLayout({
           })}
         </div>
       ) : null}
+
+      {/*--------------------------------------*/}
+      {/* Back to portfolio button             */}
+      {/*--------------------------------------*/}
+      <Link
+        href={"/portfolio"}
+        role="button"
+        className={`${backButtonColour} absolute bottom-0 right-0 m-6 max-w-max content-center self-center rounded-xl p-3 text-xl font-semibold text-fg-2 shadow-xl md:self-end lg:p-5 xl:fixed`}
+        aria-label="Go back to portfolio gallery"
+      >
+        Back to my portfolio
+      </Link>
     </article>
   );
 }

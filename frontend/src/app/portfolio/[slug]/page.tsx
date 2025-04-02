@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { fetchStrapi } from "utils/utils";
-import LayoutV from "components/ProjectLayout/ProjectLayout";
+import ProjectLayout from "components/ProjectLayout/ProjectLayout";
 import { IPortfolioItem } from "types";
 import fallbackData from "../../../content/portfolio-page.json";
 
@@ -57,20 +56,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     return notFound(); // 404 if no matching project
   }
 
-  const backButtonColour = "bg-[#222b] hover:bg-[#111c]";
-
   return (
     <main className="relative flex min-h-screen flex-col pt-28 lg:pt-36">
-      <LayoutV label={entry.label} content={entry.project_content}></LayoutV>
-
-      <Link
-        href={"/portfolio"}
-        role="button"
-        className={`${backButtonColour} absolute bottom-0 m-6 max-w-max content-center self-center rounded-xl p-3 text-xl font-semibold text-fg-2 shadow-xl md:self-end lg:p-5 xl:fixed`}
-        aria-label="Go back to portfolio gallery"
-      >
-        Back to my portfolio
-      </Link>
+      <ProjectLayout
+        label={entry.label}
+        content={entry.project_content}
+      ></ProjectLayout>
     </main>
   );
 }
