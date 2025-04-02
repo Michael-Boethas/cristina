@@ -14,14 +14,18 @@ interface ProjectLayoutProps {
   classes?: string;
 }
 
-export default async function ProjectLayoutV({
+export default async function ProjectLayout({
   label,
   content,
   classes,
 }: ProjectLayoutProps) {
   // Styling for the project
 
-  const themeStyles: { [key: string]: { label: string; results: string } } = {
+  interface ThemeStyle {
+    label: string;
+    results: string;
+  }
+  const themeStyles: Record<string, ThemeStyle> = {
     "theme 1": { label: "bg-bg-1 text-fg-2", results: "bg-bg-1 text-fg-2" },
     "theme 2": { label: "bg-bg-2 text-fg-2", results: "bg-bg-2 text-fg-2" },
     "theme 3": { label: "bg-bg-4 text-fg-1", results: "bg-bg-2 text-fg-2" },
@@ -112,14 +116,14 @@ export default async function ProjectLayoutV({
         {/*-----------------------------------------------------------------*/}
 
         {/* Carousel for mobile */}
-        {/* {content.gallery ? (
-          <Carousel pictures={content.gallery} classes="lg:hidden" />
-        ) : null} */}
+        {content.gallery ? (
+          <Carousel imageList={content.gallery} classes="lg:hidden" />
+        ) : null}
 
         {/* Lightbox for large viewports */}
         {content.gallery ? (
           <LightboxGallery
-            gallery={content.gallery}
+            imageList={content.gallery}
             classes="hidden lg:flex gap-8 p-20 justify-around"
           />
         ) : null}

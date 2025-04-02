@@ -18,7 +18,7 @@ export function useFetch<T>(url: string) {
       }
     }
 
-    fetchData(url); // Explicitly passing url
+    fetchData(url);
 
   }, [url]);
 

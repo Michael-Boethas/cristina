@@ -1,28 +1,34 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { IProjectContent } from "types";
 
 interface ICarouselProps {
-  pictures: string[];
+  imageList: IProjectContent["gallery"];
   classes?: string;
 }
 
 export default function Carousel({
-  pictures,
+  imageList,
   classes,
 }: ICarouselProps): React.JSX.Element {
+  const gallery = imageList?.map((item, index) => {
+    return { id: index, img: item.imageUrl };
+  });
+  const [currentImage, setCurrentImage] = useState(0);
+
   return (
     <div className={classes}>
-      {pictures.map((picture, index) => {
-        return (
-          <div key={index} className="">
-            <Image
-              src={picture}
-              alt={`Gallery image ${index}`}
-              width={439}
-              height={778}
-            />
-          </div>
-        );
-      })}
+      <div>
+        <Image
+          src={gallery[currentImage]?.img}
+          // alt={`Gallery image ${index}`}
+          alt=""
+          width={439}
+          height={778}
+        />
+      </div>
     </div>
   );
 }

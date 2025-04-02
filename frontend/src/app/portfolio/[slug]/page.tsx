@@ -32,7 +32,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   // Population parameters
   const populateProjects = "populate[projects][populate][project_content]";
   const populateResults = `${populateProjects}[populate][results]`;
-  const populateCarousel = `${populateProjects}[populate][gallery]`;
+  const populateGallery = `${populateProjects}[populate][gallery]`;
   const populateArticles = `${populateProjects}[populate][articles]`;
   const populateSocialMediaLinks = `${populateProjects}[populate][social_media_section][populate][links]`;
   const populateSocialMediaEmbed = `${populateProjects}[populate][social_media_section][populate][embed]`;
@@ -40,7 +40,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   // Combining the query parameters
   const queryParams = [
     `${populateResults}=*`,
-    `${populateCarousel}=*`,
+    `${populateGallery}=*`,
     `${populateArticles}=*`,
     `${populateSocialMediaLinks}=*`,
     `${populateSocialMediaEmbed}=*`,
@@ -48,8 +48,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   // Final query URL
   const url = `${baseUrl}?${queryParams}`;
-
-  // const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio?populate[projects][populate][project_content][populate][results]=*&populate[projects][populate][project_content][populate][gallery]=*&populate[projects][populate][project_content][populate][articles]=*&populate[projects][populate][project_content][populate][social_media_section][populate][links]=*&populate[projects][populate][project_content][populate][social_media_section][populate][embed]=*`;
 
   const response = await fetchStrapi(url);
   const projects = response?.projects ?? fallbackData.projects;

@@ -2,14 +2,15 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { IProjectContent } from "types";
 
 interface ILightboxGalleryProps {
-  gallery: { image: string }[];
+  imageList: IProjectContent["gallery"];
   classes?: string;
 }
 
 export default function LightboxGallery({
-  gallery,
+  imageList,
   classes,
 }: ILightboxGalleryProps): React.JSX.Element {
   const [isOpen, setIsOpen] = useState<number | null>(null);
@@ -19,7 +20,7 @@ export default function LightboxGallery({
 
   return (
     <div className={classes}>
-      {gallery.map((item, index) => (
+      {imageList?.map((item, index) => (
         <div key={index}>
           {/* Button to open modal */}
           <button
@@ -28,11 +29,12 @@ export default function LightboxGallery({
             aria-label={`View image #${index}`}
           >
             <Image
-              src={item.image}
-              alt={`Gallery image ${index}`}
+              src={item.imageUrl}
+              alt={`Image ${index}`}
               width={600}
               height={600}
-              onLoadingComplete={(img) =>
+              onLoad={(e) => {
+                const img = e.target as HTMLImageElement;
                 setDimensions((prev) => ({
                   ...prev,
                   [index]: {
@@ -40,8 +42,8 @@ export default function LightboxGallery({
                     height: img.naturalHeight,
                     ratio: img.naturalWidth / img.naturalHeight,
                   },
-                }))
-              }
+                }));
+              }}
             />
           </button>
 
@@ -58,7 +60,7 @@ export default function LightboxGallery({
                   aspectRatio: dimensions[index]?.ratio || 1, // Default ratio 1:1 to prevent errors
                 }}
               >
-                <Image src={item.image} alt={`Gallery image ${index}`} fill />
+                <Image src={item.imageUrl} alt={`Image ${index}`} fill />
               </div>
             </div>
           )}

@@ -35,7 +35,7 @@ export interface ContentGallery extends Struct.ComponentSchema {
     displayName: 'Gallery';
   };
   attributes: {
-    image: Schema.Attribute.String & Schema.Attribute.Required;
+    imageUrl: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

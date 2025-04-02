@@ -94,7 +94,7 @@ export interface IProjectContent {
   readonly video_url?: string;
   readonly cover_image?: string;
   readonly social_media_section?: ISocialMediaSection;
-  readonly gallery?: { image: string }[];
+  readonly gallery?: { imageUrl: string }[];
   readonly articles?: IArticleItem[]
   readonly results?: IProjectResult[]
 }
