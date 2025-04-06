@@ -1,12 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
-import YoutubeEmbed from "components/YoutubeEmbed/YoutubeEmbed";
-import ResultsBanner from "../ResultBanner/ResultsBanner";
-import SocialMediaSection from "components/SocialMediaSection/SocialMediaSection";
-import ArticleItem from "components/ArticleItem/ArticleItem";
-import Carousel from "components/Carousel/Carousel";
-import LightboxGallery from "components/LightboxGallery/LightboxGallery";
-import { IProjectContent } from "types";
+import Image from 'next/image';
+import Link from 'next/link';
+import YoutubeEmbed from 'components/YoutubeEmbed/YoutubeEmbed';
+import ResultsBanner from '../ResultBanner/ResultsBanner';
+import SocialMediaSection from 'components/SocialMediaSection/SocialMediaSection';
+import ArticleItem from 'components/ArticleItem/ArticleItem';
+import Carousel from 'components/Carousel/Carousel';
+import LightboxGallery from 'components/LightboxGallery/LightboxGallery';
+import { IProjectContent } from 'types';
 
 interface ProjectLayoutProps {
   label: string;
@@ -14,11 +14,7 @@ interface ProjectLayoutProps {
   classes?: string;
 }
 
-export default async function ProjectLayout({
-  label,
-  content,
-  classes,
-}: ProjectLayoutProps) {
+export default async function ProjectLayout({ label, content, classes }: ProjectLayoutProps) {
   // Styling for the project
 
   interface ThemeStyle {
@@ -26,22 +22,21 @@ export default async function ProjectLayout({
     results: string;
   }
   const themeStyles: Record<string, ThemeStyle> = {
-    "theme 1": { label: "bg-bg-1 text-fg-2", results: "bg-bg-1 text-fg-2" },
-    "theme 2": { label: "bg-bg-2 text-fg-2", results: "bg-bg-2 text-fg-2" },
-    "theme 3": { label: "bg-bg-4 text-fg-1", results: "bg-bg-2 text-fg-2" },
-    "theme 4": { label: "bg-bg-4 text-fg-1", results: "bg-bg-4 text-fg-1" },
+    'theme 1': { label: 'bg-bg-1 text-fg-2', results: 'bg-bg-1 text-fg-2' },
+    'theme 2': { label: 'bg-bg-2 text-fg-2', results: 'bg-bg-2 text-fg-2' },
+    'theme 3': { label: 'bg-bg-4 text-fg-1', results: 'bg-bg-2 text-fg-2' },
+    'theme 4': { label: 'bg-bg-4 text-fg-1', results: 'bg-bg-4 text-fg-1' },
   };
 
   const defaultStyles = {
-    label: "bg-bg-1 text-fg-2",
-    results: "bg-bg-1 text-fg-2",
+    label: 'bg-bg-1 text-fg-2',
+    results: 'bg-bg-1 text-fg-2',
   };
 
-  const backButtonColour = "bg-[#222b] hover:bg-[#111c]";
+  const backButtonColour = 'bg-[#222b] hover:bg-[#111c]';
 
   // Assign styles based on content.theme
-  const { label: labelColor, results: resultsColor } =
-    themeStyles[content.theme] || defaultStyles;
+  const { label: labelColor, results: resultsColor } = themeStyles[content.theme] || defaultStyles;
 
   return (
     <article className={classes}>
@@ -94,8 +89,8 @@ export default async function ProjectLayout({
             <p
               className={
                 content.description.length > 100
-                  ? "text-xl md:text-2xl"
-                  : "text-2xl md:text-3xl lg:text-4xl"
+                  ? 'text-xl md:text-2xl'
+                  : 'text-2xl md:text-3xl lg:text-4xl'
               }
             >
               {content.description}
@@ -118,9 +113,7 @@ export default async function ProjectLayout({
         {/*-----------------------------------------------------------------*/}
 
         {/* Carousel for mobile */}
-        {content.gallery ? (
-          <Carousel imageList={content.gallery} classes="lg:hidden" />
-        ) : null}
+        {content.gallery ? <Carousel imageList={content.gallery} classes="lg:hidden" /> : null}
 
         {/* Lightbox for large viewports */}
         {content.gallery ? (
@@ -169,9 +162,9 @@ export default async function ProjectLayout({
       {/* Back to portfolio button             */}
       {/*--------------------------------------*/}
       <Link
-        href={"/portfolio"}
+        href={'/portfolio'}
         role="button"
-        className={`${backButtonColour} absolute bottom-0 right-0 m-6 max-w-max content-center self-center rounded-xl p-3 text-xl font-semibold text-fg-2 shadow-xl md:self-end lg:p-5 xl:fixed`}
+        className={` ${backButtonColour} absolute bottom-0 left-1/2 mb-6 min-w-max -translate-x-1/2 content-center rounded-xl p-3 text-xl font-semibold text-fg-2 shadow-xl md:left-auto md:right-0 md:m-6 md:translate-x-0 md:self-end lg:p-5 xl:fixed`}
         aria-label="Go back to portfolio gallery"
       >
         Back to my portfolio
