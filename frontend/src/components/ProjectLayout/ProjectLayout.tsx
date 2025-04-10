@@ -113,12 +113,12 @@ export default async function ProjectLayout({ label, content, classes }: Project
         {/*-----------------------------------------------------------------*/}
 
         {/* Carousel for mobile */}
-        {content.gallery ? (
+        {content.gallery && content.gallery.length > 0 ? (
           <Carousel imageList={content.gallery} classes="w-full h-[80vh] lg:hidden" />
         ) : null}
 
         {/* Lightbox for large viewports */}
-        {content.gallery ? (
+        {content.gallery && content.gallery.length > 0 ? (
           <LightboxGallery
             imageList={content.gallery}
             classes="hidden lg:flex gap-8 p-20 justify-around"

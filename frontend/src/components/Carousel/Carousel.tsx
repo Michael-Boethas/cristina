@@ -85,7 +85,7 @@ export default function Carousel({ imageList, classes }: ICarouselProps): React.
           e.stopPropagation();
           handlePrev();
         }}
-        className="fa-sharp-duotone fa-solid fa-circle-chevron-left absolute bottom-1/2 left-2 z-10 text-5xl opacity-50 hover:opacity-80 sm:top-1/2 sm:-translate-y-1/2 lg:text-bg-1 lg:opacity-80"
+        className="fa-sharp-duotone fa-solid fa-circle-chevron-left absolute bottom-1/2 left-2 z-10 text-5xl opacity-50 hover:opacity-80 sm:top-1/2 sm:-translate-y-1/2 lg:hidden lg:text-bg-1 lg:opacity-80"
         aria-label="Previous image"
       />
       {[prevIndex, current, nextIndex].map((index) => (
@@ -105,7 +105,7 @@ export default function Carousel({ imageList, classes }: ICarouselProps): React.
           e.stopPropagation();
           handlePrev();
         }}
-        className="fa-sharp-duotone fa-solid fa-circle-chevron-right absolute bottom-1/2 right-2 z-10 text-5xl opacity-50 hover:opacity-80 sm:top-1/2 sm:-translate-y-1/2 lg:text-bg-1 lg:opacity-80"
+        className="fa-sharp-duotone fa-solid fa-circle-chevron-right absolute bottom-1/2 right-2 z-10 text-5xl opacity-50 hover:opacity-80 sm:top-1/2 sm:-translate-y-1/2 lg:hidden lg:text-bg-1 lg:opacity-80"
         aria-label="Next image"
       />
     </div>
