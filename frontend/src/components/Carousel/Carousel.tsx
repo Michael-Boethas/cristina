@@ -12,106 +12,101 @@ interface ICarouselProps {
 
 export default function Carousel({ imageList, classes }: ICarouselProps): React.JSX.Element {
   const gallery = imageList?.map((item) => item.imageUrl) || [];
-
-  const [aspectRatios, setAspectRatios] = useState<Record<number, number>>({});
-  const [displayed, setDisplayed] = useState<{ current: number; second: number; third: number }>({
-    current: 0,
-    second: 1,
-    third: 2,
-  });
-  const [animation, setAnimation] = useState('');
-
-  // Returns the index that is "steps" away from "current", wrapping around if it goes out of bounds.
-  // Positive "steps" move forward, negative "steps" move backward.
-  function rotateIndex(current: number, total: number, steps: number) {
-    return steps > 0
-      ? (current + steps) % total
-      : steps < 0
-        ? (current + steps + total) % total
-        : current;
-  }
-
   const total = gallery.length;
 
-  // Handling user interactions
-  const handleNext = () => {
-    setAnimation('');
-    setTimeout(() => {
-      setDisplayed({
-        current: rotateIndex(displayed.current, total, 1),
-        second: rotateIndex(displayed.current, total, 2),
-        third: rotateIndex(displayed.current, total, 3),
-      });
-      setAnimation('');
-    }, 300);
-  };
-  const handlePrev = () => {
-    setAnimation('');
-    setTimeout(() => {
-      setDisplayed({
-        current: rotateIndex(displayed.current, total, -1),
-        second: rotateIndex(displayed.current, total, -2),
-        third: rotateIndex(displayed.current, total, -3),
-      });
-      setAnimation('');
-    }, 300);
+  const [current, setCurrent] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const rotateIndex = (index: number, steps: number) => (index + steps + total) % total;
+
+  const prevIndex = rotateIndex(current, -1);
+  const nextIndex = rotateIndex(current, 1);
+
+  const handleNext = () => setCurrent(rotateIndex(current, 1));
+  const handlePrev = () => setCurrent(rotateIndex(current, -1));
+
+  const resetDrag = () => {
+    setIsDragging(false);
+    setDragOffset(0);
   };
 
-  // Simplifying swipes handling with react-swipeable
   const handlers = useSwipeable({
-    onSwipedLeft: handleNext,
-    onSwipedRight: handlePrev,
+    onSwiping: ({ deltaX }) => {
+      setIsDragging(true);
+      setDragOffset(deltaX);
+    },
+    onSwipedLeft: () => {
+      handleNext();
+      resetDrag();
+    },
+    onSwipedRight: () => {
+      handlePrev();
+      resetDrag();
+    },
+    onSwiped: resetDrag,
     trackTouch: true,
+    trackMouse: true,
   });
+
+  const getStyle = (index: number) => {
+    const isCenter = index === current;
+    const isLeft = index === prevIndex;
+    const isRight = index === nextIndex;
+
+    if (!isCenter && !isLeft && !isRight) return { display: 'none' };
+    const baseTranslate = isCenter ? 0 : isLeft ? -120 : 120;
+    const scale = isCenter ? 1 : 0.8;
+    const finalTranslate = isCenter ? dragOffset : 0;
+
+    return {
+      transform: `translateX(${baseTranslate + finalTranslate}px) scale(${scale})`,
+      transition: isDragging ? 'none' : 'opacity 300ms ease, transform 500ms ease',
+      zIndex: isCenter ? 3 : 2,
+      opacity: isCenter ? 1 : 0.9,
+      position: 'absolute' as const,
+      width: '100%',
+      maxHeight: '100%',
+      height: 'auto',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    };
+  };
 
   return (
     <div
       {...handlers}
-      className={`${classes} carousel relative my-8 flex min-h-[80vh] w-full items-center justify-center`}
+      className={`${classes} relative my-16 flex w-full max-w-4xl justify-center overflow-hidden`}
+      onClick={(e) => e.stopPropagation()}
     >
-      {gallery.length > 0 &&
-        gallery.map((entry, index) => {
-          return (
-            <div
-              key={index}
-              className={`${animation} absolute h-[85%] shadow-[0_3px_6px_2px_#2224] ${
-                index === displayed.current
-                  ? 'current'
-                  : index === displayed.second
-                    ? 'second'
-                    : index === displayed.third
-                      ? 'third'
-                      : 'hidden'
-              }`}
-              style={{
-                aspectRatio: aspectRatios[index] ?? 'auto',
-              }}
-            >
-              <Image
-                src={entry}
-                alt="Image"
-                fill
-                className="object-contain"
-                // Getting intrinsic dimensions
-                onLoad={(e) => {
-                  const { naturalWidth, naturalHeight } = e.currentTarget;
-                  const ratio = naturalWidth / naturalHeight;
-                  setAspectRatios((prev) => ({ ...prev, [index]: ratio }));
-                }}
-              />
-            </div>
-          );
-        })}
-      {/* Navigation Buttons */}
       <i
-        onClick={handlePrev}
-        aria-label="button"
-        className="fa-sharp-duotone fa-solid fa-circle-chevron-left absolute bottom-0 left-[33%] text-3xl"
+        onClick={(e) => {
+          e.stopPropagation();
+          handlePrev();
+        }}
+        className="fa-sharp-duotone fa-solid fa-circle-chevron-left absolute bottom-1/2 left-2 z-10 text-5xl opacity-50 hover:opacity-80 sm:top-1/2 sm:-translate-y-1/2 lg:text-bg-1 lg:opacity-80"
+        aria-label="Previous image"
       />
+      {[prevIndex, current, nextIndex].map((index) => (
+        <div key={index} style={getStyle(index)}>
+          <Image
+            src={gallery[index]}
+            alt="carousel image"
+            width={600}
+            height={800}
+            className="max-h-[75vh] object-contain transition-all"
+            priority={index === current}
+          />
+        </div>
+      ))}
       <i
-        onClick={handleNext}
-        aria-label="button"
-        className="fa-sharp-duotone fa-solid fa-circle-chevron-right absolute bottom-0 right-[33%] text-3xl"
+        onClick={(e) => {
+          e.stopPropagation();
+          handlePrev();
+        }}
+        className="fa-sharp-duotone fa-solid fa-circle-chevron-right absolute bottom-1/2 right-2 z-10 text-5xl opacity-50 hover:opacity-80 sm:top-1/2 sm:-translate-y-1/2 lg:text-bg-1 lg:opacity-80"
+        aria-label="Next image"
       />
     </div>
   );

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import { IProjectContent } from "types";
+import { useState } from 'react';
+import Image from 'next/image';
+import { IProjectContent } from 'types';
 
 interface ILightboxGalleryProps {
-  imageList: IProjectContent["gallery"];
+  imageList: IProjectContent['gallery'];
   classes?: string;
 }
 
@@ -47,7 +47,7 @@ export default function LightboxGallery({
             />
           </button>
 
-          {/* Modal window tied to clicked image */}
+          {/* Modal window */}
           {isOpen === index && (
             <div
               className="backdrop inset-0 flex items-center justify-center"
@@ -57,7 +57,7 @@ export default function LightboxGallery({
                 className={`fade-in relative border-8 border-[#fffa] lg:h-[66vh]`}
                 onClick={(event) => event.stopPropagation()}
                 style={{
-                  aspectRatio: dimensions[index]?.ratio || 1, // Default ratio 1:1 to prevent errors
+                  aspectRatio: dimensions[index]?.ratio || 1,
                 }}
               >
                 <Image src={item.imageUrl} alt={`Image ${index}`} fill />
