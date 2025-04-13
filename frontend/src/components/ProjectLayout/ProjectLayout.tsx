@@ -33,7 +33,7 @@ export default async function ProjectLayout({ label, content, classes }: Project
     results: 'bg-bg-1 text-fg-2',
   };
 
-  const backButtonColour = 'bg-[#222b] hover:bg-[#111c]';
+  const backButtonColour = 'bg-[#221b] hover:bg-[#111c]';
 
   // Assign styles based on content.theme
   const { label: labelColor, results: resultsColor } = themeStyles[content.theme] || defaultStyles;
