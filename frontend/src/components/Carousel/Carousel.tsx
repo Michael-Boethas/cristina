@@ -65,7 +65,7 @@ export default function Carousel({ imageList, classes }: ICarouselProps): React.
       zIndex: isCenter ? 3 : 2,
       opacity: isCenter ? 1 : 0.9,
       position: 'absolute' as const,
-      width: '100%',
+      // width: '100%',
       maxHeight: '100%',
       height: 'auto',
       display: 'flex',
@@ -95,7 +95,7 @@ export default function Carousel({ imageList, classes }: ICarouselProps): React.
             alt="carousel image"
             width={600}
             height={800}
-            className="max-h-[75vh] object-contain transition-all"
+            className={`max-h-[75vh] w-auto object-contain transition-all ${index === current ? 'shadow-[0_10px_10px_1px_#000b]' : 'shadow-[0_3px_3px_1px_#000b]'}`}
             priority={index === current}
           />
         </div>
@@ -103,7 +103,7 @@ export default function Carousel({ imageList, classes }: ICarouselProps): React.
       <i
         onClick={(e) => {
           e.stopPropagation();
-          handlePrev();
+          handleNext();
         }}
         className="fa-sharp-duotone fa-solid fa-circle-chevron-right absolute bottom-1/2 right-2 z-10 text-5xl opacity-50 hover:opacity-80 sm:top-1/2 sm:-translate-y-1/2 lg:hidden lg:text-bg-1 lg:opacity-80"
         aria-label="Next image"

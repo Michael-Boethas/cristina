@@ -24,7 +24,7 @@ export default function LightboxGallery({
         <div key={index}>
           {/* Button to open modal */}
           <button
-            className="relative shadow-[0_5px_6px_1px_#2229] transition hover:scale-[1.12]"
+            className="relative shadow-[0_3px_3px_1px_#2229] transition hover:scale-[1.12] hover:shadow-[0_10px_10px_1px_#2229]"
             onClick={() => setIsOpen(index)}
             aria-label={`View image #${index}`}
           >
@@ -54,7 +54,7 @@ export default function LightboxGallery({
               onClick={() => setIsOpen(null)}
             >
               <div
-                className={`fade-in relative border-8 border-[#fffa] lg:h-[66vh]`}
+                className={`fade-in relative lg:h-[66vh]`}
                 onClick={(event) => event.stopPropagation()}
                 style={{
                   aspectRatio: dimensions[index]?.ratio || 1,

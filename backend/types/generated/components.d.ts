@@ -1,5 +1,15 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContentAboutImages extends Struct.ComponentSchema {
+  collectionName: 'components_content_about_images';
+  info: {
+    displayName: 'aboutImages';
+  };
+  attributes: {
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface ContentArticle extends Struct.ComponentSchema {
   collectionName: 'components_content_articles';
   info: {
@@ -130,6 +140,7 @@ export interface ContentSocialMediaLinks extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'content.about-images': ContentAboutImages;
       'content.article': ContentArticle;
       'content.embed': ContentEmbed;
       'content.gallery': ContentGallery;

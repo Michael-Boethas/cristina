@@ -1,11 +1,25 @@
-export default function AboutDecoration(): React.JSX.Element {
+import Image from 'next/image';
+
+interface IAboutDecorationProps {
+  imageList: string[];
+  classes?: string;
+}
+
+export default function AboutDecoration({
+  imageList,
+  classes,
+}: IAboutDecorationProps): React.JSX.Element {
   return (
-    <div className="about__decoration" aria-hidden="true">
-      <div className="shadow-mdl"></div>
-      <div className="shadow-md"></div>
-      <div className="shadow-md"></div>
-      <div className="shadow-md"></div>
-      <div className="shadow-md"></div>
+    <div className={`${classes} about__decoration`} aria-hidden="true">
+      {imageList.map((src, index) => (
+        <Image
+          key={index}
+          src={src}
+          alt={`Image representing Cristina #${index + 1}`}
+          width={600}
+          height={800}
+        />
+      ))}
     </div>
   );
 }

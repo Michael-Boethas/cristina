@@ -24,6 +24,12 @@
     "text": {
       "type": "richtext",
       "required": true
+    },
+    "aboutImages": {
+      "displayName": "aboutImages",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.about-images"
     }
   }
 }

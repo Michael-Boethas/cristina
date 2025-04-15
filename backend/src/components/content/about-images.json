@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_content_about_images",
+  "info": {
+    "displayName": "aboutImages"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    }
+  }
+}

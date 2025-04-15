@@ -70,6 +70,7 @@ export interface IAboutPageData {
   readonly title: string;
   readonly intro: string;
   readonly text: string;
+  readonly aboutImages: string[];
 }
 
 /////// Portfolio ////////////////////////////////

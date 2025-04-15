@@ -40,7 +40,7 @@ export default async function ProjectLayout({ label, content, classes }: Project
 
   return (
     <article className={classes}>
-      <div className="mx-4 flex flex-col sm:px-10 lg:px-12">
+      <div className="mx-4 flex flex-col sm:px-10 lg:px-12 xl:px-20 2xl:px-40">
         {/*---------------------------------------------------------------------------------------------------*/}
         {/* Label and description + cover/website link if applicable, or label and description only otherwise */}
         {/*---------------------------------------------------------------------------------------------------*/}

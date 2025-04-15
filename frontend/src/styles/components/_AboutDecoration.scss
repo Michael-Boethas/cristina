@@ -1,65 +1,74 @@
 .about__decoration {
   position: relative;
   display: none;
-  margin: 12% 0 0 8%;
-
-  @screen md {
-    width: 35vw;
-    aspect-ratio: 4 / 3;
-  }
-
-  @screen lg {
-    display: block;
-    scale: 95%;
-  }
+  max-height: 100%;
+  aspect-ratio: 3/4;
 
   @screen xl {
-    margin: 8% 0 0 8%;
-    scale: 90%;
+    display: block;
+    scale: 70%;
   }
 
-  @screen 2xl {
-    margin: 5% 0 0 8%;
-    scale: 85%;
-  }
-
-  div {
+  img {
     position: absolute;
-    width: 50%;
+    inset: -20%;
+    box-shadow: 0 10px 10px 1px #000b;
+    transition: transform 300ms ease;
+
+    &:hover {
+      z-index: 2;
+      box-shadow: 0 5px 12px 5px #000b;
+    }
   }
 
-  div:nth-child(1) {
-    background: var(--bg-1);
+  img:nth-child(1) {
     aspect-ratio: 2.42 / 2.98;
-    scale: 100%;
+    scale: 66%;
     transform: rotate(352.4deg) translate(0, 8%);
+
+    &:hover {
+      transform: rotate(356deg) translate(0%, 8%) scale(1.1);
+    }
   }
 
-  div:nth-child(2) {
-    background: var(--bg-2);
+  img:nth-child(2) {
     aspect-ratio: 2.38 / 2.32;
-    scale: 96%;
+    scale: 64%;
     transform: rotate(8deg) translate(100%, 0%);
+
+    &:hover {
+      transform: rotate(6deg) translate(95%, 0%) scale(1.1);
+    }
   }
 
-  div:nth-child(3) {
-    background: var(--bg-3);
+  img:nth-child(3) {
     aspect-ratio: 2.42 / 2.98;
-    scale: 100%;
-    transform: rotate(11deg) translate(20%, 68%);
+    scale: 66%;
+    transform: rotate(8deg) translate(32%, 59%);
+
+    &:hover {
+      transform: rotate(4deg) translate(20%, 68%) scale(1.1);
+    }
   }
 
-  div:nth-child(4) {
-    background: var(--bg-4);
+  img:nth-child(4) {
     aspect-ratio: 2.1 / 2.4;
-    scale: 89%;
-    transform: rotate(344deg) translate(78%, 105%);
+    scale: 60%;
+    transform: rotate(350deg) translate(84%, 100%);
+
+    &:hover {
+      transform: rotate(354deg) translate(84%, 100%) scale(1.1);
+    }
   }
 
-  div:nth-child(5) {
-    background: var(--bg-1);
+  img:nth-child(5) {
     aspect-ratio: 2.1 / 2.4;
-    scale: 89%;
+    scale: 60%;
     transform: rotate(341deg) translate(20%, 145%);
+
+    &:hover {
+      transform: rotate(350deg) translate(45%, 136%) scale(1.1);
+    }
+
   }
 }
