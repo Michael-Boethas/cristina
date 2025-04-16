@@ -49,7 +49,7 @@ export default function Carousel({ imageList, classes }: ICarouselProps): React.
     trackMouse: true,
   });
 
-  const getStyle = (index: number) => {
+  function getStyle(index: number): React.CSSProperties {
     const isCenter = index === current;
     const isLeft = index === prevIndex;
     const isRight = index === nextIndex;
@@ -64,15 +64,14 @@ export default function Carousel({ imageList, classes }: ICarouselProps): React.
       transition: isDragging ? 'none' : 'opacity 300ms ease, transform 500ms ease',
       zIndex: isCenter ? 3 : 2,
       opacity: isCenter ? 1 : 0.9,
-      position: 'absolute' as const,
-      // width: '100%',
+      position: 'absolute',
       maxHeight: '100%',
       height: 'auto',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
     };
-  };
+  }
 
   return (
     <div

@@ -1,10 +1,10 @@
 {
-  "title": "[FALLBACK DATA] Here’s a selection of projects I’ve worked on across different industries.",
+  "title": "Here’s a selection of projects I’ve worked on across different industries.",
   "tagline": "Each project reflects my passion for storytelling and strategic communication.",
   "projects": [
     {
       "slug": "mazars-sustainability-campaign",
-      "label": "[FALLBACK DATA] Mazars’ Sustainability Campaign",
+      "label": "Mazars’ Sustainability Campaign",
       "project_content": {
         "layout": 1,
         "thumbnail_url": "/images/portfolio/thumbnails/mazars_sustainability_campaign.webp",
@@ -24,7 +24,7 @@
     },
     {
       "slug": "net-zero-internal-campaign",
-      "label": "[FALLBACK DATA] Net Zero Internal Campaign",
+      "label": "Net Zero Internal Campaign",
       "project_content": {
         "layout": 1,
         "thumbnail_url": "/images/portfolio/thumbnails/net_zero_internal_campaign.webp",
@@ -40,7 +40,7 @@
     },
     {
       "slug": "breast-cancer-campaign-EMEA-2022",
-      "label": "[FALLBACK DATA] Cancer Campaign EMEA 2022",
+      "label": "Cancer Campaign EMEA 2022",
       "project_content": {
         "layout": 2,
         "thumbnail_url": "/images/portfolio/thumbnails/breast_cancer_campaign_EMEA_2022.webp",
@@ -82,7 +82,7 @@
     },
     {
       "slug": "monthly-key-open-positions",
-      "label": "[FALLBACK DATA] Monthly Key Open Positions",
+      "label": "Monthly Key Open Positions",
       "project_content": {
         "layout": 3,
         "thumbnail_url": "/images/portfolio/thumbnails/monthly_key_open_positions.webp",
@@ -104,7 +104,7 @@
     },
     {
       "slug": "biodiversity-stories",
-      "label": "[FALLBACK DATA] Biodiversity Stories",
+      "label": "Biodiversity Stories",
       "project_content": {
         "layout": 4,
         "thumbnail_url": "/images/portfolio/thumbnails/biodiversity_stories.webp",
@@ -157,7 +157,7 @@
     },
     {
       "slug": "let-s-talk-about-biodiversity",
-      "label": "[FALLBACK DATA] Let's Talk About Biodiversity",
+      "label": "Let's Talk About Biodiversity",
       "project_content": {
         "layout": 4,
         "thumbnail_url": "/images/portfolio/thumbnails/let_s_talk_about_biodiversity.webp",

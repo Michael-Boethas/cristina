@@ -1,16 +1,14 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import { IExpertiseItem } from "../../types";
+import { useState } from 'react';
+import Image from 'next/image';
+import { IExpertiseItem } from '../../types';
 
-interface ExpertiseProps {
+interface IExpertiseProps {
   entry: IExpertiseItem;
 }
 
-export default function Expertise({
-  entry,
-}: ExpertiseProps): React.JSX.Element {
+export default function Expertise({ entry }: IExpertiseProps): React.JSX.Element {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleContent = () => {
@@ -31,13 +29,11 @@ export default function Expertise({
       <h3 className="md:min-h-[80px]">{entry.label}</h3>
       <button
         onClick={toggleContent}
-        aria-label={isCollapsed ? "Expand content" : "Collapse content"}
+        aria-label={isCollapsed ? 'Expand content' : 'Collapse content'}
       >
         <i className="hover-pop hover-text-1 fa-sharp fa-solid fa-plus" />
       </button>
-      <p
-        className={`text-[80%] md:max-w-sm ${isCollapsed ? "text--collapsed" : "text--expanded"}`}
-      >
+      <p className={`text-[80%] md:max-w-sm ${isCollapsed ? 'text--collapsed' : 'text--expanded'}`}>
         {entry.text}
       </p>
     </div>

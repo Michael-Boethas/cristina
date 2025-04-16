@@ -21,9 +21,9 @@ export default function ArticlesItem({ entry, classes }: IArticlesItemProps): Re
 
       <div className="flex h-full flex-grow flex-col justify-between gap-4 p-2">
         <div className="flex flex-col gap-4">
-          <h4 className="font--barlow hover-text-1 text-2xl font-medium lg:text-3xl">
+          <h2 className="font--barlow hover-text-1 text-2xl font-medium lg:text-3xl">
             {entry.title}
-          </h4>
+          </h2>
           {/* For press releases only */}
           {entry.preview_text && (
             <p className="fading-text line-clamp-5 text-lg">{`${entry.preview_text}`}</p>

@@ -34,7 +34,7 @@ export default function LightboxGallery({
               width={600}
               height={600}
               onLoad={(e) => {
-                const img = e.target as HTMLImageElement;
+                const img = e.currentTarget;
                 setDimensions((prev) => ({
                   ...prev,
                   [index]: {

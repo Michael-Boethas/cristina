@@ -1,13 +1,11 @@
-import Link from "next/link";
-import { ITimelineItem } from "types";
+import Link from 'next/link';
+import { ITimelineItem } from 'types';
 
-interface TimelineItemProps {
+interface ITimelineItemProps {
   entry: ITimelineItem;
 }
 
-export default function TimelineItem({
-  entry,
-}: TimelineItemProps): React.JSX.Element {
+export default function TimelineItem({ entry }: ITimelineItemProps): React.JSX.Element {
   return (
     <div className="flex border-l-2 border-bg-4 py-10">
       <div className="float-left h-[30px] min-w-[30px] -translate-x-4 rounded-full bg-bg-4">

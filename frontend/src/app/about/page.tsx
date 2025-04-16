@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import AboutDecoration from '../../components/AboutDecoration/AboutDecoration';
 import { IAboutPageData } from 'types';
 import { fetchStrapi } from 'utils/utils';
@@ -16,9 +17,23 @@ export default async function About(): Promise<React.JSX.Element> {
         className="flex flex-col p-5 text-lg sm:px-12 sm:text-xl md:px-16 md:text-2xl lg:px-24 xl:max-w-[66vw]"
         aria-label="Section describing Cristina Jiménez"
       >
-        <h2 className="py-8 text-4xl italic md:text-5xl">{content.title}</h2>
-        <em className="text-xl sm:text-2xl md:text-3xl">{content.intro}</em>
-        <p>{content.text}</p>
+        <h2 className="py-6 text-4xl italic md:text-5xl">{content.title}</h2>
+
+        {/* Text content with wrapped image */}
+        <p className="relative">
+          {/* Image for mobile viewports */}
+          <Image
+            src={content.aboutImages[content.aboutImages.length - 1].url}
+            alt="Picture of Cristina Jiménez"
+            width={300}
+            height={400}
+            className="my-8 aspect-square object-cover sm:ms-8 md:float-right md:ms-16 xl:hidden"
+          />
+          {/* Intro text */}
+          <em className="my-4 block text-xl sm:text-2xl md:text-3xl">{content.intro}</em>
+
+          {content.text}
+        </p>
       </section>
     </main>
   );

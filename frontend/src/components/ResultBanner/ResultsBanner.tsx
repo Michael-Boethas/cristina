@@ -1,12 +1,15 @@
 import AnimatedFigure from 'components/AnimatedFigure/AnimatedFigure';
 import { IProjectResult } from 'types';
 
-interface ResultsBannerProps {
+interface IResultsBannerProps {
   results: IProjectResult[];
   classes: string;
 }
 
-export default function ResultsBanner({ results, classes }: ResultsBannerProps): React.JSX.Element {
+export default function ResultsBanner({
+  results,
+  classes,
+}: IResultsBannerProps): React.JSX.Element {
   return (
     <div className={`${classes} flex w-full flex-col items-center p-4 font-semibold`}>
       <h3 className="pb-8 pt-4 text-4xl font-normal lg:text-4xl xl:text-5xl">Results</h3>

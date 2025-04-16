@@ -63,14 +63,13 @@ export interface ICompanyItem {
   readonly text: string;
 }
 
-
 /////// About /////////////////////////////////
 
 export interface IAboutPageData {
   readonly title: string;
   readonly intro: string;
   readonly text: string;
-  readonly aboutImages: string[];
+  readonly aboutImages: { url: string }[];
 }
 
 /////// Portfolio ////////////////////////////////
@@ -96,14 +95,14 @@ export interface IProjectContent {
   readonly cover_image?: string;
   readonly social_media_section?: ISocialMediaSection;
   readonly gallery?: { imageUrl: string }[];
-  readonly articles?: IArticleItem[]
-  readonly results?: IProjectResult[]
+  readonly articles?: IArticleItem[];
+  readonly results?: IProjectResult[];
 }
 
 export interface ISocialMediaSection {
   readonly label: string;
-  readonly links: ISocialMediaLink[]
-  readonly embed: { url: string }[]
+  readonly links: ISocialMediaLink[];
+  readonly embed: { url: string }[];
 }
 
 export interface ISocialMediaLink {
@@ -118,13 +117,12 @@ export interface IArticleItem {
   readonly link: string;
 }
 export interface IProjectResult {
-  readonly text: string
+  readonly text: string;
   readonly figure: number;
   readonly figure_type: string;
 }
 
 /////// Resume ////////////////////////////////
-
 
 export interface IResumePageData {
   readonly title: string;

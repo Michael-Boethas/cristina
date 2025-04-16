@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { triggerOnVisible } from 'utils/utils';
+import useOnVisible from 'hooks/useOnVisible';
 
 interface IAnimatedFigureProps {
   value: number;
@@ -10,36 +10,12 @@ interface IAnimatedFigureProps {
 }
 
 export default function AnimatedFigure({ value, duration = 800, className }: IAnimatedFigureProps) {
-  const [shouldAnimate, setShouldAnimate] = useState(false);
   const [displayValue, setDisplayValue] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
+  const [ref, isVisible] = useOnVisible(0.05, true);
   const startTimestamp = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
-
-    const cleanup = triggerOnVisible(ref.current, 'triggered');
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldAnimate(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.05 }
-    );
-
-    observer.observe(ref.current);
-
-    return () => {
-      cleanup();
-      observer.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!shouldAnimate) return;
+    if (!isVisible) return;
 
     const step = (timestamp: number) => {
       if (!startTimestamp.current) startTimestamp.current = timestamp;
@@ -55,7 +31,7 @@ export default function AnimatedFigure({ value, duration = 800, className }: IAn
     };
 
     requestAnimationFrame(step);
-  }, [shouldAnimate, value, duration]);
+  }, [isVisible, value, duration]); // isVisible triggers the animation
 
   return (
     <span ref={ref} className={className}>

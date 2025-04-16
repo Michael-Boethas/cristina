@@ -1,41 +1,41 @@
-"use client";
+'use client';
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
-interface NavProps {
+interface INavProps {
   classes: string;
 }
 
-export default function Nav({ classes }: NavProps): React.JSX.Element {
+export default function Nav({ classes }: INavProps): React.JSX.Element {
   const pathname = usePathname();
 
   return (
     <nav className={classes}>
       <Link
         href="/home"
-        className={`${pathname === "/home" ? "border-b-4 border-b-bg-1" : ""}`}
+        className={`${pathname === '/home' ? 'border-b-4 border-b-bg-1' : ''}`}
         aria-label="Navigate to Home page"
       >
         <span>Home</span>
       </Link>
       <Link
         href="/about"
-        className={`${pathname === "/about" ? "border-b-4 border-b-bg-1" : ""}`}
+        className={`${pathname === '/about' ? 'border-b-4 border-b-bg-1' : ''}`}
         aria-label="Navigate to About page"
       >
         <span>About</span>
       </Link>
       <Link
         href="/portfolio"
-        className={`${pathname.startsWith("/portfolio") ? "border-b-4 border-b-bg-1" : ""}`}
+        className={`${pathname.startsWith('/portfolio') ? 'border-b-4 border-b-bg-1' : ''}`}
         aria-label="Navigate to Portfolio"
       >
         <span>Portfolio</span>
       </Link>
       <Link
         href="/resume"
-        className={`${pathname === "/resume" ? "border-b-4 border-b-bg-1" : ""}`}
+        className={`${pathname === '/resume' ? 'border-b-4 border-b-bg-1' : ''}`}
         aria-label="Navigate to Resume"
       >
         <span>Resume</span>

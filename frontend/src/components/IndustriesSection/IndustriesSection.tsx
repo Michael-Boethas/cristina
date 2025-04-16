@@ -1,18 +1,17 @@
-import Link from "next/link";
-import Industry from "components/Industry/Industry";
-import { fetchStrapi } from "utils/utils";
-import { IIndustryItem, IIndustriesSectionData } from "../../types";
-import fallbackData from "../../content/industries-section.json" assert { type: "json" };
-interface IndustriesSectionProps {
+import Link from 'next/link';
+import Industry from 'components/Industry/Industry';
+import { fetchStrapi } from 'utils/utils';
+import { IIndustryItem, IIndustriesSectionData } from '../../types';
+import fallbackData from '../../content/industries-section.json' assert { type: 'json' };
+interface IIndustriesSectionProps {
   classes?: string;
 }
 
 export default async function IndustriesSection({
   classes,
-}: IndustriesSectionProps): Promise<React.JSX.Element> {
+}: IIndustriesSectionProps): Promise<React.JSX.Element> {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/industries-section?populate[industries][populate]=companies`;
-  const content: IIndustriesSectionData =
-    (await fetchStrapi(url)) ?? fallbackData;
+  const content: IIndustriesSectionData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (
     <section
@@ -28,6 +27,7 @@ export default async function IndustriesSection({
           return (
             <Industry
               key={index}
+              index={index}
               entry={item}
               classes="flex w-[80vw] shadow-[0_4px_8px_2px_#1116] rounded-[32px] overflow-hidden flex-col items-center xs:w-[70vw] sm:w-[33vw] md:w-72"
             />

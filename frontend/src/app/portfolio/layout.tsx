@@ -1,12 +1,10 @@
-import Metadata from "../Metadata";
+import Metadata from '../Metadata';
 
-interface PortfolioLayoutProps {
+interface IPortfolioLayoutProps {
   children: React.ReactNode;
 }
 
-export default function PortfolioLayout({
-  children,
-}: PortfolioLayoutProps): React.JSX.Element {
+export default function PortfolioLayout({ children }: IPortfolioLayoutProps): React.JSX.Element {
   return (
     <>
       <Metadata

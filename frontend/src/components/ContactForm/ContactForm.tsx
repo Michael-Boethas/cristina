@@ -1,15 +1,14 @@
-"use client"; // For the formspree submission hook
+'use client'; // For the formspree submission hook
 
-import React from "react";
-import { useForm, ValidationError } from "@formspree/react";
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm("mwpvbloo");
+  const [state, handleSubmit] = useForm('mwpvbloo');
   if (state.succeeded) {
     return (
       <p className="p-4 pt-8 text-2xl sm:pt-16 md:text-3xl">
-        Thank you for your message, I will review it and get back to you shortly
-        !
+        Thank you for your message, I will review it and get back to you shortly !
       </p>
     );
   }

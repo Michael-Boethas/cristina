@@ -13,7 +13,8 @@
     position: absolute;
     inset: -20%;
     box-shadow: 0 10px 10px 1px #000b;
-    transition: transform 300ms ease;
+    transition: all 300ms ease;
+    opacity: 0;
 
     &:hover {
       z-index: 2;
@@ -69,6 +70,5 @@
     &:hover {
       transform: rotate(350deg) translate(45%, 136%) scale(1.1);
     }
-
   }
 }

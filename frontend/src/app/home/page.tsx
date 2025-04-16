@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import ExpertiseSection from 'components/ExpertiseSection/ExpertiseSection';
 import IndustriesSection from 'components/IndustriesSection/IndustriesSection';
 import ContactForm from 'components/ContactForm/ContactForm';
@@ -79,6 +80,23 @@ export default async function Home(): Promise<React.JSX.Element> {
           </Link>
         </div>
       </section>
+      <footer className="flex min-h-[120px] w-full justify-center bg-[#545] text-xl font-semibold text-fg-2 md:text-2xl">
+        <Link
+          href="https://mishmesh.vercel.app"
+          target="_blank"
+          className="flex items-center gap-4"
+        >
+          <span className="hover:text-bg-1">Developed by </span>
+          <Image
+            src="/favicon.svg"
+            alt="Link to the portfolio of professional web developer Michaël Boëthas"
+            height={64}
+            width={64}
+            unoptimized
+            className="hover-pop text-sm font-normal"
+          />
+        </Link>
+      </footer>
     </main>
   );
 }

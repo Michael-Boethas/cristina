@@ -1,5 +1,5 @@
-"use client";
-import useInstagramEmbed from "hooks/useInstagramEmbed";
+'use client';
+import useInstagramEmbed from 'hooks/useInstagramEmbed';
 
 interface IInstagramEmbedProps {
   postUrl: string;

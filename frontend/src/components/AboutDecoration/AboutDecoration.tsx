@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import { IAboutPageData } from 'types';
 
 interface IAboutDecorationProps {
-  imageList: ({ url: string } | string)[];
+  imageList: IAboutPageData['aboutImages'];
   classes?: string;
 }
 
@@ -12,12 +13,13 @@ export default function AboutDecoration({
   return (
     <div className={`${classes} about__decoration`} aria-hidden="true">
       {imageList.map((image, index) => {
-        const src = typeof image === 'string' ? image : image.url;
         return (
           <Image
             key={index}
-            src={src}
-            alt={`Image representing Cristina #${index + 1}`}
+            src={image.url}
+            alt={`Image representing Cristina Jiménez #${index + 1}`}
+            className={`fade-in`}
+            style={{ animationDelay: `${index * 250}ms` }}
             width={600}
             height={800}
           />

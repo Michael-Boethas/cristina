@@ -1,9 +1,9 @@
-interface PreviewPDFProps {
+interface IPreviewPDFProps {
   pdf: string;
   classes?: string;
 }
 
-export default function PreviewPDF({ pdf, classes }: PreviewPDFProps): React.JSX.Element {
+export default function PreviewPDF({ pdf, classes }: IPreviewPDFProps): React.JSX.Element {
   return (
     <div className={classes}>
       <iframe

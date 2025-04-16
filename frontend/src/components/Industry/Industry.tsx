@@ -1,27 +1,33 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { IIndustryItem, ICompanyItem } from "../../types";
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import useOnVisible from 'hooks/useOnVisible';
+import { IIndustryItem, ICompanyItem } from '../../types';
 
-interface IndustryProps {
+interface IIndustryProps {
   entry: IIndustryItem;
+  index: number;
   classes: string;
 }
 
-export default function Industry({
-  entry,
-  classes,
-}: IndustryProps): React.JSX.Element {
+export default function Industry({ entry, index, classes }: IIndustryProps): React.JSX.Element {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [industryRef, isVisible] = useOnVisible(0.05, true);
 
   const toggleContent = () => {
     setIsCollapsed(!isCollapsed);
   };
 
   return (
-    <div className={classes}>
+    <div
+      ref={industryRef}
+      style={{ transitionDelay: `${index * 120}ms` }}
+      className={`${classes} transition-none ease-out xl:transition-all xl:duration-[500ms] ${
+        isVisible ? 'translate-x-0 opacity-100' : 'translate-x-[100%] opacity-0'
+      }`}
+    >
       {/* Button to open modal */}
       <button
         className="relative aspect-square w-full border border-[2px] border-bg-2 bg-bg-2"
@@ -49,9 +55,7 @@ export default function Industry({
           >
             {/* Modal header */}
             <div className="flex items-start justify-between">
-              <h3 className="sm:opacity-1 ps-3 text-3xl sm:text-4xl">
-                {entry.label}
-              </h3>
+              <h3 className="sm:opacity-1 ps-3 text-3xl sm:text-4xl">{entry.label}</h3>
               <button aria-label="Close button" onClick={toggleContent}>
                 <i className="hover-text-1 fa-solid fa-xmark -translate-y-2 ps-4 text-2xl" />
               </button>
@@ -73,9 +77,7 @@ export default function Industry({
                       {company.name}
                     </Link>
                   ) : (
-                    <span className="text-xl font-semibold sm:text-2xl">
-                      {company.name}
-                    </span>
+                    <span className="text-xl font-semibold sm:text-2xl">{company.name}</span>
                   )}
                   <p className="text-lg md:text-xl">{company.text}</p>
                 </div>

@@ -1,19 +1,18 @@
-import Link from "next/link";
-import Expertise from "components/Expertise/Expertise";
-import { fetchStrapi } from "utils/utils";
-import { IExpertiseItem, IExpertiseSectionData } from "types";
-import fallbackData from "../../content/expertise-section.json" assert { type: "json" };
+import Link from 'next/link';
+import Expertise from 'components/Expertise/Expertise';
+import { fetchStrapi } from 'utils/utils';
+import { IExpertiseItem, IExpertiseSectionData } from 'types';
+import fallbackData from '../../content/expertise-section.json' assert { type: 'json' };
 
-interface ExpertiseSectionProps {
+interface IExpertiseSectionProps {
   classes?: string;
 }
 
 export default async function ExpertiseSection({
   classes,
-}: ExpertiseSectionProps): Promise<React.JSX.Element> {
+}: IExpertiseSectionProps): Promise<React.JSX.Element> {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/expertise-section?populate=expertise`;
-  const content: IExpertiseSectionData =
-    (await fetchStrapi(url)) ?? fallbackData;
+  const content: IExpertiseSectionData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (
     <section

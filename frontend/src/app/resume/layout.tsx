@@ -1,11 +1,9 @@
-import Metadata from "../Metadata";
-interface AboutLayoutProps {
+import Metadata from '../Metadata';
+interface IAboutLayoutProps {
   children: React.ReactNode;
 }
 
-export default function AboutLayout({
-  children,
-}: AboutLayoutProps): React.JSX.Element {
+export default function AboutLayout({ children }: IAboutLayoutProps): React.JSX.Element {
   return (
     <>
       <Metadata

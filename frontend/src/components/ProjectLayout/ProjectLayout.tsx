@@ -8,13 +8,13 @@ import Carousel from 'components/Carousel/Carousel';
 import LightboxGallery from 'components/LightboxGallery/LightboxGallery';
 import { IProjectContent } from 'types';
 
-interface ProjectLayoutProps {
+interface IProjectLayoutProps {
   label: string;
   content: IProjectContent;
   classes?: string;
 }
 
-export default async function ProjectLayout({ label, content, classes }: ProjectLayoutProps) {
+export default async function ProjectLayout({ label, content, classes }: IProjectLayoutProps) {
   // Styling for the project
 
   interface ThemeStyle {

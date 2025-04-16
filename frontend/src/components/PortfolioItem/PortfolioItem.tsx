@@ -1,22 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
-import { IPortfolioItem } from "types";
+'use client';
 
-interface PortfolioItemProps {
+import Image from 'next/image';
+import Link from 'next/link';
+import useOnVisible from 'hooks/useOnVisible';
+import { IPortfolioItem } from 'types';
+
+interface IPortfolioItemProps {
   entry: IPortfolioItem;
+  index: number;
   classes: string;
 }
 
 export default function PortfolioItem({
   entry,
+  index,
   classes,
-}: PortfolioItemProps): React.JSX.Element {
+}: IPortfolioItemProps): React.JSX.Element {
+  const [industryRef, isVisible] = useOnVisible(0.05, true);
+
   return (
-    <figure className={`${classes}`}>
-      <Link
-        href={`/portfolio/${entry.slug}`}
-        className="hover-pop relative block h-full"
-      >
+    <figure
+      ref={industryRef}
+      style={{
+        transitionDelay: `${index * 120}ms`,
+        willChange: 'opacity',
+      }}
+      className={`${classes} xl:transition-opacity xl:duration-[400ms] ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
+      <Link href={`/portfolio/${entry.slug}`} className="hover-pop relative block h-full">
         <Image
           src={entry.project_content.thumbnail_url}
           alt={`Thumbnail for ${entry.label}`}
