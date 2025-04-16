@@ -1,3 +1,4 @@
+import AnimatedFigure from 'components/AnimatedFigure/AnimatedFigure';
 import { IProjectResult } from 'types';
 
 interface ResultsBannerProps {
@@ -23,11 +24,13 @@ export default function ResultsBanner({ results, classes }: ResultsBannerProps):
           return (
             <div
               key={index}
-              className="flex max-w-[85%] flex-col items-center gap-2 p-4 text-center sm:max-w-[40%] md:max-w-[30%] lg:max-w-[20%]"
+              className="flex max-w-[85%] flex-col items-center gap-6 p-4 text-center sm:max-w-[40%] md:max-w-[30%] lg:max-w-[20%]"
             >
               <span className="font--barlow text-5xl font-extrabold lg:text-6xl xl:text-7xl">
-                {`${item.figure.toString()} ${unit}`}
+                <AnimatedFigure value={item.figure} />
+                {unit}
               </span>
+
               <span className="font--barlow text-3xl font-normal lg:text-4xl">{item.text}</span>
             </div>
           );

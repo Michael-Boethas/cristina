@@ -14,7 +14,7 @@ export async function fetchStrapi(url: string) {
 
 
 // Takes an element to observe and add classes to, returns a cleanup function
-export function viewportAddClasses(
+export function triggerOnVisible(
   element: Element,
   classes: string,
   options: IntersectionObserverInit = {

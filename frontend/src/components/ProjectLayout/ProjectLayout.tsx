@@ -137,13 +137,6 @@ export default async function ProjectLayout({ label, content, classes }: Project
       </div>
 
       {/*---------------------------------------------*/}
-      {/* Results Banner if applicable                */}
-      {/*---------------------------------------------*/}
-      {content.results && content.results.length > 0 ? (
-        <ResultsBanner results={content.results} classes={resultsColor} />
-      ) : null}
-
-      {/*---------------------------------------------*/}
       {/* Articles section if applicable              */}
       {/*---------------------------------------------*/}
       {content.articles && content.articles.length > 0 ? ( // content.articles is always at least an empty array
@@ -158,6 +151,13 @@ export default async function ProjectLayout({ label, content, classes }: Project
             );
           })}
         </div>
+      ) : null}
+
+      {/*---------------------------------------------*/}
+      {/* Results Banner if applicable                */}
+      {/*---------------------------------------------*/}
+      {content.results && content.results.length > 0 ? (
+        <ResultsBanner results={content.results} classes={resultsColor} />
       ) : null}
 
       {/*--------------------------------------*/}

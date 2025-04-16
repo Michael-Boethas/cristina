@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import InstagramEmbed from "components/InstagramEmbed/InstagramEmbed";
-import { ISocialMediaSection } from "types";
+import Image from 'next/image';
+import Link from 'next/link';
+import InstagramEmbed from 'components/InstagramEmbed/InstagramEmbed';
+import { ISocialMediaSection } from 'types';
 
 interface ISocialMediaSectionProps {
   content: ISocialMediaSection;
@@ -41,6 +41,7 @@ export default function SocialMediaSection({
                 alt="Social Media link"
                 fill
                 sizes="90vw"
+                className="h-full w-full object-cover object-top"
               />
               <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center text-2xl font-semibold text-[#0000] hover:bg-[#000b] hover:text-fg-2">
                 <span> View post</span>
