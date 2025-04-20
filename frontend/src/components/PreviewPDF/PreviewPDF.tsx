@@ -1,4 +1,4 @@
-interface IPreviewPDFProps {
+export interface IPreviewPDFProps {
   pdf: string;
   classes?: string;
 }

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { IExpertiseItem } from '../../types';
 
-interface IExpertiseProps {
+export interface IExpertiseProps {
   entry: IExpertiseItem;
 }
 

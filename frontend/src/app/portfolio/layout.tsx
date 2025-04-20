@@ -1,6 +1,6 @@
 import Metadata from '../Metadata';
 
-interface IPortfolioLayoutProps {
+export interface IPortfolioLayoutProps {
   children: React.ReactNode;
 }
 

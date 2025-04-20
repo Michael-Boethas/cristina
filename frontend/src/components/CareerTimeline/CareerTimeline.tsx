@@ -3,7 +3,7 @@ import { fetchStrapi } from 'utils/utils';
 import { ITimelineItem, ICareerTimelineData } from 'types';
 import fallbackData from '../../content/career-timeline.json' assert { type: 'json' };
 
-interface ICareerTimelineProps {
+export interface ICareerTimelineProps {
   classes?: string;
 }
 

@@ -4,7 +4,7 @@ import { fetchStrapi } from 'utils/utils';
 import { IExpertiseItem, IExpertiseSectionData } from 'types';
 import fallbackData from '../../content/expertise-section.json' assert { type: 'json' };
 
-interface IExpertiseSectionProps {
+export interface IExpertiseSectionProps {
   classes?: string;
 }
 

@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import { IAboutPageData } from 'types';
 
-interface IAboutDecorationProps {
+export interface IAboutPicturesProps {
   imageList: IAboutPageData['aboutImages'];
   classes?: string;
 }
 
-export default function AboutDecoration({
+export default function AboutPictures({
   imageList,
   classes,
-}: IAboutDecorationProps): React.JSX.Element {
+}: IAboutPicturesProps): React.JSX.Element {
   return (
     <div className={`${classes} about__decoration`} aria-hidden="true">
       {imageList.map((image, index) => {

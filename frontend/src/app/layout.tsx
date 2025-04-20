@@ -7,10 +7,18 @@ import { IHeaderData } from 'types';
 import fallbackData from '../content/header.json' assert { type: 'json' };
 import '../styles/main.scss';
 
-interface IRootLayoutProps {
+export interface IRootLayoutProps {
   children: React.ReactNode;
 }
 
+/**
+ * Root layout for the application.
+ *
+ * Applies global styles, shows viewport warning, and renders the header + children.
+ *
+ * @param {IRootLayoutProps} props - Props containing React children.
+ * @returns {Promise<React.JSX.Element>} The root layout element.
+ */
 export default async function RootLayout({
   children,
 }: IRootLayoutProps): Promise<React.JSX.Element> {

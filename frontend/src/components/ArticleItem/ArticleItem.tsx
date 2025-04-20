@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { IArticleItem } from 'types';
 
-interface IArticlesItemProps {
+export interface IArticlesItemProps {
   entry: IArticleItem;
   classes?: string;
 }

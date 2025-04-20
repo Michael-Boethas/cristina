@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ITimelineItem } from 'types';
 
-interface ITimelineItemProps {
+export interface ITimelineItemProps {
   entry: ITimelineItem;
 }
 

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Nav from '../Nav/Nav';
 import { IHeaderData } from 'types';
 
-interface IHeaderProps {
+export interface IHeaderProps {
   content: IHeaderData;
 }
 

@@ -1,4 +1,4 @@
-interface IMetadataProps {
+export interface IMetadataProps {
   title?: string;
   description?: string;
 }

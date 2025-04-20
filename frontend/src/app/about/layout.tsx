@@ -1,5 +1,5 @@
 import Metadata from '../Metadata';
-interface IAboutLayoutProps {
+export interface IAboutLayoutProps {
   children: React.ReactNode;
 }
 

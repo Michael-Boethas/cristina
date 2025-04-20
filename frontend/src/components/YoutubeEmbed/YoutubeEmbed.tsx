@@ -1,4 +1,4 @@
-interface IYoutubeEmbedProps {
+export interface IYoutubeEmbedProps {
   url: string;
   classes?: string;
 }

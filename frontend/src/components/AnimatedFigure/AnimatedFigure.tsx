@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import useOnVisible from 'hooks/useOnVisible';
 
-interface IAnimatedFigureProps {
+export interface IAnimatedFigureProps {
   value: number;
   duration?: number;
   className?: string;

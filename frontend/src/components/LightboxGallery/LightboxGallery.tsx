@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import ModalPortal from 'components/ModalPortal/ModalPortal';
 import { IProjectContent } from 'types';
 
-interface ILightboxGalleryProps {
+export interface ILightboxGalleryProps {
   imageList: IProjectContent['gallery'];
   classes?: string;
 }
@@ -48,22 +49,24 @@ export default function LightboxGallery({
           </button>
 
           {/* Modal window */}
-          {isOpen === index && (
-            <div
-              className="backdrop inset-0 flex items-center justify-center"
-              onClick={() => setIsOpen(null)}
-            >
+          <ModalPortal>
+            {isOpen === index && (
               <div
-                className={`fade-in relative lg:h-[66vh]`}
-                onClick={(event) => event.stopPropagation()}
-                style={{
-                  aspectRatio: dimensions[index]?.ratio || 1,
-                }}
+                className="backdrop inset-0 flex items-center justify-center"
+                onClick={() => setIsOpen(null)}
               >
-                <Image src={item.imageUrl} alt={`Image ${index}`} fill />
+                <div
+                  className={`fade-in relative lg:h-[66vh]`}
+                  onClick={(event) => event.stopPropagation()}
+                  style={{
+                    aspectRatio: dimensions[index]?.ratio || 1,
+                  }}
+                >
+                  <Image src={item.imageUrl} alt={`Image ${index}`} fill />
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </ModalPortal>
         </div>
       ))}
     </div>

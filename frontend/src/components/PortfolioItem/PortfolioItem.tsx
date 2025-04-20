@@ -5,7 +5,7 @@ import Link from 'next/link';
 import useOnVisible from 'hooks/useOnVisible';
 import { IPortfolioItem } from 'types';
 
-interface IPortfolioItemProps {
+export interface IPortfolioItemProps {
   entry: IPortfolioItem;
   index: number;
   classes: string;

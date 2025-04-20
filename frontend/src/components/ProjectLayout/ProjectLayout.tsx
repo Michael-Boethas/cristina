@@ -11,7 +11,7 @@ import Carousel from 'components/Carousel/Carousel';
 import LightboxGallery from 'components/LightboxGallery/LightboxGallery';
 import { IProjectContent } from 'types';
 
-interface IProjectLayoutProps {
+export interface IProjectLayoutProps {
   label: string;
   content: IProjectContent;
   classes?: string;

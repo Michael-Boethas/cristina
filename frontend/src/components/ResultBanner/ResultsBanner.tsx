@@ -1,7 +1,7 @@
 import AnimatedFigure from 'components/AnimatedFigure/AnimatedFigure';
 import { IProjectResult } from 'types';
 
-interface IResultsBannerProps {
+export interface IResultsBannerProps {
   results: IProjectResult[];
   classes: string;
 }

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { IProjectContent } from 'types';
 
-interface ICarouselProps {
+export interface ICarouselProps {
   imageList: IProjectContent['gallery'];
   classes?: string;
 }

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import InstagramEmbed from 'components/InstagramEmbed/InstagramEmbed';
 import { ISocialMediaSection } from 'types';
 
-interface ISocialMediaSectionProps {
+export interface ISocialMediaSectionProps {
   content: ISocialMediaSection;
   classes?: string;
 }

@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
-interface INavProps {
+export interface INavProps {
   classes: string;
 }
 

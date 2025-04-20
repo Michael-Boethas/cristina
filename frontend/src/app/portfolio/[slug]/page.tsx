@@ -4,7 +4,7 @@ import ProjectLayout from 'components/ProjectLayout/ProjectLayout';
 import { IPortfolioItem } from 'types';
 import fallbackData from '../../../content/portfolio-page.json';
 
-interface IProjectPageProps {
+export interface IProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
