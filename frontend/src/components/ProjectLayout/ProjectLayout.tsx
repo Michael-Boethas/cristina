@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 import YoutubeEmbed from 'components/YoutubeEmbed/YoutubeEmbed';
 import ResultsBanner from '../ResultBanner/ResultsBanner';
 import SocialMediaSection from 'components/SocialMediaSection/SocialMediaSection';
@@ -75,7 +78,18 @@ export default async function ProjectLayout({ label, content, classes }: IProjec
               >
                 {label}
               </h2>
-              <p className="text-xl md:text-2xl">{content.description}</p>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
+                components={{
+                  p: (props) => <p className="prose prose-xl md:prose-2xl" {...props} />,
+                  ul: (props) => <ul className="list-disc ps-6" {...props} />,
+                  ol: (props) => <ol className="list-decimal ps-6" {...props} />,
+                  li: (props) => <li className="mb-2" {...props} />,
+                }}
+              >
+                {content.description}
+              </ReactMarkdown>
             </div>
           </div>
         ) : (

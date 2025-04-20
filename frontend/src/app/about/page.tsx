@@ -1,4 +1,7 @@
 import Image from 'next/image';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
+import ReactMarkdown from 'react-markdown';
 import AboutDecoration from '../../components/AboutDecoration/AboutDecoration';
 import { IAboutPageData } from 'types';
 import { fetchStrapi } from 'utils/utils';
@@ -32,7 +35,15 @@ export default async function About(): Promise<React.JSX.Element> {
           {/* Intro text */}
           <em className="my-4 block text-xl sm:text-2xl md:text-3xl">{content.intro}</em>
 
-          {content.text}
+          <ReactMarkdown
+            components={{
+              p: (props) => <p className="prose text-xl md:text-2xl" {...props} />,
+            }}
+            rehypePlugins={[rehypeRaw]}
+            remarkPlugins={[remarkGfm]}
+          >
+            {content.text}
+          </ReactMarkdown>
         </p>
       </section>
     </main>

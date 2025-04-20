@@ -52,6 +52,7 @@ export default async function ProjectPage({ params }: IProjectPageProps) {
   const entry = projects.find((item: IPortfolioItem) => item.slug === slug);
 
   if (!entry) {
+    console.log('ENTRY', entry);
     return notFound(); // 404 if no matching project
   }
 

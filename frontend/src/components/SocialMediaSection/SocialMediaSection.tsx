@@ -26,6 +26,11 @@ export default function SocialMediaSection({
           );
         })}
 
+        {/* Horizontal divider */}
+        {content.embed && content.links ? (
+          <div className="my-8 h-[1px] w-full bg-[#0004]">&nbsp;</div>
+        ) : null}
+
         {/* Link + thumbnail */}
         {content.links?.map((item, index) => {
           return (
