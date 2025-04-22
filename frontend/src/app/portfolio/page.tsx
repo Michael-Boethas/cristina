@@ -4,7 +4,7 @@ import { IPortfolioItem, IPortfolioPageData } from 'types';
 import fallbackData from '../../content/portfolio-page.json' assert { type: 'json' };
 
 export default async function Portfolio(): Promise<React.JSX.Element> {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio?populate[projects][populate][project_content]=true`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/portfolio?populate[projects][populate][project_content]=true`;
   const content: IPortfolioPageData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (

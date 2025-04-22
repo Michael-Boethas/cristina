@@ -9,10 +9,10 @@ import fallbackData from '../../content/about-page.json' assert { type: 'json' }
 
 /**
  * About page component that displays information about Cristina Jiménez.
- * Fetches content from Strapi and renders the about section with images and markdown content.
+ * Fetches content from Strapi CMS and renders the about section with images and markdown content.
  */
 export default async function About(): Promise<React.JSX.Element> {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/about?populate[aboutImages]=*`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/about?populate[aboutImages]=*`;
   const content: IAboutPageData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (
@@ -22,7 +22,7 @@ export default async function About(): Promise<React.JSX.Element> {
         <AboutPictures imageList={content.aboutImages} classes="" />
       </div>
       <section
-        className="flex flex-col p-5 text-lg sm:px-12 sm:text-xl md:px-16 md:text-2xl lg:px-24 xl:max-w-[66vw]"
+        className="mb-20 flex flex-col p-5 text-lg sm:px-12 sm:text-xl md:px-16 md:text-2xl lg:px-24 xl:max-w-[66vw]"
         aria-label="Section describing Cristina Jiménez"
       >
         <h2 className="py-6 text-4xl italic md:text-5xl">{content.title}</h2>

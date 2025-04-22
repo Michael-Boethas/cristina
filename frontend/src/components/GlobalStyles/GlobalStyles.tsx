@@ -6,7 +6,7 @@ import { IGlobalStylesData } from 'types';
 
 export default function GlobalStyles() {
   const { data } = useFetch<IGlobalStylesData>(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/global-styling`
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/global-styling`
   );
 
   useEffect(() => {

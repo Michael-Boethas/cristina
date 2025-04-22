@@ -27,7 +27,7 @@ export default function SocialMediaSection({
         })}
 
         {/* Horizontal divider */}
-        {content.embed && content.links ? (
+        {content.embed?.length > 0 && content.links?.length > 0 ? (
           <div className="my-8 h-[1px] w-full bg-[#0004]">&nbsp;</div>
         ) : null}
 

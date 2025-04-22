@@ -10,7 +10,7 @@ interface IIndustriesSectionProps {
 export default async function IndustriesSection({
   classes,
 }: IIndustriesSectionProps): Promise<React.JSX.Element> {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/industries-section?populate[industries][populate]=companies`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/industries-section?populate[industries][populate]=companies`;
   const content: IIndustriesSectionData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (

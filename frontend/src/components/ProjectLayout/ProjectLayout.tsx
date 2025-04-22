@@ -31,15 +31,11 @@ export default async function ProjectLayout({ label, content, classes }: IProjec
     'theme 4': { label: 'bg-bg-4 text-fg-1', results: 'bg-bg-4 text-fg-1' },
   };
 
-  const defaultStyles = {
-    label: 'bg-bg-1 text-fg-2',
-    results: 'bg-bg-1 text-fg-2',
-  };
-
   const backButtonColour = 'bg-[#221b] hover:bg-[#111c]';
 
   // Assign styles based on content.theme
-  const { label: labelColor, results: resultsColor } = themeStyles[content.theme] || defaultStyles;
+  const { label: labelColor, results: resultsColor } =
+    themeStyles[content.theme] || themeStyles['theme 1'];
 
   return (
     <article className={classes}>

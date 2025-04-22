@@ -10,7 +10,7 @@ export interface ICareerTimelineProps {
 export default async function CareerTimeline({
   classes,
 }: ICareerTimelineProps): Promise<React.JSX.Element> {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/career-timeline?populate=experiences`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/career-timeline?populate=experiences`;
   const content: ICareerTimelineData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (

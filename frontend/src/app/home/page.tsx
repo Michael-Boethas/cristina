@@ -8,7 +8,7 @@ import { IHomePageData } from 'types';
 import fallbackData from '../../content/home-page.json' assert { type: 'json' };
 
 export default async function Home(): Promise<React.JSX.Element> {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/home`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/home`;
   const content: IHomePageData = (await fetchStrapi(url)) ?? fallbackData;
   return (
     <main className="max-w-screen flex min-h-screen flex-col overflow-hidden">
@@ -23,7 +23,7 @@ export default async function Home(): Promise<React.JSX.Element> {
             const [boldPart, ...rest] = content.introduction.split('-');
             return (
               <>
-                <em className="text-4xl font-medium">{boldPart.trim()}</em>
+                <em className="text-3xl font-medium sm:text-4xl">{boldPart.trim()}</em>
                 {rest.length > 0 ? ` -\n ${rest.join('-').trim()}` : ''}
               </>
             );

@@ -6,7 +6,7 @@ import { IResumePageData } from 'types';
 import fallbackData from '../../content/resume-page.json' assert { type: 'json' };
 
 export default async function Resume(): Promise<React.JSX.Element> {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/resume`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/resume`;
   const content: IResumePageData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (

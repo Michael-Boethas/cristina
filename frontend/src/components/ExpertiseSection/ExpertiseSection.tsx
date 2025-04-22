@@ -11,7 +11,7 @@ export interface IExpertiseSectionProps {
 export default async function ExpertiseSection({
   classes,
 }: IExpertiseSectionProps): Promise<React.JSX.Element> {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/expertise-section?populate=expertise`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/expertise-section?populate=expertise`;
   const content: IExpertiseSectionData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (

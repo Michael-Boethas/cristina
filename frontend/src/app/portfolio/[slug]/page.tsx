@@ -10,7 +10,7 @@ export interface IProjectPageProps {
 
 // Generate dynamic routes data at build time
 export async function generateStaticParams() {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/portfolio`;
   const response = await fetchStrapi(url);
   const projects: IPortfolioItem[] = response?.projects ?? fallbackData.projects;
 
@@ -25,7 +25,7 @@ export default async function ProjectPage({ params }: IProjectPageProps) {
   const { slug } = await Promise.resolve(params);
 
   // Base URL
-  const baseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/portfolio`;
+  const baseUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/portfolio`;
 
   // Population parameters
   const populateProjects = 'populate[projects][populate][project_content]';

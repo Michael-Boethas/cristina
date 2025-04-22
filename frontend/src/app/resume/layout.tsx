@@ -1,16 +1,15 @@
-import Metadata from '../Metadata';
-export interface IAboutLayoutProps {
+import getMetadata from '../metadata';
+
+export const metadata = getMetadata({
+  title: 'Cristina Jiménez - Resume',
+  description:
+    'Review the work experience of Cristina Jiménez, a creative communications and marketing professional.',
+});
+
+export interface IResumeLayoutProps {
   children: React.ReactNode;
 }
 
-export default function AboutLayout({ children }: IAboutLayoutProps): React.JSX.Element {
-  return (
-    <>
-      <Metadata
-        title="Cristina Jiménez - Resume"
-        description="Review the work experience of Cristina Jiménez, a creative communications and marketing professional."
-      />
-      {children}
-    </>
-  );
+export default function ResumeLayout({ children }: IResumeLayoutProps): React.JSX.Element {
+  return <>{children}</>;
 }
