@@ -16,7 +16,7 @@ export default async function About(): Promise<React.JSX.Element> {
   const content: IAboutPageData = (await fetchStrapi(url)) ?? fallbackData;
 
   return (
-    <main className="flex min-h-screen pt-16 lg:pt-32 2xl:px-8">
+    <main className="flex min-h-screen pt-20 lg:pt-32 2xl:px-8">
       <div className="flex-grow">
         {/* About page decoration component */}
         <AboutPictures imageList={content.aboutImages} classes="" />
@@ -41,13 +41,16 @@ export default async function About(): Promise<React.JSX.Element> {
           <em className="my-4 block text-xl sm:text-2xl md:text-3xl">{content.intro}</em>
 
           <ReactMarkdown
-            components={{
-              p: (props) => <p className="prose text-xl md:text-2xl" {...props} />,
-            }}
-            rehypePlugins={[rehypeRaw]}
             remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+            components={{
+              p: (props) => <p className="break-words text-xl md:text-2xl" {...props} />,
+              ul: (props) => <ul className="list-disc ps-6" {...props} />,
+              ol: (props) => <ol className="list-decimal ps-6" {...props} />,
+              li: (props) => <li className="mb-2" {...props} />,
+            }}
           >
-            {content.text}
+            {content.text.replace(/\n/g, '<br />')}
           </ReactMarkdown>
         </div>
       </section>

@@ -68,7 +68,7 @@ export default async function ProjectLayout({ label, content, classes }: IProjec
                 />
               ) : null}
             </aside>
-            <div className="flex flex-col gap-6 xl:w-[50vw]">
+            <div className="flex flex-col xl:w-[50vw]">
               <h2
                 className={`${labelColor} mb-10 hidden max-w-max rounded-xl px-4 py-4 text-4xl lg:px-12 lg:text-5xl xl:block`}
               >
@@ -78,13 +78,13 @@ export default async function ProjectLayout({ label, content, classes }: IProjec
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw]}
                 components={{
-                  p: (props) => <p className="prose prose-xl md:prose-2xl" {...props} />,
+                  p: (props) => <p className="break-words text-xl md:text-2xl" {...props} />,
                   ul: (props) => <ul className="list-disc ps-6" {...props} />,
                   ol: (props) => <ol className="list-decimal ps-6" {...props} />,
                   li: (props) => <li className="mb-2" {...props} />,
                 }}
               >
-                {content.description}
+                {content.description.replace(/\n/g, '<br />')}
               </ReactMarkdown>
             </div>
           </div>
@@ -96,15 +96,19 @@ export default async function ProjectLayout({ label, content, classes }: IProjec
             >
               {label}
             </h2>
-            <p
-              className={
-                content.description.length > 100
-                  ? 'text-xl md:text-2xl'
-                  : 'text-2xl md:text-3xl lg:text-4xl'
-              }
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
+              components={{
+                p: (props) => <div className="break-words text-xl md:text-2xl" {...props} />,
+                br: (props) => <br {...props} />,
+                ul: (props) => <ul className="list-disc ps-6" {...props} />,
+                ol: (props) => <ol className="list-decimal ps-6" {...props} />,
+                li: (props) => <li className="mb-2" {...props} />,
+              }}
             >
-              {content.description}
-            </p>
+              {content.description.replace(/\n/g, '<br />')}
+            </ReactMarkdown>
           </div>
         )}
 
