@@ -16,6 +16,7 @@ export default function getMetadata({
         description,
         url: process.env.NEXT_PUBLIC_FRONTEND_BASE_URL,
         type: 'website',
+        siteName: 'Cristina Jiménez - Portfolio',
         images: [
           {
             url: `${process.env.NEXT_PUBLIC_FRONTEND_BASE_URL}/og-image.png`,
@@ -55,6 +56,7 @@ export default function getMetadata({
           },
         ],
       },
+      authors: [{ name: 'Michael Boethas / Mishmesh', url: process.env.NEXT_PUBLIC_AUTHOR_CREDIT }],
       applicationName: 'Cristina Jimenez - Portfolio',
     }
   );

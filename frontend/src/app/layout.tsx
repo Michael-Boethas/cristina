@@ -12,6 +12,35 @@ export const metadata = getMetadata({
   description:
     'Portfolio of a communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies.',
 });
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Cristina Jiménez',
+  url: process.env.NEXT_PUBLIC_FRONTEND_URL,
+  alumniOf: [
+    {
+      '@type': 'EducationalOrganization',
+      name: 'ISC Paris',
+    },
+    {
+      '@type': 'EducationalOrganization',
+      name: 'Istituto Marangoni',
+    },
+
+    {
+      '@type': 'EducationalOrganization',
+      name: 'The Manchester Metropolitan University',
+    },
+    {
+      '@type': 'EducationalOrganization',
+      name: 'Pontificia Universidad Católica Madre y Maestra',
+    },
+  ],
+  jobTitle: 'Communications and Marketing Specialist',
+  sameAs: ['https://www.linkedin.com/in/cristina-jim%C3%A9nez-b84a0b127'],
+};
+
 export interface IRootLayoutProps {
   children: React.ReactNode;
 }
@@ -33,6 +62,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <GlobalStyles />
         <ViewportWarning />
         <Header content={headerProps} />
