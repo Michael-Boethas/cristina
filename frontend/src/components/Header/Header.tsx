@@ -9,6 +9,15 @@ export interface IHeaderProps {
   content: IHeaderData;
 }
 
+/**
+ * Header component displays a fixed navigation header with the site's title, tagline, and location.
+ * Responsive burger menu for mobile navigation.
+ *
+ * @param {IHeaderProps} props - The props for the header component.
+ * @param {IHeaderData} props.content - The content data for the header (title, tagline, location).
+ *
+ * @returns {React.JSX.Element}.
+ */
 export default function Header({ content }: IHeaderProps): React.JSX.Element {
   const pathname = usePathname();
   const [isCollapsed, setIsCollapsed] = useState(true);

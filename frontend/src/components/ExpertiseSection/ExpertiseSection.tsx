@@ -8,6 +8,15 @@ export interface IExpertiseSectionProps {
   classes?: string;
 }
 
+/**
+ * ExpertiseSection component renders a section displaying a list of expertise items.
+ * Fetches data from Strapi.
+ *
+ * @param {IExpertiseSectionProps} props - The props for the ExpertiseSection component.
+ * @param {string} [props.classes] - Optional classes to apply to the section.
+ *
+ * @returns {React.JSX.Element} The rendered expertise section, including expertise items and a scroll button.
+ */
 export default async function ExpertiseSection({
   classes,
 }: IExpertiseSectionProps): Promise<React.JSX.Element> {

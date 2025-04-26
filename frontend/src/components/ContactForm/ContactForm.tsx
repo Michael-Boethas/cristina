@@ -3,6 +3,11 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
+/**
+ * Contact form component for submitting a message through Formspree.
+ *
+ * @returns {React.JSX.Element} The JSX element for the contact form or a success message if the form is submitted.
+ */
 export default function ContactForm() {
   const [state, handleSubmit] = useForm('mwpvbloo');
   if (state.succeeded) {

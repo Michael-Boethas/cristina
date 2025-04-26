@@ -8,6 +8,14 @@ export interface IExpertiseProps {
   entry: IExpertiseItem;
 }
 
+/**
+ * Expertise component displays an expertise item with an icon, label, and collapsible content.
+ *
+ * @param {IExpertiseProps} props - The props for the expertise component.
+ * @param {IExpertiseItem} props.entry - The expertise item to be displayed, containing an icon, label, and text.
+ *
+ * @returns {React.JSX.Element}
+ */
 export default function Expertise({ entry }: IExpertiseProps): React.JSX.Element {
   const [isCollapsed, setIsCollapsed] = useState(true);
 

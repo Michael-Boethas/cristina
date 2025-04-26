@@ -5,6 +5,12 @@ import { fetchStrapi } from 'utils/utils';
 import { IResumePageData } from 'types';
 import fallbackData from '../../content/resume-page.json' assert { type: 'json' };
 
+/**
+ * Resume Page Component
+ *
+ * This component renders Cristina Jiménez's resume page, displaying the resume and career timeline,
+ * and a link to download or preview the resume in PDF format.
+ */
 export default async function Resume(): Promise<React.JSX.Element> {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/resume`;
   const content: IResumePageData = (await fetchStrapi(url)) ?? fallbackData;

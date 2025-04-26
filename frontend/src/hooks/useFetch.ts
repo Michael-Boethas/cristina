@@ -1,5 +1,16 @@
 import { useState, useEffect } from 'react';
 
+
+/**
+ * A custom hook to fetch data from an API endpoint.
+ * This hook handles the fetching of data from the provided URL and returns the data once it has been loaded.
+ *
+ * @param {string} url - The URL from which to fetch the data.
+ *
+ * @returns {Object} An object containing the fetched data:
+ *   - `data`: The fetched data, or `null` if the data is not available yet or there was an error.
+ */
+
 export default function useFetch<T>(url: string) {
   const [data, setData] = useState<T | null>(null);
 

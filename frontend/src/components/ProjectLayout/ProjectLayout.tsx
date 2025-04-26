@@ -17,6 +17,16 @@ export interface IProjectLayoutProps {
   classes?: string;
 }
 
+/**
+ * An adataptive layout for projects depending on available content fetched from the Strapi CMS
+ *
+ * @param {object} props - The props for the ProjectLayout component.
+ * @param {string} props.label - The title of the project.
+ * @param {IProjectContent} props.content - The content for the project.
+ * @param {string} [props.classes] - An optional string of additional CSS classes to apply to the container.
+ *
+ * @returns {React.JSX.Element} The rendered project layout.
+ */
 export default async function ProjectLayout({ label, content, classes }: IProjectLayoutProps) {
   // Styling for the project
 

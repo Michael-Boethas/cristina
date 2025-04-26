@@ -11,6 +11,16 @@ export interface IPortfolioItemProps {
   classes: string;
 }
 
+/**
+ * Displays a single portfolio item with a thumbnail.
+ *
+ * @param {object} props - The props for the PortfolioItem component.
+ * @param {IPortfolioItem} props.entry - The portfolio item data, including thumbnail URL and label.
+ * @param {number} props.index - The index of the portfolio item, used for calculating the delay in the fade-in effect.
+ * @param {string} props.classes - A string of CSS classes to apply to the figure element.
+ *
+ * @returns {React.JSX.Element} The rendered portfolio item with thumbnail and caption.
+ */
 export default function PortfolioItem({
   entry,
   index,

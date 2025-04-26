@@ -7,6 +7,14 @@ interface IIndustriesSectionProps {
   classes?: string;
 }
 
+/**
+ * IndustriesSection component, displays a list of industries and related companies
+ *
+ * @param {IIndustriesSectionProps} props - The props for the industries section.
+ * @param {string} [props.classes] - Optional CSS classes to apply to the section.
+ *
+ * @returns {React.JSX.Element} The rendered industries section with industries and companies.
+ */
 export default async function IndustriesSection({
   classes,
 }: IIndustriesSectionProps): Promise<React.JSX.Element> {

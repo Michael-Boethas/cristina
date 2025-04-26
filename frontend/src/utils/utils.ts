@@ -1,4 +1,10 @@
-// Fetch data from Strapi
+
+/**
+ * Fetch data from a Strapi API endpoint.
+ * 
+ * @param url - The URL of the Strapi API endpoint to fetch data from.
+ * @returns The data from the API or null in case of an error.
+ */
 export async function fetchStrapi(url: string) {
   try {
     const res = await fetch(url, { cache: 'force-cache' });

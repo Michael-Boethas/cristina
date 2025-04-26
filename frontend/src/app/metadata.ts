@@ -1,5 +1,14 @@
 import type { Metadata } from 'next';
 
+
+/**
+ * Generates the metadata for the page, including Open Graph, Twitter, and icon information.
+ *
+ * @param {Object} params - The metadata parameters.
+ * @param {string} [params.title='Cristina Jiménez - Home'] - The page title.
+ * @param {string} [params.description='Portfolio of a communications and international marketing specialist...'] - The page description.
+ * @returns {Metadata} The generated metadata object.
+ */
 export default function getMetadata({
   title = 'Cristina Jiménez - Home',
   description = 'Portfolio of a communications and international marketing specialist who enjoys producing content that drives real value for ambitious B2B and B2C companies.',

@@ -4,6 +4,12 @@ import { useEffect } from 'react';
 import useFetch from '../../hooks/useFetch';
 import { IGlobalStylesData } from 'types';
 
+/**
+ * GlobalStyles component fetches styling data from the server and applies it as CSS variables to the document root.
+ * Replaces the SVG intro background's fill color accordingly.
+ *
+ * @returns {null} This component doesn't render anything in the DOM, it only modifies the global styles.
+ */
 export default function GlobalStyles() {
   const { data } = useFetch<IGlobalStylesData>(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/global-styling`

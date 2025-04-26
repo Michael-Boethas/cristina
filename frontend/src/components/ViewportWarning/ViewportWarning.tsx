@@ -1,5 +1,8 @@
 import { JSX } from 'react';
 
+/**
+ * Warning message for users with screens smaller than 320px wide.
+ */
 export default function ViewportWarning(): JSX.Element {
   return (
     <div className="bg-yellow-200 p-4 text-center font-bold text-orange-500 SMALLEST:hidden">

@@ -9,6 +9,15 @@ export interface IAnimatedFigureProps {
   className?: string;
 }
 
+/**
+ * AnimatedFigure component displays a number that animates from 0 to a specified value when the element becomes visible in the viewport.
+ *
+ * @param {object} props - The props for the component.
+ * @param {number} props.value - The target number to animate to.
+ * @param {number} [props.duration=800] - The duration over which the animation runs. Default is 800ms.
+ * @param {string} [props.className] - Optional className to style the component.
+ * @returns {JSX.Element} The animated figure element that displays the number.
+ */
 export default function AnimatedFigure({ value, duration = 800, className }: IAnimatedFigureProps) {
   const [displayValue, setDisplayValue] = useState(0);
   const [ref, isVisible] = useOnVisible(0.05, true);

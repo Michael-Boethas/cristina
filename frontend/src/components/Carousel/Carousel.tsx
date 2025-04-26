@@ -10,6 +10,14 @@ export interface ICarouselProps {
   classes?: string;
 }
 
+/**
+ * Carousel component that displays a gallery of images with swipe functionality.
+ *
+ * @param {Object} props - The props for the component.
+ * @param {IProjectContent['gallery']} props.imageList - A list of images to be displayed in the carousel.
+ * @param {string} [props.classes] - Optional custom CSS class names for styling the component.
+ * @returns {React.JSX.Element} The JSX representation of the carousel component.
+ */
 export default function Carousel({ imageList, classes }: ICarouselProps): React.JSX.Element {
   const gallery = imageList?.map((item) => item.imageUrl) || [];
   const total = gallery.length;

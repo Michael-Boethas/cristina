@@ -7,6 +7,13 @@ export interface ICareerTimelineProps {
   classes?: string;
 }
 
+/**
+ * Renders a resume summary as career timeline.
+ *
+ * @param {Object} props - The props for the component.
+ * @param {string} [props.classes] - Optional custom CSS class names for styling the component.
+ * @returns {React.JSX.Element} The JSX representation of the career timeline.
+ */
 export default async function CareerTimeline({
   classes,
 }: ICareerTimelineProps): Promise<React.JSX.Element> {

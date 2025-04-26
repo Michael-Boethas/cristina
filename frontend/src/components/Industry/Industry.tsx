@@ -13,6 +13,17 @@ interface IIndustryProps {
   classes: string;
 }
 
+/**
+ * Industry component displays a clickable card with an image and label. Upon clicking,
+ * a modal appears displaying a list of companies associated with the industry.
+ *
+ * @param {IIndustryProps} props - The props for the industry item.
+ * @param {IIndustryItem} props.entry - The data representing the industry, including its label, image, and associated companies.
+ * @param {number} props.index - The index of the current industry item, used for transition delay.
+ * @param {string} props.classes - The CSS classes to be applied to the industry card.
+ *
+ * @returns {React.JSX.Element} The rendered industry card, with a modal showing the companies upon click.
+ */
 export default function Industry({ entry, index, classes }: IIndustryProps): React.JSX.Element {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [industryRef, isVisible] = useOnVisible(0.05, true);
@@ -85,8 +96,7 @@ export default function Industry({ entry, index, classes }: IIndustryProps): Rea
                 ))}
               </div>
             </div>
-          </div>{' '}
-          {/* ✅ This was missing */}
+          </div>
         </ModalPortal>
       )}
     </div>

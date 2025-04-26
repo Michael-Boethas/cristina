@@ -7,6 +7,10 @@ import { fetchStrapi } from 'utils/utils';
 import { IHomePageData } from 'types';
 import fallbackData from '../../content/home-page.json' assert { type: 'json' };
 
+/**
+ * Home Page Component, renders the homepage, including an introduction, expertise section,
+ * industries section, contact form, and footer. It fetches data from Strapi.
+ */
 export default async function Home(): Promise<React.JSX.Element> {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/home`;
   const content: IHomePageData = (await fetchStrapi(url)) ?? fallbackData;
@@ -80,6 +84,8 @@ export default async function Home(): Promise<React.JSX.Element> {
           </Link>
         </div>
       </section>
+
+      {/* Footer / dev credits */}
       <footer className="flex min-h-[120px] w-full justify-center bg-[#545] text-xl font-semibold text-fg-2 md:text-2xl">
         <Link
           href={`${process.env.NODE_PUBLIC_AUTHOR_CREDIT}`}

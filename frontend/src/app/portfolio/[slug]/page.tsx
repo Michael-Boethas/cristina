@@ -19,6 +19,15 @@ export async function generateStaticParams() {
   }));
 }
 
+/**
+ * Project Page Component
+ *
+ * This component dynamically renders a project page for Cristina Jiménez based on the project slug.
+ * It fetches project data from a Strapi.
+ *
+ * @param {IProjectPageProps} params - The parameters, including the project slug.
+ * @returns {React.JSX.Element} The rendered project page JSX.
+ */
 export default async function ProjectPage({ params }: IProjectPageProps) {
   // Next.js expects `params` to be treated asynchronously, even though it's already resolved.
   // Using `await Promise.resolve(params)` to satisfy this requirement.

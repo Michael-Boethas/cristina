@@ -10,6 +10,15 @@ export interface ILightboxGalleryProps {
   classes?: string;
 }
 
+/**
+ * Renders a gallery of images where each image can be clicked to open in a modal.
+ *
+ * @param {ILightboxGalleryProps} props - The props for the gallery component.
+ * @param {IProjectContent['gallery']} props.imageList - List of images to display in the gallery.
+ * @param {string} [props.classes] - Optional CSS classes to apply to the gallery container.
+ *
+ * @returns {React.JSX.Element} The rendered gallery with lightbox functionality.
+ */
 export default function LightboxGallery({
   imageList,
   classes,

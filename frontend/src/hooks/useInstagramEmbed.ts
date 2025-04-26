@@ -1,5 +1,11 @@
 import { useEffect } from 'react';
 
+
+/**
+ * Custom hook to load and process Instagram embed scripts.
+ * It dynamically loads the Instagram embed script if not already loaded.
+ * Once loaded, it processes any Instagram embeds present on the page.
+ */
 export default function useInstagramEmbed() {
   useEffect(() => {
     // Check if the script is already added

@@ -3,6 +3,15 @@ export interface IPreviewPDFProps {
   classes?: string;
 }
 
+/**
+ * A component that displays a preview of a PDF document within an iframe.
+ *
+ * @param {object} props - The props for the PreviewPDF component.
+ * @param {string} props.pdf - The URL of the PDF to preview.
+ * @param {string} [props.classes] - An optional string of additional CSS classes to apply to the container.
+ *
+ * @returns {React.JSX.Element} The rendered iframe containing the PDF preview.
+ */
 export default function PreviewPDF({ pdf, classes }: IPreviewPDFProps): React.JSX.Element {
   return (
     <div className={classes}>

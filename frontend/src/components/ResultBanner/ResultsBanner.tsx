@@ -6,6 +6,16 @@ export interface IResultsBannerProps {
   classes: string;
 }
 
+/**
+ * Banner showing project results. It iterates through an array of results,
+ * Uses the `AnimatedFigure` component for animation.
+ *
+ * @param {object} props - The props for the ResultsBanner component.
+ * @param {IProjectResult[]} props.results - The array of project results to be displayed. Each result includes a figure and associated text.
+ * @param {string} props.classes - A string of additional CSS classes to apply to the container.
+ *
+ * @returns {React.JSX.Element} The rendered results banner, including animated figures and descriptive text.
+ */
 export default function ResultsBanner({
   results,
   classes,

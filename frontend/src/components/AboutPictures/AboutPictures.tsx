@@ -6,12 +6,16 @@ export interface IAboutPicturesProps {
   classes?: string;
 }
 
+/**
+ * Displays a list of images with fade-in animations to decorate the About page.
+ * @param {IAboutPicturesProps} props - Component props
+ */
 export default function AboutPictures({
   imageList,
   classes,
 }: IAboutPicturesProps): React.JSX.Element {
   return (
-    <div className={`${classes} about__decoration`} aria-hidden="true">
+    <div className={`${classes} about__pictures`} aria-hidden="true">
       {imageList.map((image, index) => {
         return (
           <Image

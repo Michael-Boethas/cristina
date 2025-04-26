@@ -7,6 +7,14 @@ export interface IArticlesItemProps {
   classes?: string;
 }
 
+/**
+ * Component to display a single article item with a thumbnail, title, and preview text.
+ *
+ * @param {Object} props - The props for the component.
+ * @param {IArticleItem} props.entry - The article data object containing title, link, and thumbnail URL.
+ * @param {string} [props.classes] - Optional className to apply custom styling to the component.
+ * @returns {JSX.Element} The JSX representation of the article item with an image, title, and preview text.
+ */
 export default function ArticlesItem({ entry, classes }: IArticlesItemProps): React.JSX.Element {
   return (
     <Link href={entry.link} target="_blank" className={`${classes} flex flex-col`}>

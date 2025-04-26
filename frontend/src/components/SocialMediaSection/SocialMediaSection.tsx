@@ -7,6 +7,16 @@ export interface ISocialMediaSectionProps {
   content: ISocialMediaSection;
   classes?: string;
 }
+
+/**
+ * Displays a section for linking to generic social media content, or embedding Instagram posts,
+ *
+ * @param {object} props - The props for the SocialMediaSection component.
+ * @param {ISocialMediaSection} props.content - The content for the social media section, including embedded posts and links.
+ * @param {string} [props.classes] - Optional CSS classes to apply to the container.
+ *
+ * @returns {React.JSX.Element}.
+ */
 export default function SocialMediaSection({
   content,
   classes,

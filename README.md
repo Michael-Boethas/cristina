@@ -1,1 +1,3 @@
-This is the repository for the Portfolio website of Crisitna Jimenez, built with Next.js, TypeScript and Tailwind CSS
+This is the Portfolio website of Crisitna Jimenez
+
+Table of contents:

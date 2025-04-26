@@ -7,6 +7,14 @@ export interface INavProps {
   classes: string;
 }
 
+/**
+ * Set of links to navigate the website.
+ *
+ * @param {object} props - The props for the Nav component.
+ * @param {string} props.classes - A string of CSS classes to apply to the navigation container.
+ *
+ * @returns {React.JSX.Element} The rendered navigation menu with links to various pages.
+ */
 export default function Nav({ classes }: INavProps): React.JSX.Element {
   const pathname = usePathname();
 
