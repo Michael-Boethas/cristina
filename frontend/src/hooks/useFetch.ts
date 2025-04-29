@@ -17,7 +17,6 @@ export default function useFetch<T>(url: string) {
   useEffect(() => {
     async function fetchData(fetchUrl: string) {
       try {
-        console.log('Fetching data from:', fetchUrl);
         const res = await fetch(fetchUrl);
         if (!res.ok) throw new Error(`Failed to fetch. Status: ${res.status}`);
 

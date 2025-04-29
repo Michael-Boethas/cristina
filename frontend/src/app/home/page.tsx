@@ -88,7 +88,7 @@ export default async function Home(): Promise<React.JSX.Element> {
       {/* Footer / dev credits */}
       <footer className="flex min-h-[120px] w-full justify-center bg-[#545] text-xl font-semibold text-fg-2 md:text-2xl">
         <Link
-          href={`${process.env.NODE_PUBLIC_AUTHOR_CREDIT}`}
+          href={`${process.env.NEXT_PUBLIC_AUTHOR_CREDIT}`}
           target="_blank"
           className="flex items-center gap-4"
         >
