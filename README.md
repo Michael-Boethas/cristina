@@ -12,7 +12,7 @@ This repository contains the complete source code for the professional portfolio
 
 ## Project structure
 
-### Frontend [Next.js](https://nextjs.org/docs)
+### Frontend ([Next.js](https://nextjs.org/docs))
 
 #### Tech stack
 
@@ -84,7 +84,7 @@ NEXT_PUBLIC_API_BASE_URL
 NEXT_PUBLIC_FRONTEND_BASE_URL (for dynamic metadata)
 ```
 
-### Backend [Strapi CMS](https://docs.strapi.io/)
+### Backend ([Strapi CMS](https://docs.strapi.io/))
 
 (The API's swagger doc is available at http://localhost:1337/documentation in development environment)
 
