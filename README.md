@@ -16,19 +16,19 @@ This repository contains the complete source code for the professional portfolio
 
 #### Tech stack
 
-    Framework: Next.js 15 (App router)
+- Framework: Next.js 15 (App router)
 
-    Language: TypeScript
+- Language: TypeScript
 
-    Styling: Tailwind CSS, Sass
+- Styling: Tailwind CSS, Sass
 
-    Markdown Support: react-markdown, remark-gfm, rehype-raw
+- Markdown Support: react-markdown, remark-gfm, rehype-raw
 
-    Forms: Formspree React
+- Forms: Formspree React
 
-    Utilities: Prettier, ESLint
+- Utilities: Prettier, ESLint
 
-    Touch functionality : react-swipeable
+- Touch functionality : react-swipeable
 
 #### Directory tree
 
@@ -90,19 +90,19 @@ NEXT_PUBLIC_FRONTEND_BASE_URL (for dynamic metadata)
 
 #### Tech Stack
 
-    Backend Framework: Strapi v5
+- Backend Framework: Strapi v5
 
-    Language: TypeScript
+- Language: TypeScript
 
-    Database: PostgreSQL
+- Database: PostgreSQL
 
-    Cloud Uploads: Cloudinary via @strapi/provider-upload-cloudinary
+- Cloud Uploads: Cloudinary via @strapi/provider-upload-cloudinary
 
-    Authentication & Permissions: @strapi/plugin-users-permissions
+- Authentication & Permissions: @strapi/plugin-users-permissions
 
-    API Documentation: @strapi/plugin-documentation
+- API Documentation: @strapi/plugin-documentation
 
-    Deployment: @strapi/plugin-cloud
+- Deployment: @strapi/plugin-cloud
 
 #### Directory tree
 
