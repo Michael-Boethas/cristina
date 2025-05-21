@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   productionBrowserSourceMaps: true,
+
+  env: {
+    NEXT_PUBLIC_BUILD_TIMESTAMP: new Date().getFullYear().toString(),
+  },
 };
 
 export default nextConfig;

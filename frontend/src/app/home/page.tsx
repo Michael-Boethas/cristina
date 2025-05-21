@@ -86,7 +86,7 @@ export default async function Home(): Promise<React.JSX.Element> {
       </section>
 
       {/* Footer / dev credits */}
-      <footer className="flex min-h-[120px] w-full justify-center bg-[#545] text-xl font-semibold text-fg-2 md:text-2xl">
+      <footer className="flex min-h-[120px] w-full flex-col items-center gap-6 bg-[#545] px-8 py-6 text-xl font-semibold text-fg-2 md:text-2xl">
         <Link
           href={`${process.env.NEXT_PUBLIC_AUTHOR_CREDIT}`}
           target="_blank"
@@ -102,6 +102,9 @@ export default async function Home(): Promise<React.JSX.Element> {
             className="hover-pop text-sm font-normal"
           />
         </Link>
+        <span className="text-sm text-fg-2 md:text-lg">
+          © {process.env.NEXT_PUBLIC_BUILD_TIMESTAMP}
+        </span>
       </footer>
     </main>
   );
