@@ -33,6 +33,10 @@
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   },
+  "overrides": {
+    "koa": "^2.16.1",
+    "tar-fs": "^3.0.9"
+  },
   "strapi": {
     "uuid": "e3ca048d-5523-4b0a-bb9f-57dc85cfc8b7"
   }
