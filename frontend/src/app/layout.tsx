@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import getMetadata from './metadata';
 import GlobalStyles from 'components/GlobalStyles/GlobalStyles';
 import ViewportWarning from '../components/ViewportWarning/ViewportWarning';
@@ -19,23 +20,10 @@ const jsonLd = {
   name: 'Cristina Jiménez',
   url: process.env.NEXT_PUBLIC_FRONTEND_URL,
   alumniOf: [
-    {
-      '@type': 'EducationalOrganization',
-      name: 'ISC Paris',
-    },
-    {
-      '@type': 'EducationalOrganization',
-      name: 'Istituto Marangoni',
-    },
-
-    {
-      '@type': 'EducationalOrganization',
-      name: 'The Manchester Metropolitan University',
-    },
-    {
-      '@type': 'EducationalOrganization',
-      name: 'Pontificia Universidad Católica Madre y Maestra',
-    },
+    { '@type': 'EducationalOrganization', name: 'ISC Paris' },
+    { '@type': 'EducationalOrganization', name: 'Istituto Marangoni' },
+    { '@type': 'EducationalOrganization', name: 'The Manchester Metropolitan University' },
+    { '@type': 'EducationalOrganization', name: 'Pontificia Universidad Católica Madre y Maestra' },
   ],
   jobTitle: 'Communications and Marketing Specialist',
   sameAs: ['https://www.linkedin.com/in/cristina-jim%C3%A9nez-b84a0b127'],
@@ -45,14 +33,6 @@ export interface IRootLayoutProps {
   children: React.ReactNode;
 }
 
-/**
- * Root layout for the application.
- *
- * Applies global styles, shows viewport warning, and renders the header + children.
- *
- * @param {IRootLayoutProps} props - Props containing React children.
- * @returns {Promise<React.JSX.Element>} The root layout element.
- */
 export default async function RootLayout({
   children,
 }: IRootLayoutProps): Promise<React.JSX.Element> {
@@ -61,7 +41,23 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics Script */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EYCRL2RD4L"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EYCRL2RD4L');
+          `}
+        </Script>
+      </head>
       <body>
+        {/* JSON-LD structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
