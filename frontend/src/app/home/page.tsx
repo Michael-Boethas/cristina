@@ -33,7 +33,7 @@ export default async function Home(): Promise<React.JSX.Element> {
             );
           })()}
         </p>
-        <div className="flex flex-col items-center gap-6 text-center text-lg text-fg-2 md:w-1/3 md:w-full md:items-start md:text-2xl lg:w-2/3 xl:w-1/2 xl:flex-row 2xl:w-1/3">
+        <div className="flex flex-col items-center gap-6 text-center text-lg text-fg-2 md:w-full md:items-start md:text-2xl lg:w-2/3 xl:w-1/2 xl:flex-row 2xl:w-1/3">
           <Link
             href="/portfolio"
             role="button"
@@ -78,8 +78,8 @@ export default async function Home(): Promise<React.JSX.Element> {
         <div className="absolute bottom-5 right-0 hidden md:block">
           <Link href="#intro-section" role="button" aria-label="Scroll to top">
             <div className="hover-text-1 flex flex-col">
-              <i className="fa-solid fa-chevron-up -mb-14 px-8 text-5xl text-[#000a] text-inherit xl:text-7xl" />
-              <i className="fa-solid fa-chevron-up px-8 text-5xl text-[#000a] text-inherit xl:text-7xl" />
+              <i className="fa-solid fa-chevron-up -mb-14 px-8 text-5xl text-[#000a] xl:text-7xl" />
+              <i className="fa-solid fa-chevron-up px-8 text-5xl text-[#000a] xl:text-7xl" />
             </div>
           </Link>
         </div>
@@ -94,7 +94,7 @@ export default async function Home(): Promise<React.JSX.Element> {
         >
           <span className="hover:text-bg-1">Developed by </span>
           <Image
-            src="/favicon.svg"
+            src="/mishmesh-logo.svg"
             alt="Link to the portfolio of professional web developer Michaël Boëthas"
             height={64}
             width={64}
