@@ -18,7 +18,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Cristina Jiménez',
-  url: process.env.NEXT_PUBLIC_FRONTEND_URL,
+  url: process.env.NEXT_PUBLIC_FRONTEND_BASE_URL,
   alumniOf: [
     { '@type': 'EducationalOrganization', name: 'ISC Paris' },
     { '@type': 'EducationalOrganization', name: 'Istituto Marangoni' },
