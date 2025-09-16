@@ -6,7 +6,7 @@ This repository contains the complete source code for the professional portfolio
 
 ## How It Works
 
-- Frontend: The Next.js app fetches content from the Strapi API, using a combination of SSG for better performance and SEO, and CSR for interactive components.
+- Frontend: The Next.js app fetches content from the Strapi API, using a combination of SSG for better performance and SEO, and CSR for interactive components. SSG also solves the free tier spin down issues on hosting providers.
 
 - Backend: The backend is powered by Strapi CMS, which provides a user-friendly admin panel for content management. The Strapi API is connected to a PostgreSQL database for data storage and Cloudinary for media storage.
 
