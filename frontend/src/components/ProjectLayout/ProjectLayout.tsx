@@ -1,14 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import remarkGfm from 'remark-gfm';
 import YoutubeEmbed from 'components/YoutubeEmbed/YoutubeEmbed';
 import ResultsBanner from '../ResultBanner/ResultsBanner';
 import SocialMediaSection from 'components/SocialMediaSection/SocialMediaSection';
 import ArticleItem from 'components/ArticleItem/ArticleItem';
 import Carousel from 'components/Carousel/Carousel';
 import LightboxGallery from 'components/LightboxGallery/LightboxGallery';
+import MarkdownField from 'components/MarkdownField/MarkdownField';
 import { IProjectContent } from 'types';
 
 export interface IProjectLayoutProps {
@@ -84,18 +82,7 @@ export default async function ProjectLayout({ label, content, classes }: IProjec
               >
                 {label}
               </h2>
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeRaw]}
-                components={{
-                  p: (props) => <p className="break-words text-xl md:text-2xl" {...props} />,
-                  ul: (props) => <ul className="list-disc ps-6" {...props} />,
-                  ol: (props) => <ol className="list-decimal ps-6" {...props} />,
-                  li: (props) => <li className="mb-2" {...props} />,
-                }}
-              >
-                {content.description.replace(/\n/g, '<br />')}
-              </ReactMarkdown>
+              <MarkdownField content={content.description} />
             </div>
           </div>
         ) : (
@@ -106,19 +93,7 @@ export default async function ProjectLayout({ label, content, classes }: IProjec
             >
               {label}
             </h2>
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw]}
-              components={{
-                p: (props) => <div className="break-words text-xl md:text-2xl" {...props} />,
-                br: (props) => <br {...props} />,
-                ul: (props) => <ul className="list-disc ps-6" {...props} />,
-                ol: (props) => <ol className="list-decimal ps-6" {...props} />,
-                li: (props) => <li className="mb-2" {...props} />,
-              }}
-            >
-              {content.description.replace(/\n/g, '<br />')}
-            </ReactMarkdown>
+            <MarkdownField content={content.description} />
           </div>
         )}
 
