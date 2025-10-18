@@ -23,7 +23,7 @@ export default function InstagramEmbed({
   return (
     <div className={`${classes} instagram-embed hover-pop`}>
       <blockquote
-        className="instagram-media md:w-[30vw] lg:w-[25vw]"
+        className="instagram-media md:w-[30vw] lg:w-[20vw]"
         data-instgrm-permalink={postUrl}
         data-instgrm-version="14"
       ></blockquote>
